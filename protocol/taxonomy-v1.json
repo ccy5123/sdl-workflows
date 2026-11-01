@@ -1,0 +1,96 @@
+{
+  "version": "v1",
+  "date": "2026-10-21",
+  "note": "Taxonomy v1, frozen before test-set coding (Spec sdl-db-01 v3). Classes are those of v0.1, refined on the 10 development papers; rules for applying them are in protocol/coding-guideline.md (v1) and the class correspondence to XDL, WeChemSynOntology and Leong et al. 2022 is in protocol/taxonomy-correspondence.md. No other class by design: items that do not fit are coded unmapped with a note. No class may be added during test coding.",
+  "unit_operation": {
+    "plan": [
+      "plan_next_experiment",
+      "generate_instructions"
+    ],
+    "prepare": [
+      "dispense_liquid",
+      "dispense_solid",
+      "prepare_substrate",
+      "clean_equipment"
+    ],
+    "mix": [
+      "mix",
+      "sonicate"
+    ],
+    "react": [
+      "react_thermal",
+      "react_flow",
+      "react_photo_electro",
+      "anneal",
+      "cool_quench",
+      "preheat"
+    ],
+    "separate": [
+      "filter",
+      "centrifuge",
+      "wash_extract",
+      "evaporate_dry",
+      "purify"
+    ],
+    "form": [
+      "deposit_coat",
+      "assemble_device"
+    ],
+    "measure": [
+      "measure_optical",
+      "measure_structural",
+      "measure_separation_ms",
+      "measure_imaging",
+      "measure_electrochemical",
+      "measure_physical"
+    ],
+    "analyze": [
+      "analyze_data"
+    ],
+    "handle": [
+      "handle_sample",
+      "sample_aliquot"
+    ]
+  },
+  "module_type": [
+    "liquid_handler",
+    "solid_dispenser",
+    "fluidics",
+    "batch_reactor",
+    "flow_reactor",
+    "thermal_unit",
+    "mixer",
+    "separation_unit",
+    "coating_printing_unit",
+    "assembly_unit",
+    "instrument_optical",
+    "instrument_structural",
+    "instrument_separation_ms",
+    "instrument_imaging",
+    "instrument_electrochemical",
+    "instrument_physical",
+    "storage",
+    "sample_handling_station",
+    "commercial_integrated",
+    "software",
+    "human"
+  ],
+  "transfer_mode": [
+    "fixed_tubing",
+    "robot_arm_gantry",
+    "mobile_robot",
+    "human_transfer",
+    "data_transfer"
+  ],
+  "field_tag": [
+    "chemistry_synthesis",
+    "materials_inorganic",
+    "materials_thin_film",
+    "materials_polymer_soft",
+    "nanomaterials",
+    "battery_electrochem",
+    "catalysis",
+    "biology_biochem",
+    "analytical_chemistry"
+  ]
+}

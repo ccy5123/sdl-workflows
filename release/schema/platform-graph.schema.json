@@ -1,0 +1,91 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "platform-graph.schema.json",
+ "title": "sdl-workflows platform graph",
+ "description": "One line of modes/builder/platform_graphs.jsonl: one closed-loop platform as modules (nodes), connections (edges between modules) and steps (the order in which modules carry out unit operations in one cycle). Class values are those of the taxonomy tables of the same release.",
+ "type": "object",
+ "additionalProperties": false,
+ "required": ["platform_id", "paper_id", "doi", "first_public_year", "field_tags", "name", "commercial_integrated",
+              "identity_id", "evidence", "modules", "steps", "connections"],
+ "properties": {
+  "platform_id": {"type": "string", "pattern": "^[^/]+/P[0-9]+$"},
+  "paper_id": {"type": "string"},
+  "doi": {"type": ["string", "null"]},
+  "first_public_year": {"type": "integer"},
+  "field_tags": {"type": "array", "items": {"type": "string"}},
+  "name": {"type": ["string", "null"]},
+  "commercial_integrated": {"type": "boolean"},
+  "identity_id": {"type": "string"},
+  "evidence": {"$ref": "#/$defs/evidence"},
+  "modules": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["module_id", "module_type", "name_in_paper", "on_platform", "unmapped_note", "evidence"],
+    "properties": {
+     "module_id": {"type": "string", "pattern": "^[^/]+/P[0-9]+/M[0-9]+$"},
+     "module_type": {"type": "string"},
+     "name_in_paper": {"type": ["string", "null"]},
+     "on_platform": {"type": "boolean"},
+     "unmapped_note": {"type": ["string", "null"]},
+     "evidence": {"$ref": "#/$defs/evidence"}
+    }
+   }
+  },
+  "steps": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["step_id", "step_order", "unit_operation", "family", "performed_by", "modules", "uncertain",
+                 "unmapped_note", "evidence"],
+    "properties": {
+     "step_id": {"type": "string", "pattern": "^[^/]+/P[0-9]+/S[0-9]+$"},
+     "step_order": {"type": "integer", "minimum": 1},
+     "unit_operation": {"type": "string"},
+     "family": {"type": "string"},
+     "performed_by": {"enum": ["robot", "human", "software"]},
+     "modules": {"description": "module ids in position order; the first is the primary module",
+                 "type": "array", "items": {"type": "string"}},
+     "uncertain": {"type": "boolean"},
+     "unmapped_note": {"type": ["string", "null"]},
+     "evidence": {"$ref": "#/$defs/evidence"}
+    }
+   }
+  },
+  "connections": {
+   "type": "array",
+   "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["edge_id", "from_module", "to_module", "transfer_mode", "is_material", "stated", "uncertain",
+                 "unmapped_note", "evidence"],
+    "properties": {
+     "edge_id": {"type": "string", "pattern": "^[^/]+/P[0-9]+/E[0-9]+$"},
+     "from_module": {"type": "string"},
+     "to_module": {"type": "string"},
+     "transfer_mode": {"type": "string"},
+     "is_material": {"type": "boolean"},
+     "stated": {"description": "true: stated in the paper; false: inferred", "type": "boolean"},
+     "uncertain": {"type": "boolean"},
+     "unmapped_note": {"type": ["string", "null"]},
+     "evidence": {"$ref": "#/$defs/evidence"}
+    }
+   }
+  }
+ },
+ "$defs": {
+  "evidence": {
+   "description": "where the item is described: document (main or SI<k>, see core/paper_document), page and locator",
+   "type": "object",
+   "additionalProperties": false,
+   "required": ["doc", "page", "locator"],
+   "properties": {
+    "doc": {"type": ["string", "null"]},
+    "page": {"type": ["integer", "null"]},
+    "locator": {"type": ["string", "null"]}
+   }
+  }
+ }
+}

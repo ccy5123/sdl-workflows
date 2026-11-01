@@ -1,0 +1,124 @@
+# Data card: sdl-workflows {{version}}
+
+## What the data record
+
+Which modules published closed-loop self-driving laboratories use, in what order one experimental cycle runs its
+steps on them, and how material moves between the modules. The unit is the platform: {{n_papers}} papers describe
+{{n_platforms}} platforms. One cycle of the loop is coded once, however many cycles a campaign ran. Process
+conditions (temperatures, volumes, times) are not coded.
+
+A closed loop here means that an algorithm chose the next experiment from earlier results and automated hardware
+carried it out, at least once on the physical system reported in the paper.
+
+## How the papers were found
+
+The {{n_candidates}} candidates came from two routes, both run on 20 October 2026: the reference lists of three
+reviews (Tom et al., Chem. Rev. 2024, doi:10.1021/acs.chemrev.4c00055; Hwang et al., Digital Discovery 2026,
+doi:10.1039/d6dd00024j; Lee et al., Mater. Horiz. 2026, doi:10.1039/d5mh01984b), and keyword searches of Crossref
+and arXiv. Searches of Semantic Scholar and OpenAlex were attempted and failed on that date.
+{{n_cand_seed_only}} candidates came only from the reference lists, {{n_cand_keyword_only}} only from the searches
+and {{n_cand_both}} from both. Where a reference list gave no title, venue or year but a DOI was available, the
+missing fields were taken from the DOI record ({{n_cand_bib_added}} candidates); {{n_cand_no_title}} candidates
+still have no title and {{n_cand_no_year}} no year.
+
+Candidates were screened on titles ({{n_title}}), then abstracts ({{n_abstract}}), then full texts
+({{n_fulltext}}). A paper was eligible when all of these held:
+
+1. It is an original research paper.
+2. An algorithm chose the next experiment from the results of earlier ones, and at least one such iteration was
+   run on the physical system in the paper.
+3. The experiments in the loop were executed by automated hardware; isolated manual steps were allowed.
+4. Something was made or processed in the loop, not only measured.
+5. The hardware configuration is described in the main text or the supplementary information.
+
+{{n_eligible}} papers were eligible and {{n_ineligible}} ineligible (one reason code each, defined in
+`modes/trends/screening_reasons.csv`). Of the {{n_decisions}}
+screening decisions, {{n_decisions_model}} were made by a language model working from the written criteria (the
+model is named in `screening.model_id` for the {{n_decisions_model_named}} decisions whose record names it) and
+{{n_decisions_researcher}} by the researcher. When several versions of a study were found (preprint, journal or
+other-language version), one was kept; `paper_version_link` lists the {{n_version_links}} pairs.
+
+## How the papers were coded
+
+Each paper was coded once by a language model (Claude Opus 5.5) from its main text and the supplements available as
+PDF or docx ({{n_si_docs}} supplements in total), following written coding instructions and taxonomy v1. The
+instructions and the taxonomy were settled on 10 development papers and then frozen; every coding in this release
+was made with the frozen versions. The taxonomy has no catch-all class: an item that fits no class is coded
+`unmapped` with a note. The classes and their definitions are in `modes/taxonomy/classes.csv`; the instructions, the
+taxonomy file and an English translation of the coding guideline are in `protocol/`.
+
+- **Platform:** name, whether it is a commercial integrated system with undisclosed internals, and a summary of its
+  campaigns.
+- **Module:** class, the name the paper uses, and whether it belongs to the platform or is outside equipment used
+  by the loop. Robot arms, gantries and mobile robots are coded as the transfer mode of a connection, not as
+  modules, unless they carry out a step themselves.
+- **Step:** unit-operation class, whether a robot, a person or software performs it, the modules that perform it,
+  and its position in the cycle.
+- **Connection:** source and target module, transfer mode, and whether the paper states the transfer or it was
+  inferred from context (for example, consecutive steps of one sample on different modules).
+- **Paper:** where the hardware is described, the software and hardware autonomy categories of Tom et al. (2024),
+  and field tags. For field tags the coder chose from the list of tag names; the definitions in `classes.csv` state
+  the scope of each name.
+
+Every item carries the document, page and figure, table or section that describes it; `core/paper_document.csv`
+gives the hash and version of each file that was read.
+
+Platforms used in more than one paper share an `identity_id`. Two papers' platforms are the same when one paper
+states that it reuses the other's platform (`identity_rule` = `a_stated_reuse`, judged by Claude Opus 5.5 from the
+papers' text), or when the platform names match and the corresponding-author groups match by OpenAlex author id
+(`b_name_and_group`, applied by a script).
+{{n_platforms_shared}} platforms in {{n_identities_shared}} groups appear in more than one paper.
+
+A second coding of every paper by the same model with the same instructions was compared with the released coding
+item by item. Items without a counterpart of the same class in the second coding have `uncertain` = 1:
+{{n_steps_uncertain}} of {{n_steps}} steps and {{n_connections_uncertain}} of {{n_connections}} connections. The
+second coding is not released.
+
+## How far the labels can be trusted
+
+For {{n_reference_papers}} papers ({{n_reference_recent}} first public in 2024 or later, {{n_reference_older}}
+earlier), a different model, Claude Fable 5.1, coded the papers under the same instructions as a reference. Against
+it, the released coding reached a field-wise strict micro-F1 (an item counts when it pairs with a reference item and
+has the same class) of {{f1_unit_operation}} for the unit operation of steps, {{f1_module_type}} for module type
+and {{f1_transfer_mode}} for transfer mode. The lower bounds of the paper-level cluster bootstrap 95% intervals were
+{{f1_unit_operation_low}}, {{f1_module_type_low}} and {{f1_transfer_mode_low}}. This is agreement between two models,
+not accuracy against human coding; the release contains no human coding.
+
+In the release, {{n_unmapped_steps}} steps, {{n_unmapped_modules}} modules and {{n_unmapped_connections}}
+connections are `unmapped`.
+
+## Benchmark chrono2023
+
+Two tasks predict a class from the coded context: the type of a step's primary module (the first module listed
+for the step), from its unit operation,
+the unit operations of the neighbouring steps and the field tag; and the transfer mode of a material connection,
+from the unit operations and families of the two steps it joins. Models train on the {{n_train_papers}} papers
+first public in 2023 or earlier and are tested on the {{n_test_papers}} papers first public in 2024 or later; the
+{{n_excluded_papers}} test-year papers used to develop the coding instructions are left out.
+
+| Task | Test items (papers) | Baseline top-1 | Reference model top-1 | Difference, 95% interval |
+|---|---|---|---|---|
+| Primary module type | {{module_n_items}} ({{module_n_papers}}) | {{module_baseline}} | {{module_reference}} | {{module_diff}} [{{module_low}}, {{module_high}}] |
+| Transfer mode | {{transfer_n_items}} ({{transfer_n_papers}}) | {{transfer_baseline}} | {{transfer_reference}} | {{transfer_diff}} [{{transfer_low}}, {{transfer_high}}] |
+
+The baseline predicts the most frequent class of the unit operation (of the family pair for transfer mode); the
+reference model and the scoring are defined in `modes/benchmark/tasks/*.json`. The intervals come from a
+paper-level paired cluster bootstrap. `modes/benchmark/evaluate.py` reproduces the table from the release files and
+scores new predictions the same way. The labels are the model codings described above, so accuracy on this
+benchmark measures agreement with them.
+
+## Limitations
+
+- The search ran once, on one date, in two indexes. The {{n_papers}} papers are the eligible candidates that this
+  search found, not every closed-loop SDL paper published; counts by year reflect the search as well as the field.
+- Page numbers refer to the file versions in `core/paper_document.csv`. {{n_main_preprint}} main texts are
+  preprints, and {{n_preprint_with_journal_doi}} of them belong to papers with a journal version whose pages differ.
+
+## Not included
+
+Paper text and abstracts, process conditions, the coders' general notes on each paper, and the second coding
+(represented only by `uncertain`).
+
+## Versions and corrections
+
+See `README.md`. Coding corrections are released as PATCH versions and listed in `CHANGELOG.md`.

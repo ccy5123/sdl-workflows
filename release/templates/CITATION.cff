@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+type: dataset
+title: "sdl-workflows: hardware workflows of closed-loop self-driving laboratories"
+version: "{{version}}"
+date-released: "{{released_on}}"
+license: CC-BY-4.0
+{{citation_doi}}authors:
+{{authors_cff}}

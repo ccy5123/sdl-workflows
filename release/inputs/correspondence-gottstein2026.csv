@@ -1,0 +1,57 @@
+class_kind,class,vocabulary,target,match,source_ref
+unit_operation,plan_next_experiment,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.4 ; §Extending the hierarchy to software operations
+unit_operation,generate_instructions,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.4 ; §Extending the hierarchy to software operations
+unit_operation,dispense_liquid,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.3 ; §Orchestration objects (UO)
+unit_operation,dispense_solid,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.3 ; §Orchestration objects (UO)
+unit_operation,prepare_substrate,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.3 ; §Orchestration objects (UO)
+unit_operation,clean_equipment,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.3 ; §Orchestration objects (UO)
+unit_operation,mix,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.3 ; §Orchestration objects (UO)
+unit_operation,sonicate,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.3 ; §Orchestration objects (UO)
+unit_operation,react_thermal,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.3 ; §Orchestration objects (UO)
+unit_operation,react_flow,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.3 ; §Orchestration objects (UO)
+unit_operation,react_photo_electro,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.3 ; §Orchestration objects (UO)
+unit_operation,anneal,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.3 ; §Orchestration objects (UO)
+unit_operation,cool_quench,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.3 ; §Orchestration objects (UO)
+unit_operation,preheat,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.3 ; §Orchestration objects (UO)
+unit_operation,filter,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.3 ; §Orchestration objects (UO)
+unit_operation,centrifuge,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.3 ; §Orchestration objects (UO)
+unit_operation,wash_extract,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.3 ; §Orchestration objects (UO)
+unit_operation,evaporate_dry,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.3 ; §Orchestration objects (UO)
+unit_operation,purify,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.3 ; §Orchestration objects (UO)
+unit_operation,deposit_coat,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.3 ; §Orchestration objects (UO)
+unit_operation,assemble_device,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.3 ; §Orchestration objects (UO)
+unit_operation,measure_optical,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.3 ; §Orchestration objects (UO)
+unit_operation,measure_structural,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.3 ; §Orchestration objects (UO)
+unit_operation,measure_separation_ms,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.3 ; §Orchestration objects (UO)
+unit_operation,measure_imaging,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.3 ; §Orchestration objects (UO)
+unit_operation,measure_electrochemical,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.3 ; §Orchestration objects (UO)
+unit_operation,measure_physical,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.3 ; §Orchestration objects (UO)
+unit_operation,analyze_data,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.4 ; §Extending the hierarchy to software operations
+unit_operation,handle_sample,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.3 ; §Orchestration objects (UO)
+unit_operation,sample_aliquot,Gottstein2026,unit_operation,narrower,Gottstein2026 ; pdf p.3 ; §Orchestration objects (UO)
+module_type,liquid_handler,Gottstein2026,setup,exact,Gottstein2026 ; pdf p.3 ; §Vocabulary and formalism (physical terms)
+module_type,solid_dispenser,Gottstein2026,setup,exact,Gottstein2026 ; pdf p.3 ; §Vocabulary and formalism (physical terms)
+module_type,fluidics,Gottstein2026,setup,exact,Gottstein2026 ; pdf p.3 ; §Vocabulary and formalism (physical terms)
+module_type,batch_reactor,Gottstein2026,setup,exact,Gottstein2026 ; pdf p.3 ; §Vocabulary and formalism (physical terms)
+module_type,flow_reactor,Gottstein2026,setup,exact,Gottstein2026 ; pdf p.3 ; §Vocabulary and formalism (physical terms)
+module_type,thermal_unit,Gottstein2026,setup,exact,Gottstein2026 ; pdf p.3 ; §Vocabulary and formalism (physical terms)
+module_type,mixer,Gottstein2026,setup,exact,Gottstein2026 ; pdf p.3 ; §Vocabulary and formalism (physical terms)
+module_type,separation_unit,Gottstein2026,setup,exact,Gottstein2026 ; pdf p.3 ; §Vocabulary and formalism (physical terms)
+module_type,coating_printing_unit,Gottstein2026,setup,exact,Gottstein2026 ; pdf p.3 ; §Vocabulary and formalism (physical terms)
+module_type,assembly_unit,Gottstein2026,setup,exact,Gottstein2026 ; pdf p.3 ; §Vocabulary and formalism (physical terms)
+module_type,instrument_optical,Gottstein2026,setup,exact,Gottstein2026 ; pdf p.3 ; §Vocabulary and formalism (physical terms)
+module_type,instrument_structural,Gottstein2026,setup,exact,Gottstein2026 ; pdf p.3 ; §Vocabulary and formalism (physical terms)
+module_type,instrument_separation_ms,Gottstein2026,setup,exact,Gottstein2026 ; pdf p.3 ; §Vocabulary and formalism (physical terms)
+module_type,instrument_imaging,Gottstein2026,setup,exact,Gottstein2026 ; pdf p.3 ; §Vocabulary and formalism (physical terms)
+module_type,instrument_electrochemical,Gottstein2026,setup,exact,Gottstein2026 ; pdf p.3 ; §Vocabulary and formalism (physical terms)
+module_type,instrument_physical,Gottstein2026,setup,exact,Gottstein2026 ; pdf p.3 ; §Vocabulary and formalism (physical terms)
+module_type,storage,Gottstein2026,setup,exact,Gottstein2026 ; pdf p.3 ; §Vocabulary and formalism (physical terms)
+module_type,sample_handling_station,Gottstein2026,setup,exact,Gottstein2026 ; pdf p.3 ; §Vocabulary and formalism (physical terms)
+module_type,commercial_integrated,Gottstein2026,setup,narrower,Gottstein2026 ; pdf p.3 ; §Vocabulary and formalism (physical terms)
+module_type,software,Gottstein2026,none,none,Gottstein2026 ; pdf p.4 ; §Extending the hierarchy to software operations
+module_type,human,Gottstein2026,none,none,Gottstein2026 ; pdf p.3 ; Fig. 1
+transfer_mode,fixed_tubing,Gottstein2026,unit_operation,exact,Gottstein2026 ; pdf p.8 ; §Reusable components cut development cost and risk
+transfer_mode,robot_arm_gantry,Gottstein2026,unit_operation,exact,Gottstein2026 ; pdf p.7 ; §Encapsulation unlocks safe parallel execution
+transfer_mode,mobile_robot,Gottstein2026,unit_operation,exact,Gottstein2026 ; pdf p.4 ; §Results
+transfer_mode,human_transfer,Gottstein2026,none,none,Gottstein2026 ; pdf p.3 ; Fig. 1
+transfer_mode,data_transfer,Gottstein2026,none,none,Gottstein2026 ; pdf p.4 ; §Formalism

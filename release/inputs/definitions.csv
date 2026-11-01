@@ -1,0 +1,93 @@
+kind,name,definition
+uo_family,plan,"Choosing the next experiment, or turning that choice into machine instructions."
+uo_family,prepare,"Dispensing and preparation: adding liquids and solids, preparing substrates, cleaning equipment."
+uo_family,mix,"Mixing, including ultrasonic dispersion."
+uo_family,react,Reaction and heat treatment.
+uo_family,separate,Separation and purification.
+uo_family,form,"Forming and fabrication: coating, printing, device assembly."
+uo_family,measure,Measurement.
+uo_family,analyze,Data analysis.
+uo_family,handle,Sample management.
+uo_family,unmapped,Family of a step whose unit operation fits no class of this taxonomy.
+unit_operation,plan_next_experiment,An algorithm selects the conditions of the next experiment.
+unit_operation,generate_instructions,"The selected conditions or design are converted into machine instructions (G-code, a robot script). Used only when the paper describes this as a separate step."
+unit_operation,dispense_liquid,"Dispensing a liquid, or adding a reagent."
+unit_operation,dispense_solid,Weighing and adding a solid.
+unit_operation,prepare_substrate,"Cleaning, drying or pretreating a substrate."
+unit_operation,clean_equipment,"Rinsing flow paths, nozzles or vessels with solvent between experiments."
+unit_operation,mix,"Stirring, shaking or mixing."
+unit_operation,sonicate,Ultrasonic dispersion.
+unit_operation,react_thermal,"Leaving the reaction to proceed at a set temperature, room temperature included."
+unit_operation,react_flow,Reaction inside a flow reactor.
+unit_operation,react_photo_electro,"Light irradiation, electrochemical synthesis or UV curing."
+unit_operation,anneal,Heat treatment of a film or solid.
+unit_operation,cool_quench,"Cooling, or stopping a reaction."
+unit_operation,preheat,Bringing a flow or vessel to temperature before the reaction (a preheater).
+unit_operation,filter,Filtration.
+unit_operation,centrifuge,Centrifugation.
+unit_operation,wash_extract,"Washing, extraction or phase separation."
+unit_operation,evaporate_dry,Evaporation or drying.
+unit_operation,purify,"Purification, such as chromatographic purification."
+unit_operation,deposit_coat,"Spin, drop or blade coating, or printing."
+unit_operation,assemble_device,Coin-cell assembly or device fabrication.
+unit_operation,measure_optical,"Spectroscopy such as UV-vis, photoluminescence (PL), IR or Raman."
+unit_operation,measure_structural,"Measurement such as XRD, XPS or NMR."
+unit_operation,measure_separation_ms,"Analysis such as HPLC, GC or MS."
+unit_operation,measure_imaging,Microscope or camera imaging.
+unit_operation,measure_electrochemical,"Electrochemical measurement, or conductivity."
+unit_operation,measure_physical,"Physical properties such as mass, thickness, viscosity or pH."
+unit_operation,analyze_data,"Computing the target value from measurements, or updating a model."
+unit_operation,handle_sample,"Opening or closing caps, labelling, storage."
+unit_operation,sample_aliquot,"Taking part of a sample for analysis, including through an in-line injection valve."
+unit_operation,unmapped,A step whose unit operation fits no class of this taxonomy.
+module_type,liquid_handler,"Pipetting robot, dispensing head."
+module_type,solid_dispenser,"Powder dispenser, automated balance."
+module_type,fluidics,"Syringe or peristaltic pumps and valves of a flow system."
+module_type,batch_reactor,"Vial or well-block reactor, or a stirrer or heating block on which vials stay during the reaction (may heat and stir)."
+module_type,flow_reactor,Tube or chip flow reactor.
+module_type,thermal_unit,"Hotplate, oven, furnace, chiller."
+module_type,mixer,"A device that only mixes, such as a shaker, vortex mixer or ultrasonicator."
+module_type,separation_unit,"Centrifuge, filtration device, evaporator."
+module_type,coating_printing_unit,"Spin coater, blade coater, printer."
+module_type,assembly_unit,Assembly device such as a coin-cell crimper.
+module_type,instrument_optical,"Spectrometer (UV-vis, PL, IR, Raman)."
+module_type,instrument_structural,"XRD, XPS or NMR instrument."
+module_type,instrument_separation_ms,"HPLC, GC or MS instrument."
+module_type,instrument_imaging,"Microscope, camera."
+module_type,instrument_electrochemical,"Potentiometer, impedance analyser."
+module_type,instrument_physical,"Balance, thickness gauge, pH meter."
+module_type,storage,"Rack, hotel, refrigerated storage."
+module_type,sample_handling_station,"Capping and decapping device, plate sealer, waiting deck."
+module_type,commercial_integrated,"Commercial integrated platform whose internal configuration is not disclosed (e.g., Chemspeed)."
+module_type,software,Program for experiment planning or data analysis.
+module_type,human,A station where a person works by hand.
+module_type,unmapped,A module whose type fits no class of this taxonomy.
+transfer_mode,fixed_tubing,Flow through a fixed tubing connection.
+transfer_mode,robot_arm_gantry,"Fixed robot arm, XYZ gantry or rail."
+transfer_mode,mobile_robot,Mobile robot.
+transfer_mode,human_transfer,A person moves the material.
+transfer_mode,data_transfer,"Data, not material, is passed on (instrument to software to planning)."
+transfer_mode,unmapped,A connection whose transfer mode fits no class of this taxonomy.
+field_tag,chemistry_synthesis,Application field: chemical synthesis.
+field_tag,materials_inorganic,Application field: inorganic materials.
+field_tag,materials_thin_film,Application field: thin-film materials.
+field_tag,materials_polymer_soft,Application field: polymers and soft materials.
+field_tag,nanomaterials,Application field: nanomaterials.
+field_tag,battery_electrochem,Application field: batteries and electrochemistry.
+field_tag,catalysis,Application field: catalysis.
+field_tag,biology_biochem,Application field: biology and biochemistry.
+field_tag,analytical_chemistry,"Application field: analytical chemistry, i.e., optimisation of an analytical method such as HPLC or flow-injection analysis."
+field_tag,unmapped,Application field that fits no tag of this list.
+screening_reason,E_not_paper,"Not an original research article: news item, press release, correction or erratum, editorial, table of contents, cover."
+screening_reason,E_review,"Review, survey, perspective, tutorial or conceptual architecture without its own closed-loop campaign."
+screening_reason,E_off_topic,Not about automated experimentation (e.g. 'autonomous' means something else).
+screening_reason,E_duplicate_version,"Another version (preprint, journal version, other-language version) of the same study is the record; the link is in paper_version_link."
+screening_reason,E_computational,The loop runs on simulation or computation; physical experiments only validate predictions.
+screening_reason,E_software_only,"The contribution is software (lab operating system, orchestration layer, LLM agent, planner) and no algorithm-chosen iteration on physical experiments is shown."
+screening_reason,E_no_robot,"The loop is algorithm-driven but the experiments are carried out by people, or only one tool is programmable and no integrated hardware is described."
+screening_reason,E_measure_only,The loop only chooses what or where to measure; no sample is made or processed in the loop.
+screening_reason,E_open_loop,"Automated experiments, but the conditions are not chosen by an algorithm from earlier results (fixed design of experiments, high-throughput screen, one-shot ML prediction, human-made decisions, feedback only for endpoint detection)."
+screening_reason,E_not_closed,"A platform or module paper whose loop is claimed but no algorithm-driven campaign or iteration is reported, or the loop is evaluated only retrospectively."
+screening_reason,E_hardware_not_described,"Closed loop with automated hardware, but the hardware configuration is not described in the main text or SI (only cited elsewhere)."
+screening_reason,E_researcher_read,The researcher read the full text and judged the candidate ineligible.
+screening_reason,E_unretrievable,No full text could be obtained (a web item without a DOI).

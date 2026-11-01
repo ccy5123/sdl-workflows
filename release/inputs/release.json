@@ -1,0 +1,12 @@
+{
+ "release_version": "1.0.0",
+ "released_on": "2026-11-01",
+ "source_build_digest": "6bc13fac0303d08817c63b1615ef7c0e0c15161982b5853b808cd1226bef320a",
+ "license": "data: CC-BY-4.0; code: MIT",
+ "zenodo_doi": "10.5281/zenodo.23857126",
+ "authors": [
+  {"family-names": "Joe", "given-names": "Chan Young",
+   "affiliation": "Independent Researcher, Incheon, Republic of Korea",
+   "email": "ccy5123ccy@gmail.com", "orcid": "https://orcid.org/0009-0007-5822-6714"}
+ ]
+}

@@ -1,0 +1,18 @@
+{
+ "id": "evi-obs-protocolfreeze-20261021-065228",
+ "created_at": "2026-10-21T06:52:28.864267Z",
+ "spec_id": "sdl-db-01",
+ "kind": "observation",
+ "provenance": {
+  "code_ref": "protocol/make_freeze_evidence.py",
+  "data_ref": "protocol/coding-guideline.md sha256=fb413a9cfd8be0dd56e851f654a868ae3a9d04014b5470da426969708e5c65b0; protocol/taxonomy-v1.json sha256=cef4c58326d7eaf90bcdc8f249b75f9b032545fe1cd151caf538b06d4fcf7c9e; protocol/taxonomy-correspondence.md sha256=26260dbbbb354978c75a51c49e77e9073838c434817c6e2d2f5d6b47591132d5; extraction/prompt-v1.md sha256=449d53dace41d17b8478cb546a9f9719d0df83b955fd2cc40dbd8ed938e1c76d; extraction/prepare_inputs.py sha256=9e2b90bfa4b855e13f5d9e0e0bba4591adb88cc86f5ef476a172e70b7f8d469a; extraction/rehearsal/validate.py sha256=914ea1b3e3cb7114580f8e43823c2f4d3a4e5901912aa2525220b38215303eb1; extraction/rehearsal/score.py sha256=84d50392f215ace1457c2ffd20c20a914c8aa8dddb324ae2f5ac925617575b61",
+  "data_source": null,
+  "seed": null,
+  "environment": "reference coder Fable 5.1 (claude-fable-5-1) and extractor Opus 5.5 (claude-opus-5-5), Claude Code session subagents; both receive extraction/prompt-v1.md"
+ },
+ "result": {
+  "type": "qualitative",
+  "finding": "Coding protocol frozen before any test-set coding or extraction (Spec sdl-db-01 v3): coding guideline v1, taxonomy v1 (classes unchanged from v0.1), correspondence table to XDL, WeChemSynOntology and Leong et al. 2022 (OntoLab/SAREF as a reference column), the shared coding/extraction prompt v1, and the input, validation and scoring scripts (pairing per Spec v3: score.py --r1-fam; bootstrap B=2000, percentile, seed 1). Refined on the 10 development papers only (extraction/rehearsal/README.md, rehearsals v0-v3; not evidence). No class may be added during test coding; items that do not fit are coded unmapped."
+ },
+ "bears_on": []
+}
