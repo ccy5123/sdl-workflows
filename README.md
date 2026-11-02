@@ -1,10 +1,11 @@
 # sdl-workflows (code)
 
 Code that builds, documents and checks the dataset **sdl-workflows**: hardware workflows of the closed-loop
-self-driving laboratories described in 238 published papers.
+self-driving laboratories described in 237 published papers (version 1.1.0).
 
 - Dataset: Zenodo, https://doi.org/10.5281/zenodo.23875743 (version 1.1.0, CC BY 4.0); all versions:
   https://doi.org/10.5281/zenodo.23857125
+- Explorer: https://ccy5123.github.io/sdl-workflows-explorer (browse platforms, trends, taxonomy and benchmark in a web browser)
 - Code: this repository (MIT)
 
 The data themselves are on Zenodo, not here. Download `sdl-workflows-<version>.zip` from the record; its `README.md` and
