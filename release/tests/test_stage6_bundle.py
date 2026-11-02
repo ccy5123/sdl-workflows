@@ -43,10 +43,10 @@ def evidence(a_tool=1 / 3):
     transfer_mode, 1 test item (Kim2025 M1 -> M2 fixed_tubing, steps S1 -> S2, families prepare -> react):
       baseline (prepare, react) -> robot_arm_gantry; reference L3 (prepare, react, chemistry_synthesis) ->
       robot_arm_gantry. Both wrong -> 0 and 0, interval [0, 0]."""
-    rec = {"a_items": 3, "a_tool": a_tool, "a_baseline": 1 / 3, "a_diff_ci95": [0.0, 0.0],
+    rec = {"recorded_in": "evi-fixture", "a_items": 3, "a_tool": a_tool, "a_baseline": 1 / 3, "a_diff_ci95": [0.0, 0.0],
            "b_items": 1, "b_tool": 0.0, "b_baseline": 0.0, "b_diff_ci95": [0.0, 0.0]}
-    path = Path(tempfile.mkdtemp()) / "evi.json"
-    path.write_text(json.dumps({"id": "evi-fixture", "result": {"finding": json.dumps(rec)}}), encoding="utf-8")
+    path = Path(tempfile.mkdtemp()) / "benchmark-reference.json"
+    path.write_text(json.dumps(rec), encoding="utf-8")
     return path
 
 

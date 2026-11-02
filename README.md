@@ -17,12 +17,12 @@ The data themselves are on Zenodo, not here. Download `sdl-workflows-1.0.0.zip` 
 | `release/evaluate.py` | The benchmark evaluation shipped in the bundle (`modes/benchmark/evaluate.py`); Python standard library only |
 | `release/check_release.py` | Checks a finished bundle against the release conditions |
 | `release/schema/` | SQL schema of the release (the source of the data dictionary) and the two JSON Schemas |
-| `release/inputs/` | Hand-written export inputs: version and authors, English definitions, correspondence additions, version judgments of paper files, bibliographic additions from DOI records |
+| `release/inputs/` | Hand-written export inputs: version and authors, English definitions, correspondence additions, version judgments of paper files, bibliographic additions from DOI records, the reference values of the benchmark tasks |
 | `release/templates/` | Templates of the bundle's documents; their numbers are filled at build time |
 | `release/protocol/` | English translation of the coding guideline shipped in the bundle |
 | `release/manifests/` | SHA-256 manifest of the 1.0.0 bundle and the SHA-256 of its zip |
 | `release/tests/` | Unit tests (`unittest`), with a small hand-made internal build as fixture |
-| `protocol/`, `extraction/prompt-v1.md`, `analysis/sdl-db-02/h1_tool.py`, `runs/sdl-db-02/evidence/` | Files of the authors' research workspace that the code reads: the internal schema, the taxonomy, the coding instructions, the record of the guideline's freeze, the benchmark item builder and the recorded benchmark evaluation |
+| `protocol/`, `extraction/prompt-v1.md`, `analysis/sdl-db-02/h1_tool.py` | Files of the authors' research workspace that the code reads: the internal schema, the taxonomy, the coding instructions, the record of the guideline's freeze and the benchmark item builder |
 
 ## Using it with the published bundle
 

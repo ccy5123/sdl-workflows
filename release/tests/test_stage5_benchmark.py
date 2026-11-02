@@ -140,10 +140,11 @@ class EvaluateFiles(unittest.TestCase):
 
 class ExportFixture(unittest.TestCase):
     def evidence(self, a_items, b_items):
-        path = Path(tempfile.mkdtemp()) / "evi.json"
-        rec = {"a_items": a_items, "a_tool": 0.5, "a_baseline": 0.4, "a_diff_ci95": [0.0, 0.2],
+        path = Path(tempfile.mkdtemp()) / "benchmark-reference.json"
+        rec = {"recorded_in": "evi-test",
+               "a_items": a_items, "a_tool": 0.5, "a_baseline": 0.4, "a_diff_ci95": [0.0, 0.2],
                "b_items": b_items, "b_tool": 0.5, "b_baseline": 0.4, "b_diff_ci95": [0.0, 0.2]}
-        path.write_text(json.dumps({"id": "evi-test", "result": {"finding": json.dumps(rec)}}), encoding="utf-8")
+        path.write_text(json.dumps(rec), encoding="utf-8")
         return path
 
     def test_split_and_items(self):

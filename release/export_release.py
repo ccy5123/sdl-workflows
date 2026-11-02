@@ -29,7 +29,7 @@ GOTTSTEIN = INPUTS / "correspondence-gottstein2026.csv"
 CORRESPONDENCE_OVERRIDES = INPUTS / "correspondence-overrides.csv"
 DOCUMENT_VERSIONS = INPUTS / "document-versions.csv"
 SDL_DB_02 = ROOT / "analysis" / "sdl-db-02"
-BENCHMARK_EVIDENCE = ROOT / "runs" / "sdl-db-02" / "evidence" / "evi-exp-h1-20261025-135025.json"
+BENCHMARK_EVIDENCE = ROOT / "release" / "inputs" / "benchmark-reference.json"
 
 
 def open_internal(path=INTERNAL_DB):
@@ -587,17 +587,16 @@ def export_benchmark(db, rel, evidence=BENCHMARK_EVIDENCE):
             rows.append((task_id, it["item"], it["paper"], it["platform"], split[it["paper"]], it["y"], it["t"],
                          *ctx, int(it["uncertain"])))
 
-    ev = json.loads(evidence.read_text(encoding="utf-8"))
-    rec = json.loads(ev["result"]["finding"])
+    rec = json.loads(evidence.read_text(encoding="utf-8"))
     for field, task in TASKS.items():
         test = [r for r in rows if r[0] == task["task_id"] and r[4] == "test"]
         n_items, n_papers = len(test), len({r[2] for r in test})
         if n_items != rec[f"{field}_items"]:
-            raise ExportError(f"{task['task_id']}: {n_items} test items, the record has {rec[field + '_items']}")
+            raise ExportError(f"{task['task_id']}: {n_items} test items, the reference values have {rec[field + '_items']}")
         rel.execute(f"INSERT INTO benchmark_task VALUES ({','.join('?' * 15)})",
                     (task["task_id"], BENCHMARK_ID, task["target"], task["item_rule"], task["inputs"], METRIC,
                      task["baseline_rule"], rec[f"{field}_baseline"], task["reference_model"], rec[f"{field}_tool"],
-                     *rec[f"{field}_diff_ci95"], n_items, n_papers, ev["id"]))
+                     *rec[f"{field}_diff_ci95"], n_items, n_papers, rec["recorded_in"]))
     rel.executemany(f"INSERT INTO benchmark_item VALUES ({','.join('?' * 15)})", rows)
 
 

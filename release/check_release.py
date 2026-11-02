@@ -81,7 +81,7 @@ def check_benchmark(bundle, evidence):
     bench = bundle / "modes" / "benchmark"
     run = subprocess.run([sys.executable, "-I", str(bench / "evaluate.py"), str(bench)], capture_output=True,
                          text=True, timeout=600)
-    rec = json.loads(json.loads(evidence.read_text(encoding="utf-8"))["result"]["finding"])
+    rec = json.loads(evidence.read_text(encoding="utf-8"))
     differ = []
     for field, task_id in (("a", "chrono2023-module_type"), ("b", "chrono2023-transfer_mode")):
         task = json.loads((bench / "tasks" / f"{task_id}.json").read_text(encoding="utf-8"))
@@ -90,7 +90,7 @@ def check_benchmark(bundle, evidence):
                  "n_test_items": rec[f"{field}_items"]}
         differ += [(task_id, k) for k, v in pairs.items() if round(task[k], 4) != round(v, 4)]
     ok = run.returncode == 0 and not differ
-    return ok, f"evaluate.py exit {run.returncode}; task values differing from the record {differ}"
+    return ok, f"evaluate.py exit {run.returncode}; task values differing from the reference values {differ}"
 
 
 def check_counts(bundle, rel, internal):

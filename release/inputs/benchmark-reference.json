@@ -1,0 +1,18 @@
+{
+ "description": "Reference values of the two benchmark tasks: number of test items, top-1 accuracy of the reference model and of the baseline, and the 95% paired bootstrap interval of their difference (a: module type, b: transfer mode), from the authors' evaluation named in recorded_in.",
+ "recorded_in": "evi-exp-h1-20261025-135025",
+ "a_items": 1199,
+ "a_tool": 0.6880733944954128,
+ "a_baseline": 0.6680567139282736,
+ "a_diff_ci95": [
+  -0.009716599190283401,
+  0.05293551491819057
+ ],
+ "b_items": 426,
+ "b_tool": 0.5117370892018779,
+ "b_baseline": 0.4413145539906103,
+ "b_diff_ci95": [
+  0.017204301075268817,
+  0.125531914893617
+ ]
+}
