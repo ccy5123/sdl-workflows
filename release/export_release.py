@@ -3,7 +3,8 @@
 Reads db/sdl-db.sqlite read-only, transforms it into the release tables (release/schema/release-schema.sql) in an
 in-memory database, and writes the release bundle to release/out/. The release is a build artefact: nothing in it
 is edited by hand, and hand-written inputs live in release/inputs/. Design: drafts/dataset/schema-design.md;
-plan: drafts/dataset/export-plan.md.
+plan: drafts/dataset/export-plan.md. Since 1.1.0 it also exports the timing data of the build and the
+human-intervention extraction files (extraction/human/opus/).
 """
 import csv
 import hashlib
@@ -24,6 +25,7 @@ INPUTS = HERE / "inputs"
 REDACTIONS = INPUTS / "redactions.csv"
 DEFINITIONS = INPUTS / "definitions.csv"
 BIB_ADDITIONS = INPUTS / "bibliographic-additions.csv"
+PUBLISHED_VERSIONS = INPUTS / "published-versions.csv"
 CORRESPONDENCE = ROOT / "protocol" / "taxonomy-correspondence.md"
 GOTTSTEIN = INPUTS / "correspondence-gottstein2026.csv"
 CORRESPONDENCE_OVERRIDES = INPUTS / "correspondence-overrides.csv"
@@ -182,7 +184,24 @@ def candidate_rows(db, additions=()):
     return [tuple(r) for r in rows.values()]
 
 
-def export_core(db, rel, defs, redactions=(), additions=()):
+def published_dois(papers, published=()):
+    """Paper rows with the DOI of the published version for papers recorded under a preprint DOI
+    (release/inputs/published-versions.csv). Only the DOI changes: the candidate keeps the preprint DOI and the
+    paper its first_public_year. A row whose paper and preprint DOI do not match, or whose new DOI is a preprint DOI
+    or already another paper's, fails the export."""
+    rows = {p[0]: list(p) for p in papers}
+    for v in published:
+        row = rows.get(v["paper_id"])
+        if row is None or (row[2] or "").lower() != v["preprint_doi"].lower():
+            raise ExportError(f"published version does not match a paper and its preprint DOI: {v}")
+        new = v["published_doi"].lower()
+        if new.startswith(PREPRINT_DOI) or any((r[2] or "").lower() == new for r in rows.values()):
+            raise ExportError(f"published DOI is a preprint DOI or another paper's: {v}")
+        row[2] = new
+    return [tuple(r) for r in rows.values()]
+
+
+def export_core(db, rel, defs, redactions=(), additions=(), published=()):
     """Fill the release taxonomy, literature, paper, platform and item tables from the DB-record coding of db."""
     def ins(table, rows):
         if rows:
@@ -213,7 +232,7 @@ def export_core(db, rel, defs, redactions=(), additions=()):
                "FROM paper p JOIN db_record_coding r USING (paper_id) JOIN coding c ON c.coding_id = r.coding_id")
     if len(papers) != q("SELECT COUNT(*) FROM paper")[0][0]:
         raise ExportError("a paper has no DB-record coding")
-    ins("paper", papers)
+    ins("paper", published_dois(papers, published))
     ins("paper_field_tag", q("SELECT r.paper_id, t.field_tag, t.position FROM coding_field_tag t "
                              "JOIN db_record_coding r USING (coding_id)"))
 
@@ -508,11 +527,14 @@ def export_documents(db, rel, root=ROOT, versions=None):
     """Fill paper_document; every document an exported item cites must have a row."""
     rel.executemany("INSERT INTO paper_document VALUES (?, ?, ?, ?, ?, ?, ?, ?)", document_rows(db, root, versions))
     missing = rel.execute(
-        "SELECT DISTINCT p.paper_id, x.ev_doc FROM (SELECT platform_id, ev_doc FROM platform UNION "
-        "SELECT platform_id, ev_doc FROM module UNION SELECT platform_id, ev_doc FROM step UNION "
-        "SELECT platform_id, ev_doc FROM connection) x JOIN platform p USING (platform_id) "
+        "SELECT DISTINCT x.paper_id, x.ev_doc FROM (SELECT p.paper_id, y.ev_doc FROM (SELECT platform_id, ev_doc "
+        "FROM platform UNION SELECT platform_id, ev_doc FROM module UNION SELECT platform_id, ev_doc FROM step "
+        "UNION SELECT platform_id, ev_doc FROM connection UNION SELECT platform_id, ev_doc FROM step_timing "
+        "UNION SELECT platform_id, ev_doc FROM process_value) y JOIN platform p USING (platform_id) "
+        "UNION SELECT paper_id, ev_doc FROM human_intervention UNION SELECT paper_id, run_ev_doc "
+        "FROM human_intervention) x "
         "WHERE x.ev_doc IS NOT NULL AND NOT EXISTS (SELECT 1 FROM paper_document d "
-        "WHERE d.paper_id = p.paper_id AND d.doc = x.ev_doc)").fetchall()
+        "WHERE d.paper_id = x.paper_id AND d.doc = x.ev_doc)").fetchall()
     if missing:
         raise ExportError(f"cited documents without a paper_document row: {missing[:10]}")
 
@@ -521,7 +543,7 @@ def export_documents(db, rel, root=ROOT, versions=None):
 # chrono2023 is the sdl-db-02 H1 evaluation: items are built by its own code (analysis/sdl-db-02/h1_tool.py) from
 # the same build, and the reference values are read from its recorded Evidence, never typed in.
 BENCHMARK_ID = "chrono2023"
-EXCLUSION_REASON = "used to develop the extraction instructions"
+EXCLUSION_REASON = "one of the 10 development papers of the coding instructions"
 METRIC = ("top-1 accuracy over the test items; 95% interval of a difference by paper-level paired cluster "
           "bootstrap over the test papers (B = 2000, seed 1)")
 TASKS = {
@@ -600,6 +622,211 @@ def export_benchmark(db, rel, evidence=BENCHMARK_EVIDENCE):
     rel.executemany(f"INSERT INTO benchmark_item VALUES ({','.join('?' * 15)})", rows)
 
 
+# Timing data and human-intervention reporting (added in 1.1.0) ----------------------------------------------
+# Timing data: the extraction under extraction/process-v1.md that the build marks as the database record of each
+# paper (view db_process_extraction, Claude Opus 5.5). The independent extraction of the 30 test papers (Claude
+# Fable 5.1) is not released, as the reference and second codings of the coded items are not. Human-intervention
+# reporting: the JSON files of the extraction under extraction/human-v1.md, one per paper, whose set digest is
+# recorded in the sdl-db-05 record. Only values, units, the categorical parts of each qualifier and location
+# pointers are exported. The rest of a qualifier, and every note, is the extracting model's free text and is left out.
+PROCESS_PROMPT = ROOT / "extraction" / "process-v1.md"
+HUMAN_PROMPT = ROOT / "extraction" / "human-v1.md"
+HUMAN_FREEZE = ROOT / "extraction" / "human" / "evidence_human_freeze.json"
+HUMAN_DIR = Path("extraction/human/opus")                                     # relative to the workspace root
+HUMAN_RECORD = Path("runs/sdl-db-05/evidence/evi-obs-humanset-20261102-112611.json")
+HUMAN_CATEGORIES = ("quantified", "described", "none_stated", "not_reported")
+STEP_QUANTITIES = ("duration", "duration_batch_size")
+ITEM_QUANTITIES = {"platform": ("batch_size", "parallel_units", "planning_time", "operating_hours_per_day",
+                                "operating_days_per_week", "throughput", "experiments_per_count", "cost",
+                                "throughput_less_automated", "throughput_automated", "transfer_agent_count"),
+                   "module": ("units",), "connection": ("transfer_time",)}
+THROUGHPUT = ("throughput", "throughput_less_automated", "throughput_automated")
+AGENTS = {"operating_hours_per_day": ("automated", "human"), "operating_days_per_week": ("automated", "human"),
+          "transfer_agent_count": ("robot_arm_gantry", "mobile_robot", "human")}
+NUMBER = r"[0-9]+(?:\.[0-9]+)?"
+Q_BOUND = re.compile(r"(upper|lower) bound\b")
+Q_APPROX = re.compile(r"approximate(?:ly)?\b")
+Q_RANGE = re.compile(rf"range ({NUMBER}) ?([^\s\-;,()]+)? ?- ?({NUMBER})\b")
+Q_KIND = re.compile(r"measured|nominal")
+Q_N = re.compile(rf"N ?= ?({NUMBER})")
+Q_T = re.compile(rf"T ?= ?({NUMBER}) ?(s|min|h|d|week)\b")
+Q_COVERS = re.compile(r"covers (.+)")
+Q_WORKDAY = re.compile(r"working[ -]?days?|workdays?")
+
+
+def qualifier_parts(text, value, seps=";"):
+    """The categorical parts of an extraction qualifier (process-v1.md, human-v1.md): a bound or 'approximately' at
+    the start of a segment, and 'range a-b' whose midpoint is the value. range_low and range_high are given only
+    when the midpoint of the stated range equals the value, i.e. when the range is in the value's unit."""
+    segs = [s.strip() for s in re.split(f"[{seps}]", text or "") if s.strip()]
+    out = {"bound": None, "approximate": 0, "range_midpoint": 0, "range_low": None, "range_high": None}
+    for s in segs:
+        m = Q_BOUND.match(s)
+        if m:
+            if out["bound"] not in (None, m.group(1)):
+                raise ExportError(f"qualifier with two bounds: {text!r}")
+            out["bound"] = m.group(1)
+        if Q_APPROX.match(s):
+            out["approximate"] = 1
+        m = Q_RANGE.match(s)
+        if m:
+            low, high = float(m.group(1)), float(m.group(3))
+            out["range_midpoint"] = 1
+            if abs((low + high) / 2 - value) <= 1e-9 * max(1.0, abs(value)):
+                out.update(range_low=low, range_high=high)
+    return out, segs
+
+
+def ids_in(text, known, what):
+    """The ', '-separated item ids of text, each of which must be in known."""
+    ids = [x.strip() for x in text.split(",")]
+    if not ids or any(x not in known for x in ids):
+        raise ExportError(f"{what} names items the record does not have: {text!r}")
+    return ";".join(ids)
+
+
+def export_process(db, rel):
+    """Fill step_timing and process_value from the timing data of each paper's record extraction."""
+    steps = dict(rel.execute("SELECT step_id, platform_id FROM step"))
+    owner = {"platform": {p: p for (p,) in rel.execute("SELECT platform_id FROM platform")},
+             "module": dict(rel.execute("SELECT module_id, platform_id FROM module")),
+             "connection": dict(rel.execute("SELECT edge_id, platform_id FROM connection"))}
+    off = db.execute("SELECT COUNT(*) FROM db_process_extraction x JOIN db_record_coding r USING (paper_id) "
+                     "WHERE x.record_coding_id <> r.coding_id").fetchone()[0]
+    if off:
+        raise ExportError(f"{off} timing extractions were not made on the paper's record coding")
+
+    rows = []
+    for sid, cid, rec, q, v, u, qual, doc, page, loc in db.execute(
+            "SELECT s.step_id, s.coding_id, x.record_coding_id, s.quantity, s.value, s.unit, s.qualifier, "
+            "s.ev_doc, s.ev_page, s.ev_locator FROM step_process s JOIN db_process_extraction x USING (process_id)"):
+        if cid != rec or sid not in steps or q not in STEP_QUANTITIES:
+            raise ExportError(f"step timing not on a record step: {sid} {q}")
+        parts, segs = qualifier_parts(qual, v)
+        covers = None
+        for s in segs:
+            m = Q_COVERS.fullmatch(s)
+            if m:
+                covers = ids_in(m.group(1), {k for k, p in steps.items() if p == steps[sid]}, f"{sid} covers")
+            elif s.startswith("covers "):
+                raise ExportError(f"{sid}: joint-duration qualifier not read: {qual!r}")
+        if covers is not None and (q != "duration" or covers.split(";")[0] != sid):
+            raise ExportError(f"{sid}: a joint duration must sit on the first step it covers: {qual!r}")
+        rows.append((sid, steps[sid], q, v, u, parts["bound"], parts["approximate"], parts["range_midpoint"],
+                     parts["range_low"], parts["range_high"], covers, doc, page, loc))
+    rel.executemany(f"INSERT INTO step_timing VALUES ({','.join('?' * 14)})", rows)
+
+    rows, keys = [], set()
+    for kind, tid, cid, rec, q, v, u, qual, doc, page, loc in db.execute(
+            "SELECT i.target_kind, i.target_id, i.coding_id, x.record_coding_id, i.quantity, i.value, i.unit, "
+            "i.qualifier, i.ev_doc, i.ev_page, i.ev_locator FROM process_item i "
+            "JOIN db_process_extraction x USING (process_id)"):
+        if cid != rec or tid not in owner.get(kind, {}) or q not in ITEM_QUANTITIES[kind]:
+            raise ExportError(f"timing value not on a record item: {kind} {tid} {q}")
+        platform = owner[kind][tid]
+        parts, segs = qualifier_parts(qual, v)
+        tp_kind = n = t = t_unit = agent = manual = None
+        if q in THROUGHPUT:
+            kinds = [s for s in segs if Q_KIND.fullmatch(s)]
+            if len(kinds) != 1:
+                raise ExportError(f"{tid} {q}: throughput without one kind (measured or nominal): {qual!r}")
+            tp_kind = kinds[0]
+            n = next((float(m.group(1)) for m in map(Q_N.fullmatch, segs) if m), None)
+            t, t_unit = next(((float(m.group(1)), m.group(2)) for m in map(Q_T.match, segs) if m), (None, None))
+            if q == "throughput_less_automated":
+                in_platform = {k for k, p in steps.items() if p == platform} | \
+                              {k for k, p in owner["connection"].items() if p == platform}
+                manual = ids_in(segs[0] if segs else "", in_platform, f"{tid} {q}")
+        if q in AGENTS:
+            agents = [s for s in segs if s in AGENTS[q]]
+            if len(agents) != 1:
+                raise ExportError(f"{tid} {q}: qualifier names no single agent: {qual!r}")
+            agent = agents[0]
+        key = (kind, tid, q, agent)
+        if key in keys:
+            raise ExportError(f"two timing values for {key}")
+        keys.add(key)
+        rows.append((kind, tid, platform, q, v, u, tp_kind, n, t, t_unit,
+                     (1 if Q_WORKDAY.search(qual) else 0) if q in THROUGHPUT else None, agent, manual,
+                     parts["bound"], parts["approximate"], parts["range_midpoint"], parts["range_low"],
+                     parts["range_high"], doc, page, loc))
+    rel.executemany(f"INSERT INTO process_value VALUES ({','.join('?' * 21)})", rows)
+
+
+def evidence_location(text):
+    """(doc, page, locator) of '<doc> ; pdf p.<N> ; <locator>' (db/build_db.py reads the timing data the same way);
+    an empty location is (None, None, None)."""
+    if not text:
+        return None, None, None
+    m = re.fullmatch(r"(main|SI[0-9]+) ; pdf p\.([0-9]+) ; (.+)", text.strip())
+    if not m:
+        raise ExportError(f"location not read: {text!r}")
+    return m.group(1), int(m.group(2)), m.group(3).strip()
+
+
+def file_set_digest(folder, papers=None):
+    """sha256 over the sorted '<name> <sha256>' lines of folder/*.json, as the sdl-db-05 record computes it; with
+    papers, only the files of those papers (since sdl-db-05 Spec v2: Snapp2023.json stays in the folder, not read)."""
+    h = hashlib.sha256()
+    files = [f for f in sorted(Path(folder).glob("*.json")) if papers is None or f.stem in papers]
+    for f in files:
+        h.update(f"{f.name} {hashlib.sha256(f.read_bytes()).hexdigest()}\n".encode())
+    return h.hexdigest(), len(files)
+
+
+def export_human(db, rel, root=ROOT, record=HUMAN_RECORD):
+    """Fill human_intervention from root/HUMAN_DIR, one file per paper of the build; the file set must be the one
+    the record (root/record) names."""
+    folder = Path(root) / HUMAN_DIR
+    rec = json.loads(json.loads((Path(root) / record).read_text(encoding="utf-8"))["result"]["finding"])
+    papers = {p for (p,) in db.execute("SELECT paper_id FROM paper")}
+    digest, n = file_set_digest(folder, papers)
+    if (digest, n) != (rec["set_sha256"], rec["n_files"]):
+        raise ExportError(f"{HUMAN_DIR}: {n} files with set digest {digest}, the record names "
+                          f"{rec['n_files']} files with {rec['set_sha256']}")
+    record_coding = dict(db.execute("SELECT r.paper_id, c.source_path FROM db_record_coding r "
+                                    "JOIN coding c USING (coding_id)"))
+    rows = []
+    for f in sorted(folder.glob("*.json")):
+        if f.stem not in papers:
+            continue
+        x = json.loads(f.read_text(encoding="utf-8"))
+        if x["paper_id"] != f.stem or x["human_intervention"] not in HUMAN_CATEGORIES:
+            raise ExportError(f"{f.name}: paper id or category not understood")
+        if x["record_coding"] != record_coding.get(x["paper_id"]):
+            raise ExportError(f"{f.name}: read with {x['record_coding']}, not the paper's record coding")
+        runs = x["unassisted_run_length"]
+        if len(runs) > 1:
+            raise ExportError(f"{f.name}: more than one unassisted run length")
+        loc = evidence_location(x["human_intervention_evidence"])
+        if (loc[0] is None) != (x["human_intervention"] == "not_reported"):
+            raise ExportError(f"{f.name}: a location is given exactly when the category is not not_reported")
+        run = [None] * 10
+        if runs:
+            r = runs[0]
+            parts, _ = qualifier_parts(r["qualifier"], r["value"], ";,")
+            run = [r["value"], r["unit"], parts["bound"], parts["approximate"], parts["range_midpoint"],
+                   parts["range_low"], parts["range_high"], *evidence_location(r["evidence"])]
+        rows.append((x["paper_id"], x["human_intervention"], *loc, *run))
+    if {r[0] for r in rows} != papers:
+        raise ExportError(f"human-intervention files and papers differ: {sorted({r[0] for r in rows} ^ papers)[:10]}")
+    rel.executemany(f"INSERT INTO human_intervention VALUES ({','.join('?' * 15)})", rows)
+
+
+# Location columns of the tables added in 1.1.0; like every column of those tables they must hold no quotation.
+LOCATORS = {"step_timing": ("step_id", "ev_locator"), "process_value": ("target_id", "ev_locator"),
+            "human_intervention": ("paper_id", "ev_locator", "run_ev_locator")}
+
+
+def locator_quotations(rel):
+    found = []
+    for table, (key, *cols) in LOCATORS.items():
+        for col in cols:
+            for k, text in rel.execute(f"SELECT {key}, {col} FROM {table} WHERE {col} IS NOT NULL"):
+                found += [(table, k, col, s) for s in quotations(text)]
+    return found
+
+
 def write_benchmark_files(rel, folder):
     """The benchmark folder evaluate.py reads: split.csv, items_<target>.csv, tasks/<task_id>.json."""
     folder = Path(folder)
@@ -633,8 +860,10 @@ VOCABULARIES = ("XDL", "WCSO", "Leong2022", "OntoLab_SAREF", "Gottstein2026")
 MODE_FILES = {"builder": {"platforms.csv": "builder_platform", "steps.csv": "builder_step",
                           "connections.csv": "builder_connection"},
               "trends": {"papers.csv": "trends_paper", "candidates.csv": "candidate", "screening.csv": "screening",
-                         "screening_reasons.csv": "screening_reason"},
-              "taxonomy": {"classes.csv": "taxonomy_class"}}
+                         "screening_reasons.csv": "screening_reason",
+                         "human_intervention.csv": "human_intervention"},
+              "taxonomy": {"classes.csv": "taxonomy_class"},
+              "simulation": {"step_timing.csv": "step_timing", "process_values.csv": "process_value"}}
 
 
 def release_tables(rel):
@@ -744,15 +973,26 @@ def sqlite_dump_digest(path):
         db.close()
 
 
-def build_release_db(db, info, root=ROOT, evidence=BENCHMARK_EVIDENCE, versions=None, additions=None):
-    """All release tables in memory, from one internal build whose digest must be the one release.json names."""
+def build_release_db(db, info, root=ROOT, evidence=BENCHMARK_EVIDENCE, versions=None, additions=None,
+                     human_record=HUMAN_RECORD, published=None):
+    """All release tables in memory, from one internal build whose digest must be the one release.json names. The
+    human-intervention files and their record are read from root (HUMAN_DIR, human_record)."""
     digest = internal_digest(db)
     if digest != info["source_build_digest"]:
         raise ExportError(f"internal build digest {digest} is not the release's {info['source_build_digest']}")
     rel = new_release_db()
     defs = load_definitions(db)
-    export_core(db, rel, defs, load_redactions(), load_rows(BIB_ADDITIONS) if additions is None else additions)
+    export_core(db, rel, defs, load_redactions(), load_rows(BIB_ADDITIONS) if additions is None else additions,
+                load_rows(PUBLISHED_VERSIONS) if published is None else published)
     export_correspondence(db, rel, load_rows(CORRESPONDENCE_OVERRIDES))
+    export_process(db, rel)
+    export_human(db, rel, root, human_record)
+    found = locator_quotations(rel)
+    if found:
+        raise ExportError(f"quotations in location columns: {found}")
+    violations = rel.execute("PRAGMA foreign_key_check").fetchall()
+    if violations:
+        raise ExportError(f"foreign-key violations: {violations[:10]}")
     export_documents(db, rel, root, versions)
     export_benchmark(db, rel, evidence)
     (taxonomy,) = db.execute("SELECT version FROM taxonomy_version").fetchone()
@@ -889,6 +1129,8 @@ GUIDELINE_FREEZE = ROOT / "protocol" / "evidence_protocol_freeze.json"
 GUIDELINE_TRANSLATION = HERE / "protocol" / "coding-guideline.md"
 CANDIDATE_SOURCES = ROOT / "collection" / "candidates.csv"
 QUALITY_EVIDENCE = ROOT / "runs" / "sdl-db-01" / "evidence" / "evi-exp-h3-20261022-001150.json"
+# Agreement of the timing data with the independent reference extraction of the 30 test papers (sdl-db-03 H0).
+TIMING_QUALITY = ROOT / "runs" / "sdl-db-03" / "evidence" / "evi-exp-h0-20261101-142240.json"
 PLACEHOLDER = re.compile(r"\{\{(\w+)\}\}")
 ZENODO_DOI = re.compile(r"10\.5281/zenodo\.[0-9]+")
 
@@ -900,7 +1142,8 @@ def render(text, values):
     return PLACEHOLDER.sub(lambda m: str(values[m.group(1)]), text)
 
 
-def document_values(rel, db, info, candidates=CANDIDATE_SOURCES, quality=QUALITY_EVIDENCE, additions=None):
+def document_values(rel, db, info, candidates=CANDIDATE_SOURCES, quality=QUALITY_EVIDENCE, additions=None,
+                    timing_quality=TIMING_QUALITY):
     """The values the document templates use."""
     def one(sql, args=()):
         return rel.execute(sql, args).fetchone()[0]
@@ -946,7 +1189,31 @@ def document_values(rel, db, info, candidates=CANDIDATE_SOURCES, quality=QUALITY
             "n_main_repository": "SELECT COUNT(*) FROM paper_document WHERE version = 'repository_copy'",
             "n_train_papers": "SELECT COUNT(*) FROM benchmark_split WHERE split = 'train'",
             "n_test_papers": "SELECT COUNT(*) FROM benchmark_split WHERE split = 'test'",
-            "n_excluded_papers": "SELECT COUNT(*) FROM benchmark_split WHERE split = 'excluded'"}.items():
+            "n_excluded_papers": "SELECT COUNT(*) FROM benchmark_split WHERE split = 'excluded'",
+            "n_step_timing": "SELECT COUNT(*) FROM step_timing",
+            "n_durations": "SELECT COUNT(*) FROM step_timing WHERE quantity = 'duration'",
+            "n_duration_batch_sizes": "SELECT COUNT(*) FROM step_timing WHERE quantity = 'duration_batch_size'",
+            "n_joint_durations": "SELECT COUNT(*) FROM step_timing WHERE covers_steps IS NOT NULL",
+            "n_steps_timed": "SELECT COUNT(DISTINCT step_id) FROM step_timing WHERE quantity = 'duration'",
+            "n_process_values": "SELECT COUNT(*) FROM process_value",
+            "n_platform_values": "SELECT COUNT(*) FROM process_value WHERE target_kind = 'platform'",
+            "n_module_values": "SELECT COUNT(*) FROM process_value WHERE target_kind = 'module'",
+            "n_connection_values": "SELECT COUNT(*) FROM process_value WHERE target_kind = 'connection'",
+            "n_throughput": "SELECT COUNT(*) FROM process_value WHERE quantity = 'throughput'",
+            "n_throughput_measured": "SELECT COUNT(*) FROM process_value WHERE quantity = 'throughput' "
+                                     "AND throughput_kind = 'measured'",
+            "n_throughput_nominal": "SELECT COUNT(*) FROM process_value WHERE quantity = 'throughput' "
+                                    "AND throughput_kind = 'nominal'",
+            "n_batch_size": "SELECT COUNT(*) FROM process_value WHERE quantity = 'batch_size'",
+            "n_cost": "SELECT COUNT(*) FROM process_value WHERE quantity = 'cost'",
+            "n_papers_timing": "SELECT COUNT(DISTINCT p.paper_id) FROM platform p WHERE p.platform_id IN "
+                               "(SELECT platform_id FROM step_timing UNION SELECT platform_id FROM process_value)",
+            "n_human": "SELECT COUNT(*) FROM human_intervention",
+            "n_human_quantified": "SELECT COUNT(*) FROM human_intervention WHERE category = 'quantified'",
+            "n_human_described": "SELECT COUNT(*) FROM human_intervention WHERE category = 'described'",
+            "n_human_none_stated": "SELECT COUNT(*) FROM human_intervention WHERE category = 'none_stated'",
+            "n_human_not_reported": "SELECT COUNT(*) FROM human_intervention WHERE category = 'not_reported'",
+            "n_run_length": "SELECT COUNT(*) FROM human_intervention WHERE run_length_value IS NOT NULL"}.items():
         v[name] = one(sql)
     if v["n_eligible"] + v["n_ineligible"] != v["n_fulltext"]:
         raise ExportError("full-text decisions other than eligible and ineligible; DATA_CARD.md does not cover them")
@@ -995,6 +1262,25 @@ def document_values(rel, db, info, candidates=CANDIDATE_SOURCES, quality=QUALITY
         raise ExportError(f"{GUIDELINE_ORIGINAL.name} is not the guideline recorded at its freeze")
     v.update(prompt_sha256=sha(PROTOCOL_PROMPT), taxonomy_sha256=sha(PROTOCOL_TAXONOMY),
              guideline_sha256=sha(GUIDELINE_ORIGINAL))
+    process_recorded = {s for (s,) in db.execute("SELECT DISTINCT x.prompt_sha256 FROM process_extraction x "
+                                                 "JOIN db_process_extraction USING (process_id)")}
+    if process_recorded - {sha(PROCESS_PROMPT)}:
+        raise ExportError(f"{PROCESS_PROMPT.name} is not the instruction file recorded with the timing data")
+    if sha(HUMAN_PROMPT) not in HUMAN_FREEZE.read_text(encoding="utf-8"):
+        raise ExportError(f"{HUMAN_PROMPT.name} is not the instruction file recorded at its freeze")
+    v.update(process_sha256=sha(PROCESS_PROMPT), human_sha256=sha(HUMAN_PROMPT))
+
+    tq = json.loads(json.loads(timing_quality.read_text(encoding="utf-8"))["result"]["finding"])
+    ref = {p for (p,) in db.execute("SELECT paper_id FROM process_extraction WHERE role = 'reference'")}
+    n_ref = len(ref)
+    if tq["n_papers"] != n_ref:
+        raise ExportError(f"{timing_quality.name}: {tq['n_papers']} reference papers, the build has {n_ref}")
+    # DATA_CARD.md calls them the papers of the coding reference
+    if ref != {p for (p,) in db.execute("SELECT paper_id FROM gold_membership WHERE gold_set = 'test'")}:
+        raise ExportError("the timing reference papers are not the coding reference papers")
+    v.update(n_timing_reference_papers=n_ref, timing_tp_items=tq["a_items"], timing_tp_agree=f"{tq['a_agreement']:.3f}",
+             timing_dur_items=tq["b_items"], timing_dur_agree=f"{tq['b_agreement']:.3f}",
+             timing_dur_low=f"{tq['b_ci95'][0]:.3f}", timing_dur_high=f"{tq['b_ci95'][1]:.3f}")
 
     authors = info.get("authors") or []
     if not authors:
@@ -1039,7 +1325,7 @@ def write_documents(bundle, rel, values):
         path = bundle / target
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(render((TEMPLATES / template).read_text(encoding="utf-8"), values), encoding="utf-8")
-    for source in (PROTOCOL_PROMPT, PROTOCOL_TAXONOMY, GUIDELINE_TRANSLATION):
+    for source in (PROTOCOL_PROMPT, PROTOCOL_TAXONOMY, GUIDELINE_TRANSLATION, PROCESS_PROMPT, HUMAN_PROMPT):
         shutil.copy(source, bundle / "protocol" / source.name)
 
 

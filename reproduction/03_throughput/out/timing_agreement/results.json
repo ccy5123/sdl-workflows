@@ -1,0 +1,164 @@
+{
+ "papers": [
+  "Angello2022",
+  "Anker2026",
+  "Asche2021",
+  "Bourne2011",
+  "Burger2020",
+  "Caramelli2021",
+  "DeCost2022",
+  "Gao2025a",
+  "Holmes2016",
+  "Hu2025",
+  "Kanda2022",
+  "Kershaw2023",
+  "Kirman2020",
+  "Koscher2023",
+  "MATSUDA1988",
+  "MMehr2023",
+  "McMullen2011",
+  "Mieling1976",
+  "Munyebvu2025",
+  "OrtizPerez2024",
+  "Parrott2011",
+  "Pasamontes2006",
+  "Roberts2025",
+  "Ros2025",
+  "Ruza2025",
+  "Sim2024",
+  "Wakabayashi2026",
+  "Wu2026a",
+  "Xu2025",
+  "Xu2026"
+ ],
+ "n_papers": 30,
+ "bootstrap_B": 2000,
+ "bootstrap_seed": 1,
+ "tolerance": 0.1,
+ "timing_agreement": {
+  "throughput_per_platform": {
+   "items": 15,
+   "both_valued": 15,
+   "agreement": 1.0,
+   "ci95": [
+    1.0,
+    1.0
+   ],
+   "papers_with_items": 15
+  },
+  "step_duration_per_step": {
+   "items": 54,
+   "both_valued": 49,
+   "agreement": 0.8703703703703703,
+   "ci95": [
+    0.7547169811320755,
+    0.9574468085106383
+   ],
+   "papers_with_items": 25
+  },
+  "throughput_kind_agreement": {
+   "both_give_throughput": 15,
+   "same_kind": 15
+  },
+  "other_quantities": {
+   "batch_size": {
+    "items": 29,
+    "agreeing": 27
+   },
+   "cost": {
+    "items": 2,
+    "agreeing": 2
+   },
+   "duration_batch_size": {
+    "items": 31,
+    "agreeing": 16
+   },
+   "operating_days_per_week": {
+    "items": 2,
+    "agreeing": 2
+   },
+   "operating_hours_per_day": {
+    "items": 2,
+    "agreeing": 2
+   },
+   "parallel_units": {
+    "items": 2,
+    "agreeing": 2
+   },
+   "throughput_automated": {
+    "items": 1,
+    "agreeing": 1
+   },
+   "throughput_less_automated": {
+    "items": 1,
+    "agreeing": 1
+   },
+   "transfer_agent_count": {
+    "items": 2,
+    "agreeing": 1
+   },
+   "transfer_time": {
+    "items": 1,
+    "agreeing": 1
+   },
+   "units": {
+    "items": 8,
+    "agreeing": 5
+   }
+  }
+ },
+ "negative_control_cross_paper": {
+  "pairing": {
+   "Angello2022": "Kershaw2023",
+   "Anker2026": "Asche2021",
+   "Asche2021": "Mieling1976",
+   "Bourne2011": "OrtizPerez2024",
+   "Burger2020": "Ros2025",
+   "Caramelli2021": "Gao2025a",
+   "DeCost2022": "Kirman2020",
+   "Gao2025a": "Ruza2025",
+   "Holmes2016": "Anker2026",
+   "Hu2025": "Roberts2025",
+   "Kanda2022": "Wakabayashi2026",
+   "Kershaw2023": "Koscher2023",
+   "Kirman2020": "Sim2024",
+   "Koscher2023": "DeCost2022",
+   "MATSUDA1988": "Burger2020",
+   "MMehr2023": "Angello2022",
+   "McMullen2011": "Bourne2011",
+   "Mieling1976": "Munyebvu2025",
+   "Munyebvu2025": "MMehr2023",
+   "OrtizPerez2024": "Kanda2022",
+   "Parrott2011": "MATSUDA1988",
+   "Pasamontes2006": "Hu2025",
+   "Roberts2025": "Parrott2011",
+   "Ros2025": "Wu2026a",
+   "Ruza2025": "Pasamontes2006",
+   "Sim2024": "Xu2025",
+   "Wakabayashi2026": "McMullen2011",
+   "Wu2026a": "Holmes2016",
+   "Xu2025": "Xu2026",
+   "Xu2026": "Caramelli2021"
+  },
+  "throughput_per_platform": {
+   "items": 23,
+   "both_valued": 7,
+   "agreement": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "papers_with_items": 23
+  },
+  "step_duration_per_step": {
+   "items": 77,
+   "both_valued": 26,
+   "agreement": 0.0,
+   "ci95": [
+    0.0,
+    0.0
+   ],
+   "papers_with_items": 29
+  }
+ }
+}

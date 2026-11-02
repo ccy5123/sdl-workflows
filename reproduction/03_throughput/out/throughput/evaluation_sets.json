@@ -1,0 +1,1308 @@
+{
+ "db_content_digest": "57b39af53554a4b7dbccbdfebfc3b254f88f6af050a378b3cb1f9435deeaa08a",
+ "sets": {
+  "reproduction_own_durations": [
+   {
+    "paper": "Aand2024",
+    "platform": "Aand2024/P1",
+    "own_steps": 3,
+    "steps": 6
+   },
+   {
+    "paper": "Anker2026",
+    "platform": "Anker2026/P1",
+    "own_steps": 7,
+    "steps": 8
+   },
+   {
+    "paper": "Brody2026",
+    "platform": "Brody2026/P1",
+    "own_steps": 3,
+    "steps": 6
+   },
+   {
+    "paper": "Burger2020",
+    "platform": "Burger2020/P1",
+    "own_steps": 6,
+    "steps": 9
+   },
+   {
+    "paper": "Caramelli2021",
+    "platform": "Caramelli2021/P1",
+    "own_steps": 7,
+    "steps": 9
+   },
+   {
+    "paper": "Chang2026",
+    "platform": "Chang2026/P1",
+    "own_steps": 4,
+    "steps": 5
+   },
+   {
+    "paper": "Dave2020",
+    "platform": "Dave2020/P1",
+    "own_steps": 6,
+    "steps": 8
+   },
+   {
+    "paper": "Dave2022",
+    "platform": "Dave2022/P1",
+    "own_steps": 4,
+    "steps": 7
+   },
+   {
+    "paper": "Deneault2021",
+    "platform": "Deneault2021/P1",
+    "own_steps": 4,
+    "steps": 6
+   },
+   {
+    "paper": "Epps2020",
+    "platform": "Epps2020/P1",
+    "own_steps": 3,
+    "steps": 6
+   },
+   {
+    "paper": "Fei2026",
+    "platform": "Fei2026/P1",
+    "own_steps": 14,
+    "steps": 21
+   },
+   {
+    "paper": "Fratarcangeli2026",
+    "platform": "Fratarcangeli2026/P1",
+    "own_steps": 7,
+    "steps": 11
+   },
+   {
+    "paper": "Gao2026",
+    "platform": "Gao2026/P1",
+    "own_steps": 11,
+    "steps": 14
+   },
+   {
+    "paper": "Ha2023",
+    "platform": "Ha2023/P1",
+    "own_steps": 15,
+    "steps": 18
+   },
+   {
+    "paper": "Harris2024",
+    "platform": "Harris2024/P1",
+    "own_steps": 12,
+    "steps": 13
+   },
+   {
+    "paper": "Horstkotte2010",
+    "platform": "Horstkotte2010/P1",
+    "own_steps": 8,
+    "steps": 10
+   },
+   {
+    "paper": "Jiang2022",
+    "platform": "Jiang2022/P1",
+    "own_steps": 9,
+    "steps": 11
+   },
+   {
+    "paper": "Kanda2022",
+    "platform": "Kanda2022/P1",
+    "own_steps": 17,
+    "steps": 20
+   },
+   {
+    "paper": "Kim2026",
+    "platform": "Kim2026/P1",
+    "own_steps": 21,
+    "steps": 26
+   },
+   {
+    "paper": "King2009",
+    "platform": "King2009/P1",
+    "own_steps": 7,
+    "steps": 9
+   },
+   {
+    "paper": "Langner2020",
+    "platform": "Langner2020/P1",
+    "own_steps": 6,
+    "steps": 11
+   },
+   {
+    "paper": "Liang2025",
+    "platform": "Liang2025/P1",
+    "own_steps": 3,
+    "steps": 5
+   },
+   {
+    "paper": "Low2024",
+    "platform": "Low2024/P1",
+    "own_steps": 5,
+    "steps": 6
+   },
+   {
+    "paper": "Mottafegh2024",
+    "platform": "Mottafegh2024/P2",
+    "own_steps": 8,
+    "steps": 10
+   },
+   {
+    "paper": "Munyebvu2025",
+    "platform": "Munyebvu2025/P1",
+    "own_steps": 5,
+    "steps": 10
+   },
+   {
+    "paper": "Noh2024",
+    "platform": "Noh2024/P1",
+    "own_steps": 11,
+    "steps": 14
+   },
+   {
+    "paper": "Ramirez2024",
+    "platform": "Ramirez2024/P1",
+    "own_steps": 13,
+    "steps": 15
+   },
+   {
+    "paper": "Rapp2024",
+    "platform": "Rapp2024/P1",
+    "own_steps": 11,
+    "steps": 15
+   },
+   {
+    "paper": "Shimizu2020",
+    "platform": "Shimizu2020/P1",
+    "own_steps": 3,
+    "steps": 6
+   },
+   {
+    "paper": "Singh2025",
+    "platform": "Singh2025/P1",
+    "own_steps": 31,
+    "steps": 34
+   },
+   {
+    "paper": "Suzumura2022",
+    "platform": "Suzumura2022/P1",
+    "own_steps": 4,
+    "steps": 6
+   },
+   {
+    "paper": "Tamura2025",
+    "platform": "Tamura2025/P1",
+    "own_steps": 10,
+    "steps": 12
+   },
+   {
+    "paper": "Toyama2025",
+    "platform": "Toyama2025/P1",
+    "own_steps": 3,
+    "steps": 6
+   },
+   {
+    "paper": "Wang2026",
+    "platform": "Wang2026/P1",
+    "own_steps": 4,
+    "steps": 7
+   },
+   {
+    "paper": "Wu2025c",
+    "platform": "Wu2025c/P1",
+    "own_steps": 8,
+    "steps": 12
+   }
+  ],
+  "prediction_pooled_durations": [
+   {
+    "paper": "Aand2024",
+    "platform": "Aand2024/P1"
+   },
+   {
+    "paper": "AbdelLatif2021",
+    "platform": "AbdelLatif2021/P1"
+   },
+   {
+    "paper": "Ahn2023",
+    "platform": "Ahn2023/P1"
+   },
+   {
+    "paper": "Amara2015",
+    "platform": "Amara2015/P1"
+   },
+   {
+    "paper": "Anker2026",
+    "platform": "Anker2026/P1"
+   },
+   {
+    "paper": "Asche2021",
+    "platform": "Asche2021/P1"
+   },
+   {
+    "paper": "Bai2023a",
+    "platform": "Bai2023a/P1"
+   },
+   {
+    "paper": "Bateni2022",
+    "platform": "Bateni2022/P1"
+   },
+   {
+    "paper": "Bateni2024",
+    "platform": "Bateni2024/P1"
+   },
+   {
+    "paper": "Bedard2018",
+    "platform": "Bedard2018/P6"
+   },
+   {
+    "paper": "Bennett2024",
+    "platform": "Bennett2024/P1"
+   },
+   {
+    "paper": "Bourne2011",
+    "platform": "Bourne2011/P1"
+   },
+   {
+    "paper": "Brody2026",
+    "platform": "Brody2026/P1"
+   },
+   {
+    "paper": "Burger2020",
+    "platform": "Burger2020/P1"
+   },
+   {
+    "paper": "Cao2021",
+    "platform": "Cao2021/P1"
+   },
+   {
+    "paper": "Caramelli2021",
+    "platform": "Caramelli2021/P1"
+   },
+   {
+    "paper": "Chang2020",
+    "platform": "Chang2020/P1"
+   },
+   {
+    "paper": "Chang2023",
+    "platform": "Chang2023/P1"
+   },
+   {
+    "paper": "Chang2026",
+    "platform": "Chang2026/P1"
+   },
+   {
+    "paper": "Christensen2021",
+    "platform": "Christensen2021/P1"
+   },
+   {
+    "paper": "Clayton2020",
+    "platform": "Clayton2020/P1"
+   },
+   {
+    "paper": "Clayton2020a",
+    "platform": "Clayton2020a/P1"
+   },
+   {
+    "paper": "Clayton2023",
+    "platform": "Clayton2023/P1"
+   },
+   {
+    "paper": "CortesBorda2018",
+    "platform": "CortesBorda2018/P2"
+   },
+   {
+    "paper": "Dave2020",
+    "platform": "Dave2020/P1"
+   },
+   {
+    "paper": "Dave2022",
+    "platform": "Dave2022/P1"
+   },
+   {
+    "paper": "Deneault2021",
+    "platform": "Deneault2021/P1"
+   },
+   {
+    "paper": "Desai2013",
+    "platform": "Desai2013/P1"
+   },
+   {
+    "paper": "Duros2017",
+    "platform": "Duros2017/P1"
+   },
+   {
+    "paper": "Elder2021",
+    "platform": "Elder2021/P1"
+   },
+   {
+    "paper": "Epps2020",
+    "platform": "Epps2020/P1"
+   },
+   {
+    "paper": "Fabry2019",
+    "platform": "Fabry2019/P1"
+   },
+   {
+    "paper": "Fei2026",
+    "platform": "Fei2026/P1"
+   },
+   {
+    "paper": "FiskerBdker2025",
+    "platform": "FiskerBdker2025/P1"
+   },
+   {
+    "paper": "Fitzpatrick2016",
+    "platform": "Fitzpatrick2016/P1"
+   },
+   {
+    "paper": "Fitzpatrick2018",
+    "platform": "Fitzpatrick2018/P1"
+   },
+   {
+    "paper": "Fratarcangeli2026",
+    "platform": "Fratarcangeli2026/P1"
+   },
+   {
+    "paper": "Gao2026",
+    "platform": "Gao2026/P1"
+   },
+   {
+    "paper": "Gerardy2022",
+    "platform": "Gerardy2022/P1"
+   },
+   {
+    "paper": "Ginsburg2023",
+    "platform": "Ginsburg2023/P1"
+   },
+   {
+    "paper": "Gongora2020",
+    "platform": "Gongora2020/P1"
+   },
+   {
+    "paper": "Granda2018",
+    "platform": "Granda2018/P1"
+   },
+   {
+    "paper": "Grizou2020",
+    "platform": "Grizou2020/P1"
+   },
+   {
+    "paper": "Ha2023",
+    "platform": "Ha2023/P1"
+   },
+   {
+    "paper": "Hall2021",
+    "platform": "Hall2021/P1"
+   },
+   {
+    "paper": "Harris2024",
+    "platform": "Harris2024/P1"
+   },
+   {
+    "paper": "Holmes2016",
+    "platform": "Holmes2016/P1"
+   },
+   {
+    "paper": "Holmes2016a",
+    "platform": "Holmes2016a/P1"
+   },
+   {
+    "paper": "Horstkotte2010",
+    "platform": "Horstkotte2010/P1"
+   },
+   {
+    "paper": "Hsieh2018",
+    "platform": "Hsieh2018/P1"
+   },
+   {
+    "paper": "Hu2022",
+    "platform": "Hu2022/P1"
+   },
+   {
+    "paper": "Hu2025",
+    "platform": "Hu2025/P1"
+   },
+   {
+    "paper": "Jackson2025",
+    "platform": "Jackson2025/P1"
+   },
+   {
+    "paper": "Jeraal2020",
+    "platform": "Jeraal2020/P1"
+   },
+   {
+    "paper": "Jiang2022",
+    "platform": "Jiang2022/P1"
+   },
+   {
+    "paper": "Kanda2022",
+    "platform": "Kanda2022/P1"
+   },
+   {
+    "paper": "Kershaw2023",
+    "platform": "Kershaw2023/P1"
+   },
+   {
+    "paper": "Kim2025c",
+    "platform": "Kim2025c/P1"
+   },
+   {
+    "paper": "Kim2026",
+    "platform": "Kim2026/P1"
+   },
+   {
+    "paper": "King2009",
+    "platform": "King2009/P1"
+   },
+   {
+    "paper": "Knox2025",
+    "platform": "Knox2025/P1"
+   },
+   {
+    "paper": "Koscher2023",
+    "platform": "Koscher2023/P1"
+   },
+   {
+    "paper": "Langner2020",
+    "platform": "Langner2020/P1"
+   },
+   {
+    "paper": "Laws2023",
+    "platform": "Laws2023/P1"
+   },
+   {
+    "paper": "Lee2026a",
+    "platform": "Lee2026a/P1"
+   },
+   {
+    "paper": "Li2020",
+    "platform": "Li2020/P1"
+   },
+   {
+    "paper": "Li2026",
+    "platform": "Li2026/P1"
+   },
+   {
+    "paper": "Li2026a",
+    "platform": "Li2026a/P1"
+   },
+   {
+    "paper": "Liang2025",
+    "platform": "Liang2025/P1"
+   },
+   {
+    "paper": "Liang2026",
+    "platform": "Liang2026/P1"
+   },
+   {
+    "paper": "Low2024",
+    "platform": "Low2024/P1"
+   },
+   {
+    "paper": "MMehr2023",
+    "platform": "MMehr2023/P1"
+   },
+   {
+    "paper": "MacLeod2020",
+    "platform": "MacLeod2020/P1"
+   },
+   {
+    "paper": "MacLeod2022",
+    "platform": "MacLeod2022/P1"
+   },
+   {
+    "paper": "McMullen2010",
+    "platform": "McMullen2010/P1"
+   },
+   {
+    "paper": "McMullen2010a",
+    "platform": "McMullen2010a/P1"
+   },
+   {
+    "paper": "Mikami2026",
+    "platform": "Mikami2026/P1"
+   },
+   {
+    "paper": "Moosavi2019",
+    "platform": "Moosavi2019/P1"
+   },
+   {
+    "paper": "Mottafegh2024",
+    "platform": "Mottafegh2024/P1"
+   },
+   {
+    "paper": "Mueller2023",
+    "platform": "Mueller2023/P1"
+   },
+   {
+    "paper": "Munyebvu2025",
+    "platform": "Munyebvu2025/P1"
+   },
+   {
+    "paper": "Nambiar2022",
+    "platform": "Nambiar2022/P1"
+   },
+   {
+    "paper": "Nazeri2026",
+    "platform": "Nazeri2026/P1"
+   },
+   {
+    "paper": "Nikolaev2016",
+    "platform": "Nikolaev2016/P1"
+   },
+   {
+    "paper": "Noh2024",
+    "platform": "Noh2024/P1"
+   },
+   {
+    "paper": "Olansky1978",
+    "platform": "Olansky1978/P1"
+   },
+   {
+    "paper": "OrtizPerez2024",
+    "platform": "OrtizPerez2024/P1"
+   },
+   {
+    "paper": "Pant2018",
+    "platform": "Pant2018/P1"
+   },
+   {
+    "paper": "Pence2026",
+    "platform": "Pence2026/P1"
+   },
+   {
+    "paper": "Pittaway2025",
+    "platform": "Pittaway2025/P1"
+   },
+   {
+    "paper": "Poscharny2018",
+    "platform": "Poscharny2018/P1"
+   },
+   {
+    "paper": "Putz2025",
+    "platform": "Putz2025/P1"
+   },
+   {
+    "paper": "Ramezani2026",
+    "platform": "Ramezani2026/P1"
+   },
+   {
+    "paper": "Ramirez2024",
+    "platform": "Ramirez2024/P1"
+   },
+   {
+    "paper": "Rapp2024",
+    "platform": "Rapp2024/P1"
+   },
+   {
+    "paper": "Reizman2012",
+    "platform": "Reizman2012/P1"
+   },
+   {
+    "paper": "Roch2020",
+    "platform": "Roch2020/P5"
+   },
+   {
+    "paper": "Ruan2024",
+    "platform": "Ruan2024/P1"
+   },
+   {
+    "paper": "Rubens2019",
+    "platform": "Rubens2019/P1"
+   },
+   {
+    "paper": "Rupnow2023",
+    "platform": "Rupnow2023/P1"
+   },
+   {
+    "paper": "Salley2020",
+    "platform": "Salley2020/P1"
+   },
+   {
+    "paper": "Sheng2023",
+    "platform": "Sheng2023/P1"
+   },
+   {
+    "paper": "Shimizu2020",
+    "platform": "Shimizu2020/P1"
+   },
+   {
+    "paper": "Singh2025",
+    "platform": "Singh2025/P1"
+   },
+   {
+    "paper": "Skilton2013",
+    "platform": "Skilton2013/P1"
+   },
+   {
+    "paper": "Slattery2024",
+    "platform": "Slattery2024/P1"
+   },
+   {
+    "paper": "Snapp2024",
+    "platform": "Snapp2024/P1"
+   },
+   {
+    "paper": "Suzumura2022",
+    "platform": "Suzumura2022/P1"
+   },
+   {
+    "paper": "Szymanski2023",
+    "platform": "Szymanski2023/P1"
+   },
+   {
+    "paper": "Tamura2023",
+    "platform": "Tamura2023/P1"
+   },
+   {
+    "paper": "Tamura2025",
+    "platform": "Tamura2025/P1"
+   },
+   {
+    "paper": "Tao2021",
+    "platform": "Tao2021/P1"
+   },
+   {
+    "paper": "Toyama2025",
+    "platform": "Toyama2025/P1"
+   },
+   {
+    "paper": "Vargas2026",
+    "platform": "Vargas2026/P1"
+   },
+   {
+    "paper": "Vikram2021",
+    "platform": "Vikram2021/P1"
+   },
+   {
+    "paper": "Wagner2024",
+    "platform": "Wagner2024/P1"
+   },
+   {
+    "paper": "Wakabayashi2026",
+    "platform": "Wakabayashi2026/P1"
+   },
+   {
+    "paper": "Wang2020",
+    "platform": "Wang2020/P1"
+   },
+   {
+    "paper": "Wang2025",
+    "platform": "Wang2025/P1"
+   },
+   {
+    "paper": "Wang2026",
+    "platform": "Wang2026/P1"
+   },
+   {
+    "paper": "Wang2026a",
+    "platform": "Wang2026a/P1"
+   },
+   {
+    "paper": "Wu2025a",
+    "platform": "Wu2025a/P1"
+   },
+   {
+    "paper": "Wu2025b",
+    "platform": "Wu2025b/P1"
+   },
+   {
+    "paper": "Wu2025c",
+    "platform": "Wu2025c/P1"
+   },
+   {
+    "paper": "Xu2022",
+    "platform": "Xu2022/P1"
+   },
+   {
+    "paper": "Xu2025",
+    "platform": "Xu2025/P1"
+   },
+   {
+    "paper": "Zhu2024",
+    "platform": "Zhu2024/P1"
+   }
+  ],
+  "automation_gain": [
+   {
+    "paper": "Dave2022",
+    "platform": "Dave2022/P1"
+   },
+   {
+    "paper": "Fratarcangeli2026",
+    "platform": "Fratarcangeli2026/P1"
+   },
+   {
+    "paper": "Harris2024",
+    "platform": "Harris2024/P1"
+   },
+   {
+    "paper": "Li2026",
+    "platform": "Li2026/P1"
+   },
+   {
+    "paper": "Nazeri2026",
+    "platform": "Nazeri2026/P1"
+   },
+   {
+    "paper": "Noh2024",
+    "platform": "Noh2024/P1"
+   },
+   {
+    "paper": "Ramezani2026",
+    "platform": "Ramezani2026/P1"
+   },
+   {
+    "paper": "Shimizu2020",
+    "platform": "Shimizu2020/P1"
+   },
+   {
+    "paper": "Suzumura2022",
+    "platform": "Suzumura2022/P1"
+   },
+   {
+    "paper": "Wakabayashi2026",
+    "platform": "Wakabayashi2026/P1"
+   },
+   {
+    "paper": "Wang2025",
+    "platform": "Wang2025/P1"
+   },
+   {
+    "paper": "Wang2026a",
+    "platform": "Wang2026a/P1"
+   }
+  ]
+ },
+ "n": {
+  "reproduction_own_durations": 35,
+  "prediction_pooled_durations": 127,
+  "automation_gain": 12
+ },
+ "cases": {
+  "reproduction_own_durations": {
+   "Aand2024": [],
+   "Anker2026": [
+    "long-incubation-step"
+   ],
+   "Brody2026": [
+    "long-incubation-step"
+   ],
+   "Burger2020": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent",
+    "long-incubation-step"
+   ],
+   "Caramelli2021": [
+    "parallel-or-batched-modules",
+    "long-incubation-step"
+   ],
+   "Chang2026": [
+    "shared-transfer-agent",
+    "long-incubation-step",
+    "long-planning-computation"
+   ],
+   "Dave2020": [
+    "long-incubation-step"
+   ],
+   "Dave2022": [
+    "long-incubation-step"
+   ],
+   "Deneault2021": [
+    "long-incubation-step"
+   ],
+   "Epps2020": [
+    "long-incubation-step"
+   ],
+   "Fei2026": [
+    "parallel-or-batched-modules",
+    "human-transfer-or-human-step",
+    "long-incubation-step"
+   ],
+   "Fratarcangeli2026": [
+    "parallel-or-batched-modules",
+    "human-transfer-or-human-step",
+    "long-incubation-step"
+   ],
+   "Gao2026": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent",
+    "long-incubation-step"
+   ],
+   "Ha2023": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent",
+    "long-incubation-step"
+   ],
+   "Harris2024": [
+    "long-incubation-step"
+   ],
+   "Horstkotte2010": [
+    "long-incubation-step"
+   ],
+   "Jiang2022": [
+    "parallel-or-batched-modules"
+   ],
+   "Kanda2022": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent",
+    "human-transfer-or-human-step",
+    "long-incubation-step"
+   ],
+   "Kim2026": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent",
+    "human-transfer-or-human-step"
+   ],
+   "King2009": [
+    "parallel-or-batched-modules",
+    "long-incubation-step"
+   ],
+   "Langner2020": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent",
+    "human-transfer-or-human-step",
+    "long-incubation-step"
+   ],
+   "Liang2025": [],
+   "Low2024": [
+    "parallel-or-batched-modules",
+    "long-incubation-step"
+   ],
+   "Mottafegh2024": [
+    "long-incubation-step"
+   ],
+   "Munyebvu2025": [],
+   "Noh2024": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent",
+    "human-transfer-or-human-step"
+   ],
+   "Ramirez2024": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent",
+    "human-transfer-or-human-step",
+    "long-incubation-step"
+   ],
+   "Rapp2024": [
+    "parallel-or-batched-modules"
+   ],
+   "Shimizu2020": [
+    "shared-transfer-agent"
+   ],
+   "Singh2025": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent",
+    "long-incubation-step"
+   ],
+   "Suzumura2022": [
+    "parallel-or-batched-modules",
+    "long-incubation-step"
+   ],
+   "Tamura2025": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent",
+    "long-incubation-step"
+   ],
+   "Toyama2025": [
+    "parallel-or-batched-modules",
+    "human-transfer-or-human-step"
+   ],
+   "Wang2026": [
+    "parallel-or-batched-modules",
+    "long-incubation-step"
+   ],
+   "Wu2025c": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent",
+    "long-incubation-step"
+   ]
+  },
+  "prediction_pooled_durations": {
+   "Aand2024": [
+    "long-incubation-step"
+   ],
+   "AbdelLatif2021": [],
+   "Ahn2023": [
+    "long-incubation-step"
+   ],
+   "Amara2015": [
+    "long-incubation-step"
+   ],
+   "Anker2026": [
+    "long-incubation-step"
+   ],
+   "Asche2021": [
+    "long-incubation-step"
+   ],
+   "Bai2023a": [
+    "parallel-or-batched-modules",
+    "human-transfer-or-human-step",
+    "long-incubation-step"
+   ],
+   "Bateni2022": [],
+   "Bateni2024": [],
+   "Bedard2018": [],
+   "Bennett2024": [],
+   "Bourne2011": [],
+   "Brody2026": [
+    "long-incubation-step"
+   ],
+   "Burger2020": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent",
+    "long-incubation-step"
+   ],
+   "Cao2021": [
+    "parallel-or-batched-modules",
+    "human-transfer-or-human-step",
+    "long-incubation-step"
+   ],
+   "Caramelli2021": [
+    "parallel-or-batched-modules",
+    "long-incubation-step"
+   ],
+   "Chang2020": [
+    "long-incubation-step"
+   ],
+   "Chang2023": [
+    "parallel-or-batched-modules"
+   ],
+   "Chang2026": [
+    "shared-transfer-agent",
+    "long-incubation-step"
+   ],
+   "Christensen2021": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent",
+    "long-incubation-step"
+   ],
+   "Clayton2020": [
+    "parallel-or-batched-modules"
+   ],
+   "Clayton2020a": [
+    "parallel-or-batched-modules",
+    "long-incubation-step"
+   ],
+   "Clayton2023": [],
+   "CortesBorda2018": [],
+   "Dave2020": [],
+   "Dave2022": [],
+   "Deneault2021": [],
+   "Desai2013": [
+    "shared-transfer-agent"
+   ],
+   "Duros2017": [
+    "parallel-or-batched-modules",
+    "human-transfer-or-human-step",
+    "long-incubation-step"
+   ],
+   "Elder2021": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent"
+   ],
+   "Epps2020": [],
+   "Fabry2019": [],
+   "Fei2026": [
+    "parallel-or-batched-modules",
+    "human-transfer-or-human-step",
+    "long-incubation-step"
+   ],
+   "FiskerBdker2025": [
+    "shared-transfer-agent",
+    "long-incubation-step"
+   ],
+   "Fitzpatrick2016": [],
+   "Fitzpatrick2018": [],
+   "Fratarcangeli2026": [
+    "parallel-or-batched-modules",
+    "human-transfer-or-human-step"
+   ],
+   "Gao2026": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent"
+   ],
+   "Gerardy2022": [],
+   "Ginsburg2023": [
+    "shared-transfer-agent",
+    "long-incubation-step"
+   ],
+   "Gongora2020": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent"
+   ],
+   "Granda2018": [
+    "parallel-or-batched-modules",
+    "long-incubation-step"
+   ],
+   "Grizou2020": [
+    "shared-transfer-agent"
+   ],
+   "Ha2023": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent",
+    "long-incubation-step"
+   ],
+   "Hall2021": [],
+   "Harris2024": [],
+   "Holmes2016": [
+    "parallel-or-batched-modules"
+   ],
+   "Holmes2016a": [],
+   "Horstkotte2010": [],
+   "Hsieh2018": [],
+   "Hu2022": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent",
+    "human-transfer-or-human-step"
+   ],
+   "Hu2025": [],
+   "Jackson2025": [
+    "parallel-or-batched-modules"
+   ],
+   "Jeraal2020": [],
+   "Jiang2022": [
+    "parallel-or-batched-modules",
+    "long-incubation-step"
+   ],
+   "Kanda2022": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent",
+    "human-transfer-or-human-step"
+   ],
+   "Kershaw2023": [],
+   "Kim2025c": [
+    "parallel-or-batched-modules"
+   ],
+   "Kim2026": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent",
+    "human-transfer-or-human-step"
+   ],
+   "King2009": [
+    "parallel-or-batched-modules"
+   ],
+   "Knox2025": [],
+   "Koscher2023": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent"
+   ],
+   "Langner2020": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent",
+    "human-transfer-or-human-step",
+    "long-incubation-step"
+   ],
+   "Laws2023": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent"
+   ],
+   "Lee2026a": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent"
+   ],
+   "Li2020": [],
+   "Li2026": [
+    "shared-transfer-agent",
+    "human-transfer-or-human-step",
+    "long-incubation-step"
+   ],
+   "Li2026a": [
+    "parallel-or-batched-modules",
+    "long-incubation-step"
+   ],
+   "Liang2025": [],
+   "Liang2026": [
+    "long-incubation-step"
+   ],
+   "Low2024": [
+    "parallel-or-batched-modules"
+   ],
+   "MMehr2023": [
+    "parallel-or-batched-modules",
+    "long-incubation-step"
+   ],
+   "MacLeod2020": [
+    "shared-transfer-agent"
+   ],
+   "MacLeod2022": [],
+   "McMullen2010": [],
+   "McMullen2010a": [],
+   "Mikami2026": [
+    "parallel-or-batched-modules",
+    "human-transfer-or-human-step",
+    "long-incubation-step"
+   ],
+   "Moosavi2019": [
+    "parallel-or-batched-modules",
+    "human-transfer-or-human-step",
+    "long-incubation-step"
+   ],
+   "Mottafegh2024": [
+    "long-incubation-step"
+   ],
+   "Mueller2023": [],
+   "Munyebvu2025": [],
+   "Nambiar2022": [],
+   "Nazeri2026": [],
+   "Nikolaev2016": [
+    "long-incubation-step"
+   ],
+   "Noh2024": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent",
+    "human-transfer-or-human-step"
+   ],
+   "Olansky1978": [],
+   "OrtizPerez2024": [
+    "parallel-or-batched-modules",
+    "human-transfer-or-human-step"
+   ],
+   "Pant2018": [
+    "shared-transfer-agent",
+    "long-incubation-step"
+   ],
+   "Pence2026": [
+    "long-incubation-step"
+   ],
+   "Pittaway2025": [],
+   "Poscharny2018": [],
+   "Putz2025": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent",
+    "long-incubation-step"
+   ],
+   "Ramezani2026": [],
+   "Ramirez2024": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent",
+    "human-transfer-or-human-step",
+    "long-incubation-step"
+   ],
+   "Rapp2024": [
+    "parallel-or-batched-modules"
+   ],
+   "Reizman2012": [],
+   "Roch2020": [],
+   "Ruan2024": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent",
+    "long-incubation-step"
+   ],
+   "Rubens2019": [],
+   "Rupnow2023": [
+    "long-incubation-step"
+   ],
+   "Salley2020": [
+    "parallel-or-batched-modules",
+    "long-incubation-step"
+   ],
+   "Sheng2023": [],
+   "Shimizu2020": [
+    "shared-transfer-agent"
+   ],
+   "Singh2025": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent"
+   ],
+   "Skilton2013": [],
+   "Slattery2024": [],
+   "Snapp2024": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent"
+   ],
+   "Suzumura2022": [
+    "parallel-or-batched-modules",
+    "long-incubation-step"
+   ],
+   "Szymanski2023": [
+    "parallel-or-batched-modules",
+    "long-incubation-step"
+   ],
+   "Tamura2023": [
+    "parallel-or-batched-modules",
+    "long-incubation-step"
+   ],
+   "Tamura2025": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent"
+   ],
+   "Tao2021": [],
+   "Toyama2025": [
+    "parallel-or-batched-modules",
+    "human-transfer-or-human-step",
+    "long-incubation-step"
+   ],
+   "Vargas2026": [
+    "long-incubation-step"
+   ],
+   "Vikram2021": [
+    "parallel-or-batched-modules"
+   ],
+   "Wagner2024": [],
+   "Wakabayashi2026": [
+    "shared-transfer-agent",
+    "human-transfer-or-human-step",
+    "long-incubation-step"
+   ],
+   "Wang2020": [],
+   "Wang2025": [
+    "shared-transfer-agent"
+   ],
+   "Wang2026": [
+    "parallel-or-batched-modules"
+   ],
+   "Wang2026a": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent",
+    "long-incubation-step"
+   ],
+   "Wu2025a": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent"
+   ],
+   "Wu2025b": [],
+   "Wu2025c": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent",
+    "long-incubation-step"
+   ],
+   "Xu2022": [
+    "parallel-or-batched-modules"
+   ],
+   "Xu2025": [
+    "parallel-or-batched-modules",
+    "shared-transfer-agent"
+   ],
+   "Zhu2024": [
+    "shared-transfer-agent",
+    "long-incubation-step"
+   ]
+  }
+ },
+ "case_counts": {
+  "reproduction_own_durations": {
+   "parallel-or-batched-modules": 21,
+   "shared-transfer-agent": 13,
+   "human-transfer-or-human-step": 8,
+   "long-incubation-step": 26,
+   "long-planning-computation": 1
+  },
+  "prediction_pooled_durations": {
+   "parallel-or-batched-modules": 54,
+   "shared-transfer-agent": 36,
+   "human-transfer-or-human-step": 17,
+   "long-incubation-step": 46,
+   "long-planning-computation": 0
+  }
+ },
+ "unattached_connections": {
+  "papers": 22,
+  "connections": 39
+ },
+ "pool_sizes": {
+  "steps": 391,
+  "transfers": 4,
+  "planning": 6
+ }
+}

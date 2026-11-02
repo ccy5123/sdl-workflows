@@ -43,7 +43,32 @@ def workspace():
                         "pdf_url": "https://arxiv.org/pdf/2501.00001v2"}}))
     put(root, "collection/fulltext_pdfs/supplied/si/C0002/kim_si.pdf", "%PDF kim si")
     put(root, "extraction/inputs/Kim2025/si_1.txt", "# source file: kim_si.pdf\n=== SI1 pdf p.1 ===\ntext\n")
+    put_human(root, HUMAN_FILES)
     return root
+
+
+# Human-intervention extraction of the fixture papers (human-v1.md output format): Lee2020 names a human task
+# without a number; Kim2025 states an unattended campaign with a lower-bound run length.
+HUMAN_FILES = {
+    "Lee2020": {"paper_id": "Lee2020", "coder": "opus-5.5-human", "record_coding": "extraction/db/opus_a/Lee2020.json",
+                "human_intervention": "described", "human_intervention_evidence": "main ; pdf p.3 ; §2 ¶1",
+                "unassisted_run_length": [], "notes": "a person moves the plate, as the paper says \"by hand every time\""},
+    "Kim2025": {"paper_id": "Kim2025", "coder": "opus-5.5-human", "record_coding": "extraction/db/opus_a/Kim2025.json",
+                "human_intervention": "none_stated", "human_intervention_evidence": "SI1 ; pdf p.1 ; Table S1",
+                "unassisted_run_length": [{"value": 48, "unit": "h", "qualifier": "lower bound, approximately; the whole "
+                                           "campaign", "evidence": "main ; pdf p.2 ; §3 ¶2"}],
+                "notes": "ran unattended"},
+}
+
+
+def put_human(root, files, record=True):
+    """Write the human-intervention files and, if record, a record naming their set digest."""
+    for pid, x in files.items():
+        put(root, ex.HUMAN_DIR / f"{pid}.json", json.dumps(x, ensure_ascii=False))
+    if record:
+        digest, n = ex.file_set_digest(root / ex.HUMAN_DIR)
+        put(root, ex.HUMAN_RECORD, json.dumps({"result": {"finding": json.dumps({"set_sha256": digest,
+                                                                                  "n_files": n})}}))
 
 
 def documents(root, db=None, versions=()):
@@ -120,13 +145,14 @@ class RecordedBuild(unittest.TestCase):
     def setUpClass(cls):
         cls.db = ex.open_internal()
         cls.rel = ex.new_release_db()
-        ex.export_core(cls.db, cls.rel, ex.load_definitions(cls.db), redactions=ex.load_redactions())
+        ex.export_core(cls.db, cls.rel, ex.load_definitions(cls.db), redactions=ex.load_redactions(),
+                       published=ex.load_rows(ex.PUBLISHED_VERSIONS))
         ex.export_documents(cls.db, cls.rel)
 
     def test_main_text_versions(self):
         self.assertEqual(self.rel.execute("SELECT version, COUNT(*) FROM paper_document WHERE doc = 'main' "
                                           "GROUP BY 1 ORDER BY 1").fetchall(),
-                         [("accepted_manuscript", 6), ("journal", 201), ("preprint", 30), ("repository_copy", 1)])
+                         [("accepted_manuscript", 6), ("journal", 201), ("preprint", 29), ("repository_copy", 1)])
 
     def test_supplements(self):
         self.assertEqual(self.rel.execute("SELECT file_format, COUNT(*) FROM paper_document WHERE doc <> 'main' "

@@ -1,0 +1,172 @@
+{
+ "db_content_digest": "57b39af53554a4b7dbccbdfebfc3b254f88f6af050a378b3cb1f9435deeaa08a",
+ "bootstrap": {
+  "B": 2000,
+  "seed": 1
+ },
+ "variants": {
+  "base": {
+   "hours": 8.0,
+   "days": 5
+  },
+  "continuous": {
+   "hours": 24.0,
+   "days": 7
+  },
+  "seven_day": {
+   "hours": 8.0,
+   "days": 7
+  }
+ },
+ "base_check": {
+  "recorded_share_within_1p5x": 0.34285714285714286,
+  "rerun_share_within_1p5x": 0.34285714285714286,
+  "recorded_mean_d": 0.03711318075798048,
+  "rerun_mean_d": 0.03711318075798048,
+  "per_paper_mismatches": []
+ },
+ "affected_papers": {
+  "reproduction_own_durations": {
+   "papers": 35,
+   "human_step_or_transfer": 8,
+   "human_work_simulated": 8,
+   "human_hours_or_days_stated": 0,
+   "human_work_simulated_and_default_calendar": 8
+  },
+  "prediction_pooled_durations": {
+   "papers": 127,
+   "human_step_or_transfer": 17,
+   "human_work_simulated": 16,
+   "human_hours_or_days_stated": 0,
+   "human_work_simulated_and_default_calendar": 16
+  }
+ },
+ "results": {
+  "base": {
+   "reproduction_own_durations": {
+    "n": 35,
+    "n_simulated": 34,
+    "n_within_1p5x": 12,
+    "share_within_1p5x": 0.34285714285714286,
+    "ci95": [
+     0.2,
+     0.5142857142857142
+    ],
+    "flagged": 1,
+    "papers_changed": 0,
+    "within_status_changed": 0,
+    "difference_vs_base": {
+     "value": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "n": 35
+    }
+   },
+   "prediction_pooled_durations": {
+    "n": 127,
+    "n_simulated": 123,
+    "mean_d": 0.03711318075798048,
+    "ci95": [
+     -0.05536359428557937,
+     0.12611385546091616
+    ],
+    "flagged": 2,
+    "papers_changed": 0,
+    "difference_vs_base": {
+     "value": 0.0,
+     "ci95": [
+      0.0,
+      0.0
+     ],
+     "n": 123
+    }
+   }
+  },
+  "continuous": {
+   "reproduction_own_durations": {
+    "n": 35,
+    "n_simulated": 34,
+    "n_within_1p5x": 13,
+    "share_within_1p5x": 0.37142857142857144,
+    "ci95": [
+     0.22857142857142856,
+     0.5428571428571428
+    ],
+    "flagged": 1,
+    "papers_changed": 7,
+    "within_status_changed": 3,
+    "difference_vs_base": {
+     "value": 0.02857142857142857,
+     "ci95": [
+      -0.05714285714285714,
+      0.14285714285714285
+     ],
+     "n": 35
+    }
+   },
+   "prediction_pooled_durations": {
+    "n": 127,
+    "n_simulated": 124,
+    "mean_d": 0.029469495084938478,
+    "ci95": [
+     -0.056969977554412084,
+     0.11678095234801462
+    ],
+    "flagged": 2,
+    "papers_changed": 16,
+    "difference_vs_base": {
+     "value": -0.014845758423643765,
+     "ci95": [
+      -0.036026787229888425,
+      0.0033077954083673166
+     ],
+     "n": 123
+    }
+   }
+  },
+  "seven_day": {
+   "reproduction_own_durations": {
+    "n": 35,
+    "n_simulated": 34,
+    "n_within_1p5x": 12,
+    "share_within_1p5x": 0.34285714285714286,
+    "ci95": [
+     0.2,
+     0.5142857142857142
+    ],
+    "flagged": 1,
+    "papers_changed": 7,
+    "within_status_changed": 2,
+    "difference_vs_base": {
+     "value": 0.0,
+     "ci95": [
+      -0.08571428571428572,
+      0.08571428571428572
+     ],
+     "n": 35
+    }
+   },
+   "prediction_pooled_durations": {
+    "n": 127,
+    "n_simulated": 124,
+    "mean_d": 0.032717152521899516,
+    "ci95": [
+     -0.056987545857363334,
+     0.12371639130102866
+    ],
+    "flagged": 2,
+    "papers_changed": 15,
+    "difference_vs_base": {
+     "value": -0.011571697267683045,
+     "ci95": [
+      -0.019711809636981433,
+      -0.004405955978205193
+     ],
+     "n": 123
+    }
+   }
+  }
+ }
+}

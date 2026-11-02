@@ -1,0 +1,61 @@
+name: Missing or new paper
+description: Suggest a closed-loop self-driving laboratory paper that sdl-workflows does not include.
+title: "[paper] "
+labels: ["paper"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The maintainer screens each suggested paper against the criteria below and codes eligible papers with the
+        coding instructions in `protocol/` that coded the released papers, so that every paper in the dataset is coded the same way.
+        Eligible papers are added in the next MINOR release. Please do not send codings.
+  - type: input
+    id: doi
+    attributes:
+      label: DOI or link
+      placeholder: "10.1039/d4re00138a"
+    validations:
+      required: true
+  - type: input
+    id: paper_title
+    attributes:
+      label: Title
+  - type: checkboxes
+    id: criteria
+    attributes:
+      label: Which criteria does the paper meet?
+      description: All five are needed for inclusion. Tick the ones you have checked.
+      options:
+        - label: It is an original research paper.
+        - label: An algorithm chose the next experiment from the results of earlier ones, at least once on the physical system in the paper.
+        - label: The experiments in the loop were run by automated hardware (isolated manual steps are allowed).
+        - label: Something was made or processed in the loop, not only measured.
+        - label: The hardware configuration is described in the main text or the supplementary information.
+  - type: textarea
+    id: where
+    attributes:
+      label: Where the paper shows the closed loop and the hardware
+      description: "Document (`main` or `SI1`, ...), page and figure, table or section."
+      placeholder: "main, p. 4, Fig. 1; SI1, p. 9-15, §S2"
+    validations:
+      required: true
+  - type: dropdown
+    id: relation
+    attributes:
+      label: Your relation to the paper
+      options:
+        - I am an author of this paper
+        - I am not an author of this paper
+  - type: input
+    id: credit
+    attributes:
+      label: Name and ORCID for credit (optional)
+      description: Accepted contributors are listed in CONTRIBUTORS.md and as contributors on the Zenodo record. Leave empty to be credited by GitHub handle only.
+      placeholder: "Jane Doe, https://orcid.org/0000-0000-0000-0000"
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Licence
+      options:
+        - label: I agree that this contribution is published under CC BY 4.0, the licence of the dataset.
+          required: true

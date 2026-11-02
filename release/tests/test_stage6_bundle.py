@@ -74,11 +74,21 @@ def quality_evidence():
     return path
 
 
-def build(out, root, evidence_path=None, db=None):
+def timing_quality(n_papers=0):
+    """Timing agreement values for the documents; fixture_db() has no reference timing extraction."""
+    rec = {"n_papers": n_papers, "a_items": 2, "a_agreement": 1.0, "b_items": 4, "b_agreement": 0.75,
+           "b_ci95": [0.5, 1.0]}
+    path = Path(tempfile.mkdtemp()) / "evi-timing.json"
+    path.write_text(json.dumps({"result": {"finding": json.dumps(rec)}}), encoding="utf-8")
+    return path
+
+
+def build(out, root, evidence_path=None, db=None, timing=None):
     db = db or fixture_db()
     meta = info(db)
-    rel = ex.build_release_db(db, meta, root, evidence_path or evidence(), versions=[], additions=[])
-    values = ex.document_values(rel, db, meta, candidate_sources(), quality_evidence(), additions=[])
+    rel = ex.build_release_db(db, meta, root, evidence_path or evidence(), versions=[], additions=[], published=[])
+    values = ex.document_values(rel, db, meta, candidate_sources(), quality_evidence(), additions=[],
+                                timing_quality=timing or timing_quality())
     return ex.write_bundle(rel, meta, values, out)
 
 
@@ -114,7 +124,10 @@ class FixtureBundle(unittest.TestCase):
                      "schema/benchmark-task.schema.json", "README.md", "DATA_CARD.md", "CHANGELOG.md",
                      "CITATION.cff", "LICENSE-DATA", "LICENSE-CODE", "data_dictionary.csv",
                      "modes/simulation/README.md", "protocol/README.md", "protocol/prompt-v1.md",
-                     "protocol/taxonomy-v1.json", "protocol/coding-guideline.md"):
+                     "protocol/taxonomy-v1.json", "protocol/coding-guideline.md", "protocol/process-v1.md",
+                     "protocol/human-v1.md", "core/step_timing.csv", "core/process_value.parquet",
+                     "core/human_intervention.csv", "modes/simulation/step_timing.csv",
+                     "modes/simulation/process_values.csv", "modes/trends/human_intervention.csv"):
             self.assertIn(name, files)
         on_disk = {p.relative_to(self.bundle).as_posix() for p in self.bundle.rglob("*") if p.is_file()}
         self.assertEqual(on_disk - {"MANIFEST.sha256"}, files)
@@ -185,7 +198,7 @@ class Refusals(unittest.TestCase):
         db = fixture_db()
         meta = dict(info(db), source_build_digest="0" * 64)
         with self.assertRaises(ex.ExportError):
-            ex.build_release_db(db, meta, self.root, evidence(), versions=[], additions=[])
+            ex.build_release_db(db, meta, self.root, evidence(), versions=[], additions=[], published=[])
 
     def test_evaluate_not_reproducing_the_record_fails(self):
         with self.assertRaises(ex.ExportError):
@@ -220,16 +233,16 @@ class RecordedBuild(unittest.TestCase):
         def n(rel_path):
             with (self.bundles[0] / rel_path).open(encoding="utf-8") as f:
                 return sum(1 for _ in csv.DictReader(f))
-        self.assertEqual([n("core/paper.csv"), n("core/step.csv"), n("core/connection.csv")], [238, 2621, 1687])
-        self.assertEqual(n("modes/builder/steps.csv"), 2621)
+        self.assertEqual([n("core/paper.csv"), n("core/step.csv"), n("core/connection.csv")], [237, 2610, 1681])
+        self.assertEqual(n("modes/builder/steps.csv"), 2610)
         self.assertEqual(len((self.bundles[0] / "modes/builder/platform_graphs.jsonl")
-                             .read_text(encoding="utf-8").splitlines()), 280)
+                             .read_text(encoding="utf-8").splitlines()), 279)
 
     def test_release_row_names_the_source_build(self):
         with (self.bundles[0] / "core/release.csv").open(encoding="utf-8") as f:
             row = next(csv.DictReader(f))
-        self.assertEqual(row["source_build_digest"], "6bc13fac0303d08817c63b1615ef7c0e0c15161982b5853b808cd1226bef320a")
-        self.assertEqual(row["n_papers"], "238")
+        self.assertEqual(row["source_build_digest"], "57b39af53554a4b7dbccbdfebfc3b254f88f6af050a378b3cb1f9435deeaa08a")
+        self.assertEqual(row["n_papers"], "237")
 
 
 if __name__ == "__main__":

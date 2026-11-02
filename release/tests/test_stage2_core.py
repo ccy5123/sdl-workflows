@@ -72,6 +72,27 @@ class Papers(unittest.TestCase):
                          .fetchone()[0], "chemistry_synthesis;catalysis")
 
 
+class PublishedVersions(unittest.TestCase):
+    PAPERS = [("Kim2025", "C0002", "10.26434/chemrxiv-2025-x", 2025, "candidate_year", "main", 2, 2),
+              ("Lee2020", "C0001", "10.1021/a", 2020, "candidate_year", "main", 2, 2)]
+
+    def row(self, preprint="10.26434/chemrxiv-2025-x", published="10.1039/B"):
+        return {"paper_id": "Kim2025", "preprint_doi": preprint, "published_doi": published}
+
+    def test_only_the_doi_changes(self):
+        self.assertEqual(ex.published_dois(self.PAPERS, [self.row()]),
+                         [("Kim2025", "C0002", "10.1039/b", 2025, "candidate_year", "main", 2, 2), self.PAPERS[1]])
+
+    def test_no_rows_leave_the_papers_as_they_are(self):
+        self.assertEqual(ex.published_dois(self.PAPERS), self.PAPERS)
+
+    def test_a_row_that_does_not_match_fails(self):
+        for row in (self.row(preprint="10.26434/other"), self.row(published="10.48550/arxiv.1"),
+                    self.row(published="10.1021/A"), dict(self.row(), paper_id="Nope2020")):
+            with self.assertRaises(ex.ExportError):
+                ex.published_dois(self.PAPERS, [row])
+
+
 class Platforms(unittest.TestCase):
     def setUp(self):
         self.rel = export_fixture()
@@ -193,9 +214,9 @@ class RecordedBuild(unittest.TestCase):
         self.assertEqual(self.rel.execute("PRAGMA foreign_key_check").fetchall(), [])
 
     def test_row_counts_match_the_internal_views(self):
-        self.assertEqual(self.count("SELECT COUNT(*) FROM paper")[0], 238)
-        self.assertEqual(self.count("SELECT COUNT(*) FROM step")[0], 2621)
-        self.assertEqual(self.count("SELECT COUNT(*) FROM connection")[0], 1687)
+        self.assertEqual(self.count("SELECT COUNT(*) FROM paper")[0], 237)
+        self.assertEqual(self.count("SELECT COUNT(*) FROM step")[0], 2610)
+        self.assertEqual(self.count("SELECT COUNT(*) FROM connection")[0], 1681)
         for table in ("platform", "module", "step_module"):
             rel_n, db_n = self.count(f"SELECT COUNT(*) FROM {table}",
                                      f"SELECT COUNT(*) FROM {table} JOIN db_record_coding USING (coding_id)")
@@ -205,7 +226,7 @@ class RecordedBuild(unittest.TestCase):
 
     def test_uncertain_counts_match_the_flags(self):
         self.assertEqual(self.count("SELECT SUM(uncertain) FROM step")[0], 340)
-        self.assertEqual(self.count("SELECT SUM(uncertain) FROM connection")[0], 156)
+        self.assertEqual(self.count("SELECT SUM(uncertain) FROM connection")[0], 155)
 
     def test_integration_modes_match_the_internal_view(self):
         sql = "SELECT integration_mode, COUNT(*) FROM {} GROUP BY 1 ORDER BY 1"
@@ -215,7 +236,7 @@ class RecordedBuild(unittest.TestCase):
     def test_screening_actors(self):
         self.assertEqual(self.rel.execute("SELECT decided_by, model_id, COUNT(*) FROM screening "
                                           "GROUP BY 1, 2 ORDER BY 1, 2").fetchall(),
-                         [("model", None, 2926), ("model", "claude-opus-5-5", 314), ("researcher", None, 58)])
+                         [("model", None, 2926), ("model", "claude-opus-5-5", 313), ("researcher", None, 59)])
 
     def test_no_html_entities_left(self):
         n = self.rel.execute("SELECT COUNT(*) FROM candidate WHERE title LIKE '%&%;%' OR venue LIKE '%&%;%' "

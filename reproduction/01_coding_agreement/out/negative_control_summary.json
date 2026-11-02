@@ -1,0 +1,83 @@
+{
+ "n_papers": 30,
+ "seed": 7,
+ "fields": {
+  "unit_operation": {
+   "strict_micro_f1": 0.3772954924874791,
+   "n_correct": 113,
+   "n_paired": 188,
+   "label_accuracy_paired": 0.601063829787234,
+   "ci95": [
+    0.33225806451612905,
+    0.42628774422735344
+   ]
+  },
+  "module_type": {
+   "strict_micro_f1": 0.34056761268781305,
+   "n_correct": 102,
+   "n_paired": 188,
+   "label_accuracy_paired": 0.5425531914893617,
+   "ci95": [
+    0.27892234548335976,
+    0.4112478031634446
+   ]
+  },
+  "transfer_mode": {
+   "strict_micro_f1": 0.15760869565217392,
+   "n_correct": 29,
+   "n_paired": 31,
+   "label_accuracy_paired": 0.9354838709677419,
+   "ci95": [
+    0.0987012987012987,
+    0.2215909090909091
+   ]
+  },
+  "identification_f1_steps": 0.6277128547579299,
+  "n_steps_reference": 306,
+  "n_steps_extraction": 293,
+  "n_steps_paired": 188,
+  "identification_f1_connections": 0.16847826086956522,
+  "n_connections_reference": 185,
+  "n_connections_extraction": 183,
+  "n_connections_paired": 31
+ },
+ "per_difficult_case": {
+  "hardware-in-SI-only": {
+   "n_papers": 2,
+   "unit_operation": 0.45454545454545453,
+   "module_type": 0.36363636363636365,
+   "transfer_mode": 0.0
+  },
+  "multiple-platforms-or-campaigns": {
+   "n_papers": 1,
+   "unit_operation": 0.23076923076923078,
+   "module_type": 0.23076923076923078,
+   "transfer_mode": 0.0
+  },
+  "commercial-integrated-platform": {
+   "n_papers": 3,
+   "unit_operation": 0.2909090909090909,
+   "module_type": 0.2545454545454545,
+   "transfer_mode": 0.0
+  },
+  "implied-human-step": {
+   "n_papers": 6,
+   "unit_operation": 0.35294117647058826,
+   "module_type": 0.29411764705882354,
+   "transfer_mode": 0.09836065573770492
+  },
+  "mixed-flow-and-robot-arm": {
+   "n_papers": 2,
+   "unit_operation": 0.391304347826087,
+   "module_type": 0.391304347826087,
+   "transfer_mode": 0.13793103448275862
+  },
+  "closed-loop-with-off-platform-step": {
+   "n_papers": 5,
+   "unit_operation": 0.34615384615384615,
+   "module_type": 0.2692307692307692,
+   "transfer_mode": 0.09836065573770492
+  }
+ },
+ "n_fixed_points": 0
+}

@@ -5,7 +5,9 @@
 Which modules published closed-loop self-driving laboratories use, in what order one experimental cycle runs its
 steps on them, and how material moves between the modules. The unit is the platform: {{n_papers}} papers describe
 {{n_platforms}} platforms. One cycle of the loop is coded once, however many cycles a campaign ran. Process
-conditions (temperatures, volumes, times) are not coded.
+conditions (temperatures, volumes) are not coded. The times, batch sizes, throughput and cost a paper states are
+attached to its coded items as timing data, and what it states about human intervention during the campaign is
+recorded per paper (sections below).
 
 A closed loop here means that an algorithm chose the next experiment from earlier results and automated hardware
 carried it out, at least once on the physical system reported in the paper.
@@ -42,8 +44,8 @@ other-language version), one was kept; `paper_version_link` lists the {{n_versio
 
 Each paper was coded once by a language model (Claude Opus 5.5) from its main text and the supplements available as
 PDF or docx ({{n_si_docs}} supplements in total), following written coding instructions and taxonomy v1. The
-instructions and the taxonomy were settled on 10 development papers and then frozen; every coding in this release
-was made with the frozen versions. The taxonomy has no catch-all class: an item that fits no class is coded
+instructions and the taxonomy were settled on 10 development papers and not changed afterwards; every coding in this
+release used those versions. The taxonomy has no catch-all class: an item that fits no class is coded
 `unmapped` with a note. The classes and their definitions are in `modes/taxonomy/classes.csv`; the instructions, the
 taxonomy file and an English translation of the coding guideline are in `protocol/`.
 
@@ -87,14 +89,61 @@ not accuracy against human coding; the release contains no human coding.
 In the release, {{n_unmapped_steps}} steps, {{n_unmapped_modules}} modules and {{n_unmapped_connections}}
 connections are `unmapped`.
 
-## Benchmark chrono2023
+## Timing data
+
+`step_timing` and `process_value` hold the process numbers the papers state: {{n_durations}} step durations and
+{{n_duration_batch_sizes}} numbers of samples one device handles in one run of a step; for platforms,
+{{n_batch_size}} batch sizes, {{n_throughput}} throughputs ({{n_throughput_measured}} measured in a campaign,
+{{n_throughput_nominal}} nominal), {{n_cost}} costs and the other quantities defined in `data_dictionary.csv`;
+{{n_module_values}} module and {{n_connection_values}} connection values. {{n_papers_timing}} of the {{n_papers}}
+papers have at least one value. Each value is keyed to a step, platform, module or connection of the release and
+carries the document, page and figure, table or section that states it.
+
+Claude Opus 5.5 extracted the values under written instructions (`protocol/process-v1.md`), one extraction per
+paper, from the paper's text and its released coding. The instructions allow only numbers the paper states: the
+model was not allowed to estimate a value, take one from general knowledge or another paper, or derive a time from
+flow rates, volumes or counts. Three pieces of arithmetic were allowed: the midpoint of a stated range
+(`range_midpoint`, with `range_low` and `range_high`), a measured throughput as a stated number of experiments
+divided by a stated elapsed time of the same campaign (`n_experiments`, `elapsed_time`), and an expression the paper
+prints for that one quantity. Values are in the paper's unit. A value the paper does not state has no row. Two
+cases need care: a time the paper gives for several consecutive steps sits on the first of them
+({{n_joint_durations}} rows), with `covers_steps` naming all of them, and the other steps have no duration row. `parallel_units`, `units` and
+`transfer_agent_count` are recorded only when the paper states more than one, so their absence also covers one. A
+platform has at most one throughput: a measured one where the paper reports one, else a nominal one.
+
+The instructions ask for a qualifier with each value. Its categorical parts are columns: bound, approximate, range,
+throughput kind, rate per working day, the steps a joint duration covers, whether operating hours are those of the
+equipment or of people, the kind of transfer agents (robot arms or gantries, mobile robots or people), and the steps and connections a person performs in a less automated configuration. The rest of the
+qualifier, including what a cost covers, is the model's free text and is not included.
+
+For the same {{n_timing_reference_papers}} papers as above, Claude Fable 5.1 extracted the timing data under the same
+instructions as a reference. An item (a platform's throughput, a step's duration) agreed when both extractions gave a
+value and the values, normalised to experiments per day and to minutes per batch, differed by at most 10%. The share
+of agreeing items was {{timing_tp_agree}} for throughput ({{timing_tp_items}} platforms) and {{timing_dur_agree}}
+for step duration ({{timing_dur_items}} steps; paper-level cluster bootstrap 95% interval {{timing_dur_low}} to
+{{timing_dur_high}}). This is agreement between two models, not accuracy. The reference extraction is not released.
+
+## Human-intervention reporting
+
+`human_intervention` records, for every paper, what it states about human intervention during its closed-loop
+campaign, read by Claude Opus 5.5 under written instructions (`protocol/human-v1.md`), one extraction per paper.
+{{n_human_quantified}} papers state a number for it (a count of interventions, person-time, or the frequency of a
+human task), {{n_human_described}} name tasks people performed without a number, {{n_human_none_stated}} state that
+the campaign ran without human intervention, and {{n_human_not_reported}} state none of these. One-time set-up before
+the first iteration is not intervention; a capability statement or the word "autonomous" alone does not give
+`none_stated`. {{n_run_length}} papers state a stretch of the campaign that ran without a person; `run_length_value`
+holds the longest, with bounds, approximate values and ranges marked as in the timing data. The category and the
+run length carry the location of the statement each rests on. No second extraction exists to compare with.
+
+## Benchmark (`chrono2023`)
 
 Two tasks predict a class from the coded context: the type of a step's primary module (the first module listed
 for the step), from its unit operation,
 the unit operations of the neighbouring steps and the field tag; and the transfer mode of a material connection,
-from the unit operations and families of the two steps it joins. Models train on the {{n_train_papers}} papers
+from the unit operations of the two steps it joins and their families (groups of related unit operations,
+column `family` of `modes/taxonomy/classes.csv`). Models train on the {{n_train_papers}} papers
 first public in 2023 or earlier and are tested on the {{n_test_papers}} papers first public in 2024 or later; the
-{{n_excluded_papers}} test-year papers used to develop the coding instructions are left out.
+{{n_excluded_papers}} papers from 2024 on among the 10 development papers of the coding instructions are left out.
 
 | Task | Test items (papers) | Baseline top-1 | Reference model top-1 | Difference, 95% interval |
 |---|---|---|---|---|
@@ -116,8 +165,9 @@ benchmark measures agreement with them.
 
 ## Not included
 
-Paper text and abstracts, process conditions, the coders' general notes on each paper, and the second coding
-(represented only by `uncertain`).
+Paper text and abstracts, process conditions other than the stated times, batch sizes, throughput and cost, the
+coders' general notes on each paper, the extracting model's notes and free-text qualifiers, the second coding
+(represented only by `uncertain`), and the reference extraction of the timing data.
 
 ## Versions and corrections
 

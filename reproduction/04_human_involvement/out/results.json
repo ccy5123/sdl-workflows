@@ -1,0 +1,1242 @@
+{
+ "papers": 237,
+ "steps": 2610,
+ "connections": 1681,
+ "components": 200,
+ "multi_paper_components": 24,
+ "papers_in_multi_paper_components": 61,
+ "largest_component": 5,
+ "L": 30,
+ "multi_paper_component_members": [
+  [
+   "AbdelLatif2021",
+   "Bateni2022",
+   "Epps2020"
+  ],
+  [
+   "Aka2019",
+   "CortesBorda2018",
+   "Konan2022",
+   "Vasudevan2021",
+   "Wimmer2019"
+  ],
+  [
+   "Amara2015",
+   "Bourne2011",
+   "Jumbam2012",
+   "Parrott2011",
+   "Skilton2013"
+  ],
+  [
+   "Angello2022",
+   "StriethKalthoff2024"
+  ],
+  [
+   "Baumgartner2018",
+   "Baumgartner2019"
+  ],
+  [
+   "Chang2020",
+   "Nikolaev2016",
+   "Waelder2024"
+  ],
+  [
+   "Corkan1992",
+   "Plouvier1992"
+  ],
+  [
+   "Dai2025",
+   "Wu2025c"
+  ],
+  [
+   "Desai2013",
+   "Pant2018"
+  ],
+  [
+   "Emery2024",
+   "Gongora2020",
+   "Snapp2024"
+  ],
+  [
+   "Fitzpatrick2016",
+   "Fitzpatrick2018"
+  ],
+  [
+   "Gerardy2022",
+   "Nambiar2022"
+  ],
+  [
+   "Ginsburg2023",
+   "Vescovi2023"
+  ],
+  [
+   "HamediRad2019",
+   "Singh2025"
+  ],
+  [
+   "Haque2025",
+   "Harris2024"
+  ],
+  [
+   "Knox2022",
+   "Knox2025"
+  ],
+  [
+   "Luo2025",
+   "Song2025",
+   "Zhao2026",
+   "Zhu2022",
+   "Zhu2024"
+  ],
+  [
+   "MacLeod2020",
+   "MacLeod2022",
+   "Rupnow2023"
+  ],
+  [
+   "Matsuda2022",
+   "Tamura2023"
+  ],
+  [
+   "Noh2024",
+   "Ritchhart2025"
+  ],
+  [
+   "Putz2024",
+   "Putz2025"
+  ],
+  [
+   "Rendy2026",
+   "Szymanski2023"
+  ],
+  [
+   "Sadeghi2024",
+   "Sadeghi2025"
+  ],
+  [
+   "Suponya2026",
+   "Tamasi2022"
+  ]
+ ],
+ "papers_without_steps": [],
+ "papers_without_first_field_tag": [],
+ "main": {
+  "fields": {
+   "analyze_data": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 9
+   },
+   "anneal": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 1
+   },
+   "centrifuge": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 1
+   },
+   "clean_equipment": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 4
+   },
+   "cool_quench": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 1
+   },
+   "deposit_coat": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 2
+   },
+   "dispense_liquid": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 9
+   },
+   "dispense_solid": {
+    "fields_share_ge_half": 1,
+    "fields_share_lt_half": 0
+   },
+   "evaporate_dry": {
+    "fields_share_ge_half": 1,
+    "fields_share_lt_half": 0
+   },
+   "filter": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 1
+   },
+   "generate_instructions": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 4
+   },
+   "handle_sample": {
+    "fields_share_ge_half": 1,
+    "fields_share_lt_half": 3
+   },
+   "measure_electrochemical": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 2
+   },
+   "measure_imaging": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 2
+   },
+   "measure_optical": {
+    "fields_share_ge_half": 1,
+    "fields_share_lt_half": 5
+   },
+   "measure_physical": {
+    "fields_share_ge_half": 1,
+    "fields_share_lt_half": 0
+   },
+   "measure_separation_ms": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 2
+   },
+   "measure_structural": {
+    "fields_share_ge_half": 1,
+    "fields_share_lt_half": 2
+   },
+   "mix": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 5
+   },
+   "plan_next_experiment": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 9
+   },
+   "preheat": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 1
+   },
+   "purify": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 1
+   },
+   "react_flow": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 3
+   },
+   "react_photo_electro": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 1
+   },
+   "react_thermal": {
+    "fields_share_ge_half": 1,
+    "fields_share_lt_half": 4
+   },
+   "sample_aliquot": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 6
+   },
+   "wash_extract": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 2
+   }
+  },
+  "bootstrap": {
+   "B": 2000,
+   "seed": 1
+  }
+ },
+ "further": {
+  "period": {
+   "early": {
+    "papers": 135,
+    "fields": {
+     "analyze_data": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 9
+     },
+     "clean_equipment": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 2
+     },
+     "cool_quench": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 1
+     },
+     "deposit_coat": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 1
+     },
+     "dispense_liquid": {
+      "fields_share_ge_half": 1,
+      "fields_share_lt_half": 7
+     },
+     "generate_instructions": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 1
+     },
+     "measure_electrochemical": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 1
+     },
+     "measure_optical": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 3
+     },
+     "measure_separation_ms": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 1
+     },
+     "measure_structural": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 1
+     },
+     "mix": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 2
+     },
+     "plan_next_experiment": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 9
+     },
+     "preheat": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 1
+     },
+     "react_flow": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 2
+     },
+     "react_photo_electro": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 1
+     },
+     "react_thermal": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 2
+     },
+     "sample_aliquot": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 2
+     }
+    }
+   },
+   "late": {
+    "papers": 102,
+    "fields": {
+     "analyze_data": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 6
+     },
+     "anneal": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 1
+     },
+     "clean_equipment": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 2
+     },
+     "cool_quench": {
+      "fields_share_ge_half": 1,
+      "fields_share_lt_half": 0
+     },
+     "deposit_coat": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 1
+     },
+     "dispense_liquid": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 6
+     },
+     "generate_instructions": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 2
+     },
+     "handle_sample": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 1
+     },
+     "measure_electrochemical": {
+      "fields_share_ge_half": 1,
+      "fields_share_lt_half": 0
+     },
+     "measure_imaging": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 1
+     },
+     "measure_optical": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 3
+     },
+     "measure_separation_ms": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 1
+     },
+     "mix": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 2
+     },
+     "plan_next_experiment": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 6
+     },
+     "react_flow": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 2
+     },
+     "react_thermal": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 3
+     },
+     "sample_aliquot": {
+      "fields_share_ge_half": 0,
+      "fields_share_lt_half": 2
+     }
+    }
+   }
+  },
+  "period_missing_papers": [],
+  "independently_coded_papers": 40,
+  "condition_counts": {
+   "a": 139,
+   "b": 130,
+   "c": 345,
+   "composite": 347,
+   "steps": 2610,
+   "steps_without_primary_module": 0
+  }
+ },
+ "relabelling": {
+  "B": 2000,
+  "seed": 1,
+  "per_unit_operation": {
+   "analyze_data": {
+    "share": {
+     "median": 0.026223776223776224,
+     "q025": 0.02053388090349076,
+     "q975": 0.02720348204570185
+    },
+    "replicates": 2000
+   },
+   "anneal": {
+    "share": {
+     "median": 0.21176470588235294,
+     "q025": 0.1411764705882353,
+     "q975": 0.35294117647058826
+    },
+    "replicates": 2000
+   },
+   "assemble_device": {
+    "share": {
+     "median": 0.36363636363636365,
+     "q025": 0.36363636363636365,
+     "q975": 0.5454545454545454
+    },
+    "replicates": 2000
+   },
+   "centrifuge": {
+    "share": {
+     "median": 0.275,
+     "q025": 0.275,
+     "q975": 0.4625
+    },
+    "replicates": 2000
+   },
+   "clean_equipment": {
+    "share": {
+     "median": 0.04178272980501393,
+     "q025": 0.0,
+     "q975": 0.09670487106017192
+    },
+    "replicates": 2000
+   },
+   "cool_quench": {
+    "share": {
+     "median": 0.2671232876712329,
+     "q025": 0.15126050420168066,
+     "q975": 0.38
+    },
+    "replicates": 2000
+   },
+   "deposit_coat": {
+    "share": {
+     "median": 0.29739776951672864,
+     "q025": 0.22304832713754646,
+     "q975": 0.379182156133829
+    },
+    "replicates": 2000
+   },
+   "dispense_liquid": {
+    "share": {
+     "median": 0.13503549181515284,
+     "q025": 0.1140926640926641,
+     "q975": 0.1585014409221902
+    },
+    "replicates": 2000
+   },
+   "dispense_solid": {
+    "share": {
+     "median": 0.42452830188679247,
+     "q025": 0.37735849056603776,
+     "q975": 0.49528301886792453
+    },
+    "replicates": 2000
+   },
+   "evaporate_dry": {
+    "share": {
+     "median": 0.3425414364640884,
+     "q025": 0.287292817679558,
+     "q975": 0.4530386740331492
+    },
+    "replicates": 2000
+   },
+   "filter": {
+    "share": {
+     "median": 0.2727272727272727,
+     "q025": 0.09523809523809523,
+     "q975": 0.4782608695652174
+    },
+    "replicates": 2000
+   },
+   "generate_instructions": {
+    "share": {
+     "median": 0.0,
+     "q025": 0.0,
+     "q975": 0.0
+    },
+    "replicates": 2000
+   },
+   "handle_sample": {
+    "share": {
+     "median": 0.2820053715308863,
+     "q025": 0.2180232558139535,
+     "q975": 0.35878564857405704
+    },
+    "replicates": 2000
+   },
+   "measure_electrochemical": {
+    "share": {
+     "median": 0.16597510373443983,
+     "q025": 0.12448132780082988,
+     "q975": 0.24896265560165975
+    },
+    "replicates": 2000
+   },
+   "measure_imaging": {
+    "share": {
+     "median": 0.2978723404255319,
+     "q025": 0.2553191489361702,
+     "q975": 0.3723404255319149
+    },
+    "replicates": 2000
+   },
+   "measure_optical": {
+    "share": {
+     "median": 0.11601011926273942,
+     "q025": 0.0943259848211059,
+     "q975": 0.14311528731478135
+    },
+    "replicates": 2000
+   },
+   "measure_physical": {
+    "share": {
+     "median": 0.2553191489361702,
+     "q025": 0.2127659574468085,
+     "q975": 0.3404255319148936
+    },
+    "replicates": 2000
+   },
+   "measure_separation_ms": {
+    "share": {
+     "median": 0.16203703703703703,
+     "q025": 0.1328125,
+     "q975": 0.184
+    },
+    "replicates": 2000
+   },
+   "measure_structural": {
+    "share": {
+     "median": 0.3488372093023256,
+     "q025": 0.3488372093023256,
+     "q975": 0.38303693570451436
+    },
+    "replicates": 2000
+   },
+   "mix": {
+    "share": {
+     "median": 0.1422924901185771,
+     "q025": 0.1073558648111332,
+     "q975": 0.18712273641851107
+    },
+    "replicates": 2000
+   },
+   "plan_next_experiment": {
+    "share": {
+     "median": 0.0,
+     "q025": 0.0,
+     "q975": 0.0
+    },
+    "replicates": 2000
+   },
+   "preheat": {
+    "share": {
+     "median": 0.08757297748123437,
+     "q025": 0.03637833468067906,
+     "q975": 0.14126712328767124
+    },
+    "replicates": 2000
+   },
+   "prepare_substrate": {
+    "share": {
+     "median": 0.5555555555555556,
+     "q025": 0.4166666666666667,
+     "q975": 0.6944444444444444
+    },
+    "replicates": 2000
+   },
+   "purify": {
+    "share": {
+     "median": 0.2857142857142857,
+     "q025": 0.2857142857142857,
+     "q975": 0.42857142857142855
+    },
+    "replicates": 2000
+   },
+   "react_flow": {
+    "share": {
+     "median": 0.06048398023611877,
+     "q025": 0.039735099337748346,
+     "q975": 0.07267441860465117
+    },
+    "replicates": 2000
+   },
+   "react_photo_electro": {
+    "share": {
+     "median": 0.27918781725888325,
+     "q025": 0.27918781725888325,
+     "q975": 0.3401015228426396
+    },
+    "replicates": 2000
+   },
+   "react_thermal": {
+    "share": {
+     "median": 0.3338842975206612,
+     "q025": 0.27808988764044945,
+     "q975": 0.39048165137614677
+    },
+    "replicates": 2000
+   },
+   "sample_aliquot": {
+    "share": {
+     "median": 0.18055294977575204,
+     "q025": 0.14705882352941177,
+     "q975": 0.21714922048997773
+    },
+    "replicates": 2000
+   },
+   "sonicate": {
+    "share": {
+     "median": 0.19480519480519481,
+     "q025": 0.08403361344537816,
+     "q975": 0.3937007874015748
+    },
+    "replicates": 2000
+   },
+   "unmapped": {
+    "share": {
+     "median": 0.35403726708074534,
+     "q025": 0.2535211267605634,
+     "q975": 0.44680851063829785
+    },
+    "replicates": 2000
+   },
+   "wash_extract": {
+    "share": {
+     "median": 0.32618025751072965,
+     "q025": 0.27896995708154504,
+     "q975": 0.41630901287553645
+    },
+    "replicates": 2000
+   }
+  },
+  "primary_module_type_changed_share": {
+   "median": 0.08141762452107279,
+   "q025": 0.07126436781609195,
+   "q975": 0.09157088122605364
+  },
+  "steps_deleted": {
+   "median": 87.0,
+   "q025": 71,
+   "q975": 105
+  },
+  "connections_deleted": {
+   "median": 148.0,
+   "q025": 127,
+   "q975": 172
+  },
+  "miss_rates": {
+   "module_type": {
+    "batch_reactor": {
+     "missed": 2,
+     "reference_items": 28,
+     "miss_rate": 0.07142857142857142
+    },
+    "coating_printing_unit": {
+     "missed": 0,
+     "reference_items": 2,
+     "miss_rate": 0.0
+    },
+    "commercial_integrated": {
+     "missed": 1,
+     "reference_items": 11,
+     "miss_rate": 0.09090909090909091
+    },
+    "flow_reactor": {
+     "missed": 2,
+     "reference_items": 15,
+     "miss_rate": 0.13333333333333333
+    },
+    "fluidics": {
+     "missed": 4,
+     "reference_items": 35,
+     "miss_rate": 0.11428571428571428
+    },
+    "human": {
+     "missed": 2,
+     "reference_items": 16,
+     "miss_rate": 0.125
+    },
+    "instrument_electrochemical": {
+     "missed": 0,
+     "reference_items": 2,
+     "miss_rate": 0.0
+    },
+    "instrument_imaging": {
+     "missed": 1,
+     "reference_items": 7,
+     "miss_rate": 0.14285714285714285
+    },
+    "instrument_optical": {
+     "missed": 2,
+     "reference_items": 19,
+     "miss_rate": 0.10526315789473684
+    },
+    "instrument_physical": {
+     "missed": 0,
+     "reference_items": 3,
+     "miss_rate": 0.0
+    },
+    "instrument_separation_ms": {
+     "missed": 1,
+     "reference_items": 26,
+     "miss_rate": 0.038461538461538464
+    },
+    "instrument_structural": {
+     "missed": 1,
+     "reference_items": 4,
+     "miss_rate": 0.25
+    },
+    "liquid_handler": {
+     "missed": 0,
+     "reference_items": 33,
+     "miss_rate": 0.0
+    },
+    "mixer": {
+     "missed": 1,
+     "reference_items": 11,
+     "miss_rate": 0.09090909090909091
+    },
+    "sample_handling_station": {
+     "missed": 0,
+     "reference_items": 5,
+     "miss_rate": 0.0
+    },
+    "separation_unit": {
+     "missed": 2,
+     "reference_items": 7,
+     "miss_rate": 0.2857142857142857
+    },
+    "software": {
+     "missed": 4,
+     "reference_items": 70,
+     "miss_rate": 0.05714285714285714
+    },
+    "solid_dispenser": {
+     "missed": 0,
+     "reference_items": 1,
+     "miss_rate": 0.0
+    },
+    "storage": {
+     "missed": 0,
+     "reference_items": 3,
+     "miss_rate": 0.0
+    },
+    "thermal_unit": {
+     "missed": 0,
+     "reference_items": 5,
+     "miss_rate": 0.0
+    },
+    "unmapped": {
+     "missed": 0,
+     "reference_items": 3,
+     "miss_rate": 0.0
+    }
+   },
+   "transfer_mode": {
+    "data_transfer": {
+     "missed": 2,
+     "reference_items": 68,
+     "miss_rate": 0.029411764705882353
+    },
+    "fixed_tubing": {
+     "missed": 5,
+     "reference_items": 43,
+     "miss_rate": 0.11627906976744186
+    },
+    "human_transfer": {
+     "missed": 7,
+     "reference_items": 27,
+     "miss_rate": 0.25925925925925924
+    },
+    "mobile_robot": {
+     "missed": 0,
+     "reference_items": 6,
+     "miss_rate": 0.0
+    },
+    "robot_arm_gantry": {
+     "missed": 4,
+     "reference_items": 41,
+     "miss_rate": 0.0975609756097561
+    }
+   },
+   "unit_operation": {
+    "analyze_data": {
+     "missed": 2,
+     "reference_items": 33,
+     "miss_rate": 0.06060606060606061
+    },
+    "centrifuge": {
+     "missed": 0,
+     "reference_items": 1,
+     "miss_rate": 0.0
+    },
+    "clean_equipment": {
+     "missed": 3,
+     "reference_items": 8,
+     "miss_rate": 0.375
+    },
+    "cool_quench": {
+     "missed": 0,
+     "reference_items": 2,
+     "miss_rate": 0.0
+    },
+    "deposit_coat": {
+     "missed": 0,
+     "reference_items": 2,
+     "miss_rate": 0.0
+    },
+    "dispense_liquid": {
+     "missed": 4,
+     "reference_items": 60,
+     "miss_rate": 0.06666666666666667
+    },
+    "dispense_solid": {
+     "missed": 0,
+     "reference_items": 3,
+     "miss_rate": 0.0
+    },
+    "evaporate_dry": {
+     "missed": 0,
+     "reference_items": 3,
+     "miss_rate": 0.0
+    },
+    "filter": {
+     "missed": 0,
+     "reference_items": 4,
+     "miss_rate": 0.0
+    },
+    "generate_instructions": {
+     "missed": 2,
+     "reference_items": 8,
+     "miss_rate": 0.25
+    },
+    "handle_sample": {
+     "missed": 1,
+     "reference_items": 9,
+     "miss_rate": 0.1111111111111111
+    },
+    "measure_electrochemical": {
+     "missed": 0,
+     "reference_items": 2,
+     "miss_rate": 0.0
+    },
+    "measure_imaging": {
+     "missed": 0,
+     "reference_items": 5,
+     "miss_rate": 0.0
+    },
+    "measure_optical": {
+     "missed": 0,
+     "reference_items": 16,
+     "miss_rate": 0.0
+    },
+    "measure_physical": {
+     "missed": 0,
+     "reference_items": 5,
+     "miss_rate": 0.0
+    },
+    "measure_separation_ms": {
+     "missed": 1,
+     "reference_items": 13,
+     "miss_rate": 0.07692307692307693
+    },
+    "measure_structural": {
+     "missed": 1,
+     "reference_items": 4,
+     "miss_rate": 0.25
+    },
+    "mix": {
+     "missed": 1,
+     "reference_items": 14,
+     "miss_rate": 0.07142857142857142
+    },
+    "plan_next_experiment": {
+     "missed": 1,
+     "reference_items": 30,
+     "miss_rate": 0.03333333333333333
+    },
+    "preheat": {
+     "missed": 1,
+     "reference_items": 5,
+     "miss_rate": 0.2
+    },
+    "purify": {
+     "missed": 0,
+     "reference_items": 2,
+     "miss_rate": 0.0
+    },
+    "react_flow": {
+     "missed": 1,
+     "reference_items": 11,
+     "miss_rate": 0.09090909090909091
+    },
+    "react_photo_electro": {
+     "missed": 1,
+     "reference_items": 5,
+     "miss_rate": 0.2
+    },
+    "react_thermal": {
+     "missed": 2,
+     "reference_items": 27,
+     "miss_rate": 0.07407407407407407
+    },
+    "sample_aliquot": {
+     "missed": 1,
+     "reference_items": 23,
+     "miss_rate": 0.043478260869565216
+    },
+    "sonicate": {
+     "missed": 0,
+     "reference_items": 1,
+     "miss_rate": 0.0
+    },
+    "unmapped": {
+     "missed": 1,
+     "reference_items": 5,
+     "miss_rate": 0.2
+    },
+    "wash_extract": {
+     "missed": 0,
+     "reference_items": 5,
+     "miss_rate": 0.0
+    }
+   }
+  }
+ },
+ "uncertain_items_excluded": {
+  "fields": {
+   "analyze_data": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 9
+   },
+   "anneal": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 1
+   },
+   "centrifuge": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 1
+   },
+   "clean_equipment": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 3
+   },
+   "cool_quench": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 1
+   },
+   "deposit_coat": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 2
+   },
+   "dispense_liquid": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 9
+   },
+   "dispense_solid": {
+    "fields_share_ge_half": 1,
+    "fields_share_lt_half": 0
+   },
+   "evaporate_dry": {
+    "fields_share_ge_half": 1,
+    "fields_share_lt_half": 0
+   },
+   "filter": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 1
+   },
+   "generate_instructions": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 3
+   },
+   "handle_sample": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 1
+   },
+   "measure_electrochemical": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 2
+   },
+   "measure_imaging": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 2
+   },
+   "measure_optical": {
+    "fields_share_ge_half": 1,
+    "fields_share_lt_half": 5
+   },
+   "measure_physical": {
+    "fields_share_ge_half": 1,
+    "fields_share_lt_half": 0
+   },
+   "measure_separation_ms": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 2
+   },
+   "measure_structural": {
+    "fields_share_ge_half": 1,
+    "fields_share_lt_half": 2
+   },
+   "mix": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 5
+   },
+   "plan_next_experiment": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 9
+   },
+   "preheat": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 1
+   },
+   "purify": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 1
+   },
+   "react_flow": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 3
+   },
+   "react_photo_electro": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 1
+   },
+   "react_thermal": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 4
+   },
+   "sample_aliquot": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 5
+   },
+   "wash_extract": {
+    "fields_share_ge_half": 0,
+    "fields_share_lt_half": 2
+   }
+  },
+  "steps_excluded": 340,
+  "connections_excluded": 155
+ },
+ "paired_comparison": {
+  "papers": 30,
+  "paired_steps": 283,
+  "reference_unpaired_steps": 23,
+  "db_record_unpaired_steps": 10,
+  "performed_by": {
+   "n": 283,
+   "agreement": 0.9752650176678446,
+   "kappa": 0.9469356048430302
+  },
+  "composite": {
+   "n": 283,
+   "agreement": 0.9929328621908127,
+   "kappa": 0.9760838333474181
+  },
+  "module_pairs": 166,
+  "on_platform_module_pairs": {
+   "n": 166,
+   "agreement": 0.9759036144578314,
+   "kappa": 0.8053927315357564
+  },
+  "module_pair_conflicts_reference_side": 12,
+  "module_pair_conflicts_db_record_side": 10,
+  "module_pair_conflicts": 22,
+  "reference_modules": 165,
+  "db_record_modules": 163,
+  "reference_unpaired_modules": 13,
+  "db_record_unpaired_modules": 7,
+  "paired_steps_without_primary_module": 0,
+  "per_paper": {
+   "Angello2022": {
+    "paired_steps": 6,
+    "reference_unpaired_steps": 0,
+    "db_record_unpaired_steps": 0
+   },
+   "Anker2026": {
+    "paired_steps": 8,
+    "reference_unpaired_steps": 4,
+    "db_record_unpaired_steps": 0
+   },
+   "Asche2021": {
+    "paired_steps": 6,
+    "reference_unpaired_steps": 2,
+    "db_record_unpaired_steps": 2
+   },
+   "Bourne2011": {
+    "paired_steps": 7,
+    "reference_unpaired_steps": 0,
+    "db_record_unpaired_steps": 1
+   },
+   "Burger2020": {
+    "paired_steps": 9,
+    "reference_unpaired_steps": 0,
+    "db_record_unpaired_steps": 0
+   },
+   "Caramelli2021": {
+    "paired_steps": 9,
+    "reference_unpaired_steps": 1,
+    "db_record_unpaired_steps": 0
+   },
+   "DeCost2022": {
+    "paired_steps": 8,
+    "reference_unpaired_steps": 0,
+    "db_record_unpaired_steps": 0
+   },
+   "Gao2025a": {
+    "paired_steps": 13,
+    "reference_unpaired_steps": 0,
+    "db_record_unpaired_steps": 0
+   },
+   "Holmes2016": {
+    "paired_steps": 7,
+    "reference_unpaired_steps": 0,
+    "db_record_unpaired_steps": 1
+   },
+   "Hu2025": {
+    "paired_steps": 6,
+    "reference_unpaired_steps": 1,
+    "db_record_unpaired_steps": 0
+   },
+   "Kanda2022": {
+    "paired_steps": 19,
+    "reference_unpaired_steps": 2,
+    "db_record_unpaired_steps": 1
+   },
+   "Kershaw2023": {
+    "paired_steps": 6,
+    "reference_unpaired_steps": 1,
+    "db_record_unpaired_steps": 0
+   },
+   "Kirman2020": {
+    "paired_steps": 5,
+    "reference_unpaired_steps": 1,
+    "db_record_unpaired_steps": 0
+   },
+   "Koscher2023": {
+    "paired_steps": 16,
+    "reference_unpaired_steps": 0,
+    "db_record_unpaired_steps": 0
+   },
+   "MATSUDA1988": {
+    "paired_steps": 11,
+    "reference_unpaired_steps": 2,
+    "db_record_unpaired_steps": 0
+   },
+   "MMehr2023": {
+    "paired_steps": 10,
+    "reference_unpaired_steps": 0,
+    "db_record_unpaired_steps": 0
+   },
+   "McMullen2011": {
+    "paired_steps": 10,
+    "reference_unpaired_steps": 0,
+    "db_record_unpaired_steps": 0
+   },
+   "Mieling1976": {
+    "paired_steps": 7,
+    "reference_unpaired_steps": 1,
+    "db_record_unpaired_steps": 2
+   },
+   "Munyebvu2025": {
+    "paired_steps": 10,
+    "reference_unpaired_steps": 0,
+    "db_record_unpaired_steps": 0
+   },
+   "OrtizPerez2024": {
+    "paired_steps": 24,
+    "reference_unpaired_steps": 2,
+    "db_record_unpaired_steps": 1
+   },
+   "Parrott2011": {
+    "paired_steps": 7,
+    "reference_unpaired_steps": 0,
+    "db_record_unpaired_steps": 0
+   },
+   "Pasamontes2006": {
+    "paired_steps": 5,
+    "reference_unpaired_steps": 1,
+    "db_record_unpaired_steps": 0
+   },
+   "Roberts2025": {
+    "paired_steps": 14,
+    "reference_unpaired_steps": 2,
+    "db_record_unpaired_steps": 1
+   },
+   "Ros2025": {
+    "paired_steps": 9,
+    "reference_unpaired_steps": 0,
+    "db_record_unpaired_steps": 0
+   },
+   "Ruza2025": {
+    "paired_steps": 11,
+    "reference_unpaired_steps": 2,
+    "db_record_unpaired_steps": 0
+   },
+   "Sim2024": {
+    "paired_steps": 14,
+    "reference_unpaired_steps": 0,
+    "db_record_unpaired_steps": 0
+   },
+   "Wakabayashi2026": {
+    "paired_steps": 5,
+    "reference_unpaired_steps": 0,
+    "db_record_unpaired_steps": 0
+   },
+   "Wu2026a": {
+    "paired_steps": 3,
+    "reference_unpaired_steps": 1,
+    "db_record_unpaired_steps": 1
+   },
+   "Xu2025": {
+    "paired_steps": 14,
+    "reference_unpaired_steps": 0,
+    "db_record_unpaired_steps": 0
+   },
+   "Xu2026": {
+    "paired_steps": 4,
+    "reference_unpaired_steps": 0,
+    "db_record_unpaired_steps": 0
+   }
+  }
+ }
+}

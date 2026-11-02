@@ -1,0 +1,45 @@
+{
+ "bundle": "sdl-workflows-1.1.0",
+ "B": 2000,
+ "seed": 1,
+ "tasks": {
+  "chrono2023-module_type": {
+   "n_test_items": 1189,
+   "n_test_papers": 98,
+   "n_groups": 90,
+   "groups_with_several_papers": 6,
+   "papers_in_such_groups": 14,
+   "reference_model_top1": 0.6862910008410429,
+   "baseline_top1": 0.6669470142977292,
+   "difference": 0.019343986543313707,
+   "paper_bootstrap_ci95": [
+    -0.011111111111111112,
+    0.05304829770387965
+   ],
+   "platform_group_bootstrap_ci95": [
+    -0.013875123885034688,
+    0.05079825834542816
+   ],
+   "replicates": 2000
+  },
+  "chrono2023-transfer_mode": {
+   "n_test_items": 424,
+   "n_test_papers": 98,
+   "n_groups": 90,
+   "groups_with_several_papers": 6,
+   "papers_in_such_groups": 14,
+   "reference_model_top1": 0.5117924528301887,
+   "baseline_top1": 0.4410377358490566,
+   "difference": 0.07075471698113212,
+   "paper_bootstrap_ci95": [
+    0.01627906976744186,
+    0.12525667351129363
+   ],
+   "platform_group_bootstrap_ci95": [
+    0.02631578947368421,
+    0.11386138613861387
+   ],
+   "replicates": 2000
+  }
+ }
+}

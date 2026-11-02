@@ -209,16 +209,43 @@ CREATE TABLE platform_identity_member (
   FOREIGN KEY (coding_id, platform_id) REFERENCES platform(coding_id, platform_id)
 );
 
--- Process information for sdl-db-03 (empty until its own validated extraction) ----------------------------
+-- Process information for sdl-db-03 (extraction/process-v1.md; quantities defined by the sdl-db-03 Spec) -------
+CREATE TABLE process_extraction (
+  process_id      TEXT PRIMARY KEY,          -- <paper_id>|process-<role>|<prompt sha256[:12]>
+  paper_id        TEXT NOT NULL REFERENCES paper(paper_id),
+  role            TEXT NOT NULL CHECK (role IN ('extractor', 'reference')),   -- Opus 5.5 / Fable 5.1
+  coder_label     TEXT NOT NULL,             -- the 'coder' field of the JSON
+  model_id        TEXT NOT NULL,
+  prompt_path     TEXT NOT NULL,
+  prompt_sha256   TEXT NOT NULL,
+  record_coding_id TEXT NOT NULL REFERENCES coding(coding_id),   -- the DB-record coding given as input
+  source_path     TEXT NOT NULL REFERENCES source_file(path),
+  notes           TEXT,                      -- the extractor's own words, no quotations
+  UNIQUE (paper_id, role, prompt_sha256)
+);
 CREATE TABLE step_process (
-  coding_id       TEXT NOT NULL,
+  process_id      TEXT NOT NULL REFERENCES process_extraction(process_id),
+  coding_id       TEXT NOT NULL,             -- the DB-record coding that holds step_id
   step_id         TEXT NOT NULL,
-  quantity        TEXT NOT NULL,             -- defined by the sdl-db-03 Spec
-  value           REAL,
-  unit            TEXT,
+  quantity        TEXT NOT NULL CHECK (quantity IN ('duration', 'duration_batch_size')),
+  value           REAL NOT NULL,
+  unit            TEXT NOT NULL,
+  qualifier       TEXT NOT NULL,             -- bounds, 'approximately', 'covers <step ids>' (process-v1.md)
   ev_doc TEXT, ev_page INTEGER, ev_locator TEXT,
-  PRIMARY KEY (coding_id, step_id, quantity),
+  PRIMARY KEY (process_id, step_id, quantity),
   FOREIGN KEY (coding_id, step_id) REFERENCES step(coding_id, step_id)
+);
+CREATE TABLE process_item (
+  process_id      TEXT NOT NULL REFERENCES process_extraction(process_id),
+  coding_id       TEXT NOT NULL REFERENCES coding(coding_id),   -- the DB-record coding that holds target_id
+  target_kind     TEXT NOT NULL CHECK (target_kind IN ('platform', 'module', 'connection')),
+  target_id       TEXT NOT NULL,             -- platform_id, module_id or edge_id; existence checked by the build
+  quantity        TEXT NOT NULL,
+  value           REAL NOT NULL,
+  unit            TEXT NOT NULL,
+  qualifier       TEXT NOT NULL,
+  ev_doc TEXT, ev_page INTEGER, ev_locator TEXT,
+  PRIMARY KEY (process_id, target_kind, target_id, quantity, qualifier)
 );
 
 -- Views ---------------------------------------------------------------------------------------------------
@@ -227,6 +254,12 @@ CREATE VIEW db_record_coding AS
   FROM coding c
   WHERE c.role = 'extractor_a'
     AND c.prompt_path = 'extraction/prompt-v1.md';
+
+CREATE VIEW db_process_extraction AS
+  SELECT x.paper_id, x.process_id, x.record_coding_id
+  FROM process_extraction x
+  WHERE x.role = 'extractor'
+    AND x.prompt_path = 'extraction/process-v1.md';
 
 CREATE VIEW v_era AS
   SELECT p.paper_id, p.first_public_year,

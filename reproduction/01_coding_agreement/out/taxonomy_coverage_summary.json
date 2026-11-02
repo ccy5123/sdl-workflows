@@ -1,0 +1,71 @@
+{
+ "n_papers": 30,
+ "n_steps": 306,
+ "n_steps_mapped": 301,
+ "n_steps_unmapped": 5,
+ "mapped_share_steps": 0.9836601307189542,
+ "n_modules": 165,
+ "n_modules_mapped": 163,
+ "n_modules_unmapped": 2,
+ "mapped_share_modules": 0.9878787878787879,
+ "n_connections": 185,
+ "n_connections_mapped": 185,
+ "n_connections_unmapped": 0,
+ "mapped_share_connections": 1.0,
+ "per_field_tag": {
+  "analytical_chemistry": {
+   "n_papers": 2,
+   "mapped_share_steps": 1.0,
+   "mapped_share_modules": 1.0,
+   "mapped_share_connections": 1.0
+  },
+  "battery_electrochem": {
+   "n_papers": 2,
+   "mapped_share_steps": 1.0,
+   "mapped_share_modules": 1.0,
+   "mapped_share_connections": 1.0
+  },
+  "biology_biochem": {
+   "n_papers": 3,
+   "mapped_share_steps": 0.9841269841269841,
+   "mapped_share_modules": 1.0,
+   "mapped_share_connections": 1.0
+  },
+  "catalysis": {
+   "n_papers": 3,
+   "mapped_share_steps": 1.0,
+   "mapped_share_modules": 1.0,
+   "mapped_share_connections": 1.0
+  },
+  "chemistry_synthesis": {
+   "n_papers": 13,
+   "mapped_share_steps": 0.9694656488549618,
+   "mapped_share_modules": 0.9857142857142858,
+   "mapped_share_connections": 1.0
+  },
+  "materials_inorganic": {
+   "n_papers": 1,
+   "mapped_share_steps": 1.0,
+   "mapped_share_modules": 1.0,
+   "mapped_share_connections": 1.0
+  },
+  "materials_polymer_soft": {
+   "n_papers": 3,
+   "mapped_share_steps": 1.0,
+   "mapped_share_modules": 1.0,
+   "mapped_share_connections": 1.0
+  },
+  "materials_thin_film": {
+   "n_papers": 2,
+   "mapped_share_steps": 1.0,
+   "mapped_share_modules": 1.0,
+   "mapped_share_connections": 1.0
+  },
+  "nanomaterials": {
+   "n_papers": 7,
+   "mapped_share_steps": 1.0,
+   "mapped_share_modules": 0.9772727272727273,
+   "mapped_share_connections": 1.0
+  }
+ }
+}

@@ -1,0 +1,187 @@
+{
+ "split": "main",
+ "m": {
+  "module_type": 1,
+  "transfer_mode": 1
+ },
+ "bootstrap": {
+  "B": 2000,
+  "seed": 1,
+  "papers_resampled": 98
+ },
+ "labels": {
+  "module_type": {
+   "fitting_items": 1383,
+   "fitting_papers": 135,
+   "evaluation_items": 1189,
+   "evaluation_papers": 98,
+   "majority_label": "software",
+   "accuracy": {
+    "model": {
+     "value": 0.6862910008410429,
+     "ci95": [
+      0.6452380952380953,
+      0.7312859884836852
+     ]
+    },
+    "baseline": {
+     "value": 0.6669470142977292,
+     "ci95": [
+      0.6251074806534824,
+      0.710387323943662
+     ]
+    },
+    "majority": {
+     "value": 0.23380992430613962,
+     "ci95": [
+      0.20978441127694858,
+      0.25812441968430827
+     ]
+    }
+   },
+   "difference": {
+    "model_minus_majority": {
+     "value": 0.45248107653490327,
+     "ci95": [
+      0.4050179211469534,
+      0.5
+     ]
+    },
+    "baseline_minus_majority": {
+     "value": 0.43313708999158956,
+     "ci95": [
+      0.39270199826238056,
+      0.4737704918032787
+     ]
+    },
+    "model_minus_baseline": {
+     "value": 0.019343986543313707,
+     "ci95": [
+      -0.011111111111111112,
+      0.05304829770387965
+     ]
+    }
+   },
+   "replicates": 2000,
+   "counts": {
+    "fitting": {
+     "software": 362,
+     "fluidics": 200,
+     "instrument_separation_ms": 151,
+     "flow_reactor": 128,
+     "liquid_handler": 123,
+     "instrument_optical": 80,
+     "batch_reactor": 72,
+     "human": 29,
+     "mixer": 26,
+     "separation_unit": 24,
+     "unmapped": 23,
+     "instrument_physical": 23,
+     "instrument_imaging": 20,
+     "instrument_electrochemical": 20,
+     "coating_printing_unit": 19,
+     "thermal_unit": 18,
+     "commercial_integrated": 18,
+     "instrument_structural": 16,
+     "storage": 14,
+     "sample_handling_station": 12,
+     "solid_dispenser": 5
+    },
+    "evaluation": {
+     "software": 278,
+     "liquid_handler": 194,
+     "fluidics": 95,
+     "flow_reactor": 71,
+     "batch_reactor": 71,
+     "instrument_optical": 65,
+     "instrument_separation_ms": 61,
+     "human": 48,
+     "separation_unit": 40,
+     "coating_printing_unit": 39,
+     "thermal_unit": 36,
+     "mixer": 32,
+     "instrument_imaging": 24,
+     "instrument_electrochemical": 23,
+     "sample_handling_station": 22,
+     "solid_dispenser": 19,
+     "unmapped": 18,
+     "instrument_structural": 15,
+     "instrument_physical": 13,
+     "storage": 12,
+     "commercial_integrated": 9,
+     "assembly_unit": 4
+    }
+   }
+  },
+  "transfer_mode": {
+   "fitting_items": 542,
+   "fitting_papers": 132,
+   "evaluation_items": 424,
+   "evaluation_papers": 92,
+   "majority_label": "fixed_tubing",
+   "accuracy": {
+    "model": {
+     "value": 0.5117924528301887,
+     "ci95": [
+      0.4525862068965517,
+      0.5738161559888579
+     ]
+    },
+    "baseline": {
+     "value": 0.4410377358490566,
+     "ci95": [
+      0.3735224586288416,
+      0.5125628140703518
+     ]
+    },
+    "majority": {
+     "value": 0.2830188679245283,
+     "ci95": [
+      0.20085470085470086,
+      0.3778280542986425
+     ]
+    }
+   },
+   "difference": {
+    "model_minus_majority": {
+     "value": 0.2287735849056604,
+     "ci95": [
+      0.15102974828375287,
+      0.3023758099352052
+     ]
+    },
+    "baseline_minus_majority": {
+     "value": 0.1580188679245283,
+     "ci95": [
+      0.1,
+      0.2151029748283753
+     ]
+    },
+    "model_minus_baseline": {
+     "value": 0.07075471698113212,
+     "ci95": [
+      0.01627906976744186,
+      0.12525667351129363
+     ]
+    }
+   },
+   "replicates": 2000,
+   "counts": {
+    "fitting": {
+     "fixed_tubing": 298,
+     "robot_arm_gantry": 175,
+     "human_transfer": 58,
+     "mobile_robot": 10,
+     "unmapped": 1
+    },
+    "evaluation": {
+     "robot_arm_gantry": 187,
+     "fixed_tubing": 120,
+     "human_transfer": 83,
+     "mobile_robot": 29,
+     "unmapped": 5
+    }
+   }
+  }
+ }
+}

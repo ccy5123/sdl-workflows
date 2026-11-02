@@ -1,0 +1,90 @@
+name: Correction to a coded item
+description: Report a module, step, connection, platform or paper record that does not match its source paper.
+title: "[correction] "
+labels: ["correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Each item in sdl-workflows names the document, page and figure, table or section that describes it
+        (`ev_doc`, `ev_page`, `ev_locator`). A correction is checked against that page of the file version listed in
+        `core/paper_document.csv`, so please say where in the paper the correct value is shown.
+        Do not paste more than a short quote from the paper.
+  - type: input
+    id: item_id
+    attributes:
+      label: Item id
+      description: "The id of the item, as in the release or the explorer: a platform (`Aand2024/P1`), module (`/M2`), step (`/S3`) or connection (`/E1`). For a paper-level field, give the paper id (`Aand2024`)."
+      placeholder: Aand2024/P1/S3
+    validations:
+      required: true
+  - type: dropdown
+    id: field
+    attributes:
+      label: What is wrong
+      options:
+        - Module type
+        - Unit operation of a step
+        - Transfer mode of a connection
+        - Step order or a missing or extra step
+        - Modules that perform a step
+        - Source or target module of a connection
+        - Missing or extra module or connection
+        - Who performs a step (robot, person, software)
+        - Platform record (name, commercial integrated system, campaigns, same platform as another paper)
+        - Paper record (DOI, year, field tags, autonomy categories)
+        - Evidence location (document, page, locator)
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: current_value
+    attributes:
+      label: Value in the release
+      placeholder: "unit_operation = mix"
+  - type: textarea
+    id: proposed_value
+    attributes:
+      label: Proposed value
+      description: For a class, use a class name from `modes/taxonomy/classes.csv`. For a missing item, describe it.
+      placeholder: "unit_operation = sonicate"
+    validations:
+      required: true
+  - type: input
+    id: evidence
+    attributes:
+      label: Where the paper shows it
+      description: "Document (`main` or `SI1`, `SI2`, ...), page and figure, table or section."
+      placeholder: "SI1, p. 15, §S2.4"
+    validations:
+      required: true
+  - type: textarea
+    id: explanation
+    attributes:
+      label: Explanation
+      description: Anything that helps check the correction.
+  - type: input
+    id: release
+    attributes:
+      label: Release version
+      value: "1.1.0"
+  - type: dropdown
+    id: relation
+    attributes:
+      label: Your relation to the paper
+      options:
+        - I am an author of this paper
+        - I am not an author of this paper
+  - type: input
+    id: credit
+    attributes:
+      label: Name and ORCID for credit (optional)
+      description: Accepted contributors are listed in CONTRIBUTORS.md and as contributors on the Zenodo record. Leave empty to be credited by GitHub handle only.
+      placeholder: "Jane Doe, https://orcid.org/0000-0000-0000-0000"
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Licence
+      options:
+        - label: I agree that this contribution is published under CC BY 4.0, the licence of the dataset.
+          required: true

@@ -1,0 +1,74 @@
+{
+ "papers": [
+  "Angello2022",
+  "Asche2021",
+  "Burger2020",
+  "Hu2025",
+  "MATSUDA1988",
+  "Mieling1976",
+  "OrtizPerez2024",
+  "Parrott2011",
+  "Ruza2025",
+  "Xu2025"
+ ],
+ "n_papers": 10,
+ "n_steps_reference": 111,
+ "n_steps_recode": 109,
+ "n_steps_paired": 105,
+ "n_connections_reference": 63,
+ "n_connections_recode": 63,
+ "n_connections_paired": 59,
+ "f1_step_identification": 0.9545454545454546,
+ "f1_connection_identification": 0.9365079365079365,
+ "kappa_unit_operation": 0.9686442365120446,
+ "kappa_module_type": 0.9155609167671894,
+ "kappa_transfer_mode": 0.9555890101618366,
+ "pct_agreement_unit_operation": 0.9714285714285714,
+ "pct_agreement_module_type": 0.9238095238095239,
+ "pct_agreement_transfer_mode": 0.9661016949152542,
+ "gwet_ac1_unit_operation": 0.9705337598922378,
+ "gwet_ac1_module_type": 0.9203906454495402,
+ "gwet_ac1_transfer_mode": 0.9599972879517256,
+ "gwet_q": {
+  "uo": 31,
+  "mt": 22,
+  "tm": 6
+ },
+ "bootstrap": {
+  "f1_step": {
+   "ci95": [
+    0.9056603773584906,
+    0.9937106918238994
+   ],
+   "replicates_kept": 2000
+  },
+  "f1_conn": {
+   "ci95": [
+    0.8679245283018868,
+    1.0
+   ],
+   "replicates_kept": 2000
+  },
+  "kappa_uo": {
+   "ci95": [
+    0.9129109514478555,
+    1.0
+   ],
+   "replicates_kept": 2000
+  },
+  "kappa_mt": {
+   "ci95": [
+    0.8266720495222716,
+    0.9784254745358365
+   ],
+   "replicates_kept": 2000
+  },
+  "kappa_tm": {
+   "ci95": [
+    0.878723404255319,
+    1.0
+   ],
+   "replicates_kept": 2000
+  }
+ }
+}

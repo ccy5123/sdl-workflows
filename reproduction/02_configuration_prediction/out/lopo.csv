@@ -1,0 +1,11 @@
+label,m,items,papers,correct,accuracy
+module_type,1,1383,135,1084,0.783803
+module_type,2,1383,135,1083,0.783080
+module_type,3,1383,135,1079,0.780188
+module_type,5,1383,135,1047,0.757050
+module_type,10,1383,135,1033,0.746927
+transfer_mode,1,542,132,375,0.691882
+transfer_mode,2,542,132,355,0.654982
+transfer_mode,3,542,132,352,0.649446
+transfer_mode,5,542,132,350,0.645756
+transfer_mode,10,542,132,318,0.586716

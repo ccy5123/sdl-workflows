@@ -30,7 +30,7 @@ PRAGMA foreign_keys = ON;
 CREATE TABLE release (
   release_version     TEXT PRIMARY KEY,          -- semantic version: MAJOR.MINOR.PATCH
   released_on         TEXT NOT NULL,             -- release date, ISO 8601
-  source_build_digest TEXT NOT NULL,             -- SHA-256 content digest of the database build exported
+  source_build_digest TEXT NOT NULL,             -- SHA-256 of the contents of the authors' internal database this release was exported from
   taxonomy_version    TEXT NOT NULL,             -- taxonomy version (v1)
   license             TEXT NOT NULL,             -- licences of data and code
   zenodo_doi          TEXT,                      -- Zenodo DOI of this version
@@ -65,7 +65,7 @@ CREATE TABLE transfer_mode (
 -- @column field_tag.field_tag: Application-field tag; 'unmapped' for a field that fits no tag.
 CREATE TABLE field_tag (
   field_tag           TEXT PRIMARY KEY,          -- includes 'unmapped'
-  definition          TEXT NOT NULL              -- stays within the tag name and the guideline's gloss
+  definition          TEXT NOT NULL              -- definition that says no more than the tag name and the coding guideline's short description of it
 );
 -- Correspondence of our classes to classes of other vocabularies, one row per correspondence. It was written
 -- with taxonomy v1 and is not used for coding. modes/taxonomy/correspondence.csv holds the same rows, one line
@@ -119,7 +119,7 @@ CREATE TABLE screening_reason (
 CREATE TABLE screening (
   cand_id             TEXT NOT NULL REFERENCES candidate(cand_id),
   stage               TEXT NOT NULL CHECK (stage IN ('title', 'abstract', 'fulltext')),
-  round               INTEGER NOT NULL,          -- a later round supersedes an earlier one for the same stage
+  round               INTEGER NOT NULL,          -- a later round replaces an earlier one for the same stage
   decision            TEXT NOT NULL,
   reason_code         TEXT REFERENCES screening_reason(reason_code),
   decided_by          TEXT NOT NULL CHECK (decided_by IN ('researcher', 'model')),
@@ -139,6 +139,7 @@ CREATE TABLE paper_version_link (
 
 -- Papers --------------------------------------------------------------------------------------------------
 -- @column paper.cand_id: Candidate id of the paper's record (see candidate).
+-- @column paper.doi: DOI of the paper: the journal or proceedings version where one exists. A paper screened as a preprint that was later published has the published version's DOI here and the preprint's DOI in candidate.doi; its first_public_year stays the preprint's.
 -- @column paper.first_public_year: Earliest year over the linked versions of the paper; the year used by the chrono2023 benchmark split.
 -- @column paper.year_basis: How first_public_year was set: candidate_year (the year recorded for the candidate), override:<basis>, or unknown.
 -- @column paper.hardware_location: Where the paper describes the hardware: main, SI, or both.
@@ -289,11 +290,11 @@ CREATE TABLE benchmark_task (
   diff_ci95_high      REAL NOT NULL,             -- (paper-level paired cluster bootstrap, see metric)
   n_test_items        INTEGER NOT NULL,          -- number of test items
   n_test_papers       INTEGER NOT NULL,          -- number of test papers with at least one item
-  recorded_in         TEXT NOT NULL              -- id of the recorded evaluation in the authors' research record
+  recorded_in         TEXT NOT NULL              -- identifier of the authors' internal record of the evaluation that gave the reference values (not part of the release)
 );
 -- @column benchmark_split.benchmark_id: Benchmark: chrono2023 trains on papers first public in 2023 or earlier and tests on papers first public in 2024 or later.
 -- @column benchmark_split.split: train, test, or excluded (see exclusion_reason).
--- @column benchmark_split.exclusion_reason: Why a test-year paper is left out: it was used to develop the extraction instructions.
+-- @column benchmark_split.exclusion_reason: Why a paper from 2024 on is left out: it is one of the 10 papers on which the coding instructions were developed.
 CREATE TABLE benchmark_split (
   benchmark_id        TEXT NOT NULL,
   paper_id            TEXT NOT NULL REFERENCES paper(paper_id),
@@ -301,6 +302,122 @@ CREATE TABLE benchmark_split (
   exclusion_reason    TEXT,                      -- set only when split = excluded
   PRIMARY KEY (benchmark_id, paper_id),
   CHECK ((split = 'excluded') = (exclusion_reason IS NOT NULL))
+);
+
+-- Timing data (mode: simulation; added in 1.1.0) -----------------------------------------------------------
+-- Process numbers the paper states, attached to the coded steps, platforms, modules and connections by a language
+-- model (Claude Opus 5.5) under written instructions (process-v1.md in the bundle's protocol folder), one extraction per
+-- paper. A number the paper does not state has no row: the model recorded stated numbers only and did not estimate,
+-- take values from other papers, or derive a time from flow rates, volumes or counts. Values are in the paper's
+-- own unit. Of the instructions' qualifier, the release keeps the categorical parts (bound, approximately, range,
+-- throughput kind, the joint steps of a duration, the agent); the rest is the model's free text and is not included.
+-- @column step_timing.quantity: duration (how long the step occupies its modules for one run of the step) or duration_batch_size (how many samples one device handles together in that run).
+-- @column step_timing.value: Value in unit; for a value the paper states as a range, the range's midpoint.
+-- @column step_timing.unit: s, min, h or d for duration; samples for duration_batch_size.
+-- @column step_timing.covers_steps: Joint duration: the steps whose time the paper gives together, ';'-separated, this step first; the other steps then have no duration row. Empty otherwise.
+-- @column *.bound: lower or upper when the paper states the value as a bound (at least, up to, less than); empty otherwise.
+-- @column *.approximate: 1 when the paper states the value as approximate; 0 otherwise.
+-- @column *.range_midpoint: 1 when the paper states a range and the value is its arithmetic midpoint; 0 otherwise.
+-- @column *.range_low: Lower end of the stated range, in the row's unit; empty when no range is stated or the range is stated in another unit.
+-- @column *.range_high: Upper end of the stated range, in the row's unit; empty as for range_low.
+-- @column step_timing.ev_doc: Document that states the value: main or SI<k> (see paper_document).
+-- @column process_value.ev_doc: Document that states the value: main or SI<k> (see paper_document).
+CREATE TABLE step_timing (
+  step_id             TEXT NOT NULL REFERENCES step(step_id),
+  platform_id         TEXT NOT NULL REFERENCES platform(platform_id),
+  quantity            TEXT NOT NULL CHECK (quantity IN ('duration', 'duration_batch_size')),
+  value               REAL NOT NULL CHECK (value > 0),
+  unit                TEXT NOT NULL CHECK (unit IN ('s', 'min', 'h', 'd', 'samples')),
+  bound               TEXT CHECK (bound IN ('lower', 'upper')),
+  approximate         INTEGER NOT NULL CHECK (approximate IN (0, 1)),
+  range_midpoint      INTEGER NOT NULL CHECK (range_midpoint IN (0, 1)),
+  range_low           REAL,
+  range_high          REAL,
+  covers_steps        TEXT,
+  ev_doc TEXT, ev_page INTEGER, ev_locator TEXT,
+  PRIMARY KEY (step_id, quantity),
+  CHECK ((quantity = 'duration') = (unit <> 'samples')),
+  CHECK (covers_steps IS NULL OR quantity = 'duration')
+);
+-- One row per stated value of a platform, module or connection. Three quantities are recorded only when the paper
+-- states more than one (parallel_units, units, transfer_agent_count), so for them no row also covers 'one'.
+-- @column process_value.target_kind: platform, module or connection.
+-- @column process_value.target_id: The platform_id, module_id or edge_id the value belongs to.
+-- @column process_value.quantity: Platform: batch_size (experiments the planning algorithm proposes and gets back together), parallel_units (batches that can be in progress at once), planning_time (computation time to propose one batch), operating_hours_per_day, operating_days_per_week, throughput (at most one per platform: a measured rate if the paper reports one, else a nominal one), experiments_per_count (experiments per counted sample when throughput counts samples), cost, throughput_less_automated and throughput_automated (throughput of a less automated and of the automated configuration of the same workflow, when both are reported), transfer_agent_count (robot arms or gantries, mobile robots or people that move samples). Module: units (identical devices the module stands for, working in parallel). Connection: transfer_time (time to move one batch along it).
+-- @column process_value.value: Value in unit; a measured throughput computed from a stated number of experiments and elapsed time is n_experiments / elapsed_time; for a value the paper states as a range, the range's midpoint.
+-- @column process_value.unit: Unit as the paper gives it: samples, count, s, min, h, d, a currency code for cost, empty for experiments_per_count; for a throughput a rate <count>/<time> (experiments, samples or batches per s, min, h, d or week, optionally per several time units, e.g. samples/4h) or a cycle time <time>/<count>.
+-- @column process_value.throughput_kind: Throughput quantities: measured (the rate observed in a campaign) or nominal (a capacity or cycle time the paper states); empty otherwise.
+-- @column process_value.n_experiments: Measured throughput computed from two stated numbers: the number of experiments of the campaign; empty otherwise.
+-- @column process_value.elapsed_time: Measured throughput computed from two stated numbers: the elapsed time of the campaign, in elapsed_time_unit; empty otherwise.
+-- @column process_value.elapsed_time_unit: Unit of elapsed_time: s, min, h, d or week.
+-- @column process_value.per_working_day: Throughput quantities: 1 when the paper gives the rate per working day (the unit then counts working days as d); 0 when it does not; empty for other quantities.
+-- @column process_value.agent: operating_hours_per_day and operating_days_per_week: automated (the platform) or human (the people doing manual steps); transfer_agent_count: robot_arm_gantry, mobile_robot or human; empty otherwise.
+-- @column process_value.manual_items: throughput_less_automated: the steps and connections a person performs in the less automated configuration, ';'-separated; empty otherwise.
+CREATE TABLE process_value (
+  target_kind         TEXT NOT NULL CHECK (target_kind IN ('platform', 'module', 'connection')),
+  target_id           TEXT NOT NULL,
+  platform_id         TEXT NOT NULL REFERENCES platform(platform_id),
+  quantity            TEXT NOT NULL CHECK (quantity IN ('batch_size', 'parallel_units', 'planning_time',
+                        'operating_hours_per_day', 'operating_days_per_week', 'throughput', 'experiments_per_count',
+                        'cost', 'throughput_less_automated', 'throughput_automated', 'transfer_agent_count',
+                        'units', 'transfer_time')),
+  value               REAL NOT NULL CHECK (value > 0),
+  unit                TEXT NOT NULL,
+  throughput_kind     TEXT CHECK (throughput_kind IN ('measured', 'nominal')),
+  n_experiments       REAL,
+  elapsed_time        REAL,
+  elapsed_time_unit   TEXT CHECK (elapsed_time_unit IN ('s', 'min', 'h', 'd', 'week')),
+  per_working_day     INTEGER CHECK (per_working_day IN (0, 1)),
+  agent               TEXT CHECK (agent IN ('automated', 'human', 'robot_arm_gantry', 'mobile_robot')),
+  manual_items        TEXT,
+  bound               TEXT CHECK (bound IN ('lower', 'upper')),
+  approximate         INTEGER NOT NULL CHECK (approximate IN (0, 1)),
+  range_midpoint      INTEGER NOT NULL CHECK (range_midpoint IN (0, 1)),
+  range_low           REAL,
+  range_high          REAL,
+  ev_doc TEXT, ev_page INTEGER, ev_locator TEXT,
+  CHECK ((throughput_kind IS NOT NULL) = (quantity IN ('throughput', 'throughput_less_automated', 'throughput_automated'))),
+  CHECK ((per_working_day IS NOT NULL) = (throughput_kind IS NOT NULL)),
+  CHECK ((agent IS NOT NULL) = (quantity IN ('operating_hours_per_day', 'operating_days_per_week', 'transfer_agent_count'))),
+  CHECK ((manual_items IS NOT NULL) = (quantity = 'throughput_less_automated')),
+  CHECK (target_kind <> 'module' OR quantity = 'units'),
+  CHECK (target_kind <> 'connection' OR quantity = 'transfer_time')
+);
+
+-- Human-intervention reporting (mode: trends; added in 1.1.0) ----------------------------------------------
+-- What each paper states about human intervention during its closed-loop campaign and the longest stated run
+-- without a person, read by a language model (Claude Opus 5.5) under written instructions (human-v1.md in the
+-- bundle's protocol folder), one extraction per paper. Statements about set-up before the first iteration, capability statements
+-- and words such as 'autonomous' alone do not count.
+-- @column human_intervention.category: quantified (the paper states a number for human involvement during the campaign), described (it names tasks people performed, without a number), none_stated (it states that the campaign ran without human intervention), or not_reported.
+-- @column human_intervention.ev_doc: Document of the statement that decides the category (as ev_doc elsewhere); empty for not_reported.
+-- @column human_intervention.ev_page: Page of that statement (as ev_page elsewhere).
+-- @column human_intervention.ev_locator: Figure, table, section or paragraph of that statement (a location, never a quotation).
+-- @column human_intervention.run_length_value: Longest stretch of the campaign the paper states ran without a person, in run_length_unit (a time if any is stated in time, else the largest count); empty when the paper states none.
+-- @column human_intervention.run_length_unit: s, min, h, d, week, experiments, samples or batches.
+-- @column human_intervention.run_length_bound: lower or upper when the run length is stated as a bound; empty otherwise.
+-- @column human_intervention.run_length_approximate: 1 when the run length is stated as approximate; 0 when it is not; empty without a run length.
+-- @column human_intervention.run_length_range_midpoint: 1 when the run length is the midpoint of a stated range; 0 when it is not; empty without a run length.
+-- @column human_intervention.run_length_range_low: Lower end of that range, in run_length_unit.
+-- @column human_intervention.run_length_range_high: Upper end of that range, in run_length_unit.
+-- @column human_intervention.run_ev_doc: Document that states the run length (main or SI<k>, see paper_document).
+-- @column human_intervention.run_ev_page: Page of that statement.
+-- @column human_intervention.run_ev_locator: Figure, table, section or paragraph of that statement (a location, never a quotation).
+CREATE TABLE human_intervention (
+  paper_id            TEXT PRIMARY KEY REFERENCES paper(paper_id),
+  category            TEXT NOT NULL CHECK (category IN ('quantified', 'described', 'none_stated', 'not_reported')),
+  ev_doc TEXT, ev_page INTEGER, ev_locator TEXT,
+  run_length_value    REAL CHECK (run_length_value > 0),
+  run_length_unit     TEXT CHECK (run_length_unit IN ('s', 'min', 'h', 'd', 'week', 'experiments', 'samples', 'batches')),
+  run_length_bound    TEXT CHECK (run_length_bound IN ('lower', 'upper')),
+  run_length_approximate INTEGER CHECK (run_length_approximate IN (0, 1)),
+  run_length_range_midpoint INTEGER CHECK (run_length_range_midpoint IN (0, 1)),
+  run_length_range_low REAL,
+  run_length_range_high REAL,
+  run_ev_doc TEXT, run_ev_page INTEGER, run_ev_locator TEXT,
+  CHECK ((ev_doc IS NULL) = (category = 'not_reported')),
+  CHECK ((run_length_value IS NULL) = (run_length_unit IS NULL)),
+  CHECK ((run_length_value IS NULL) = (run_length_approximate IS NULL))
 );
 
 -- Views: builder mode -------------------------------------------------------------------------------------
@@ -383,8 +500,8 @@ CREATE VIEW paper_integration AS
   LEFT JOIN transfer_mode t ON t.transfer_mode = e.transfer_mode
   GROUP BY p.paper_id;
 
--- @column trends_paper.title: Title of the screened candidate record (candidate.title). When the paper's DOI names a later version of that record (one paper: a preprint screened, its journal article cited), it is the screened version's title.
--- @column trends_paper.venue: Venue of the screened candidate record (candidate.venue); see title for the one paper whose DOI names a later version.
+-- @column trends_paper.title: Title of the screened candidate record (candidate.title). When the paper's DOI names a later version of that record (a preprint screened, its published version cited; compare candidate.doi with doi), it is the screened version's title.
+-- @column trends_paper.venue: Venue of the screened candidate record (candidate.venue); see title for the papers whose DOI names a later version.
 -- @column trends_paper.first_field_tag: First field tag of the paper.
 -- @column trends_paper.n_platforms: Number of platforms coded for the paper.
 -- @column trends_paper.n_platforms_shared_with_other_papers: Of these, platforms that the identity rules link to a platform of another paper.

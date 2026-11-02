@@ -1,10 +1,13 @@
 """Check a finished sdl-workflows bundle against the release conditions (drafts/dataset/schema-design.md section 5).
 
-  1. no foreign-key violation, no value outside the taxonomy, no 'unmapped' item without a note
-  2. no quotation of 12 or more characters in the free-text columns
+  1. no foreign-key violation, no value outside the taxonomy, no 'unmapped' item without a note, and every item a
+     timing value names (target_id, covers_steps, manual_items) is an item of the release
+  2. no quotation of 12 or more characters in the free-text columns or in the location columns of the timing and
+     human-intervention tables
   3. the bundle's evaluate.py reproduces the recorded benchmark values, which are those of the recorded evaluation
-  4. row counts equal the internal build's (papers, steps, connections, platforms, modules) and every core CSV
-     holds as many rows as its SQLite table
+  4. row counts equal the internal build's (papers, steps, connections, platforms, modules, the timing values of
+     each paper's record extraction, one human-intervention row per paper) and every core CSV holds as many rows
+     as its SQLite table
   5. the bundle names the source build digest of release.json, and the internal build has that digest
   6. no HTML entity left in the bibliographic columns
 and, before them, that MANIFEST.sha256 lists every file with its hash.
@@ -31,7 +34,10 @@ CORE_COUNTS = {"paper": "SELECT COUNT(*) FROM paper",
                "platform": "SELECT COUNT(*) FROM platform p JOIN db_record_coding USING (coding_id)",
                "module": "SELECT COUNT(*) FROM module m JOIN db_record_coding USING (coding_id)",
                "step": "SELECT COUNT(*) FROM v_step",
-               "connection": "SELECT COUNT(*) FROM v_connection"}
+               "connection": "SELECT COUNT(*) FROM v_connection",
+               "step_timing": "SELECT COUNT(*) FROM step_process JOIN db_process_extraction USING (process_id)",
+               "process_value": "SELECT COUNT(*) FROM process_item JOIN db_process_extraction USING (process_id)",
+               "human_intervention": "SELECT COUNT(*) FROM paper"}
 CLASS_COLUMNS = (("step", "unit_operation", "unit_operation"), ("module", "module_type", "module_type"),
                  ("connection", "transfer_mode", "transfer_mode"))
 
@@ -64,8 +70,25 @@ def check_integrity(rel):
     for table, col, _ in CLASS_COLUMNS:
         unnoted += rel.execute(f"SELECT '{table}' FROM {table} WHERE {col} = 'unmapped' "
                                "AND length(coalesce(unmapped_note, '')) = 0").fetchall()
-    ok = not fk and not outside and not unnoted
-    return ok, f"foreign-key violations {len(fk)}, values outside the taxonomy {len(outside)}, unmapped without note {len(unnoted)}"
+    named = rel.execute(
+        "SELECT target_id FROM process_value v WHERE NOT EXISTS (SELECT 1 FROM platform p WHERE v.target_kind = "
+        "'platform' AND p.platform_id = v.target_id AND p.platform_id = v.platform_id) AND NOT EXISTS (SELECT 1 "
+        "FROM module m WHERE v.target_kind = 'module' AND m.module_id = v.target_id AND m.platform_id = v.platform_id)"
+        " AND NOT EXISTS (SELECT 1 FROM connection e WHERE v.target_kind = 'connection' AND e.edge_id = v.target_id "
+        "AND e.platform_id = v.platform_id)").fetchall()
+    steps = dict(rel.execute("SELECT step_id, platform_id FROM step"))
+    items = {**steps, **dict(rel.execute("SELECT edge_id, platform_id FROM connection"))}
+    named += rel.execute("SELECT step_id FROM step_timing t WHERE NOT EXISTS (SELECT 1 FROM step s "
+                         "WHERE s.step_id = t.step_id AND s.platform_id = t.platform_id)").fetchall()
+    for key, platform, ids in rel.execute("SELECT step_id, platform_id, covers_steps FROM step_timing "
+                                          "WHERE covers_steps IS NOT NULL"):
+        named += [(key, i) for i in ids.split(";") if steps.get(i) != platform]
+    for key, platform, ids in rel.execute("SELECT target_id, platform_id, manual_items FROM process_value "
+                                          "WHERE manual_items IS NOT NULL"):
+        named += [(key, i) for i in ids.split(";") if items.get(i) != platform]
+    ok = not fk and not outside and not unnoted and not named
+    return ok, (f"foreign-key violations {len(fk)}, values outside the taxonomy {len(outside)}, unmapped without note "
+                f"{len(unnoted)}, timing values naming unknown items {len(named)}")
 
 
 def check_quotations(rel):
@@ -74,6 +97,7 @@ def check_quotations(rel):
         for col in cols:
             for k, text in rel.execute(f"SELECT {key}, {col} FROM {table} WHERE {col} IS NOT NULL"):
                 found += [(table, k, col) for _ in ex.quotations(text)]
+    found += [f[:3] for f in ex.locator_quotations(rel)]
     return not found, f"quotations {len(found)} {found[:3]}"
 
 
@@ -106,7 +130,8 @@ def check_counts(bundle, rel, internal):
         n_db = rel.execute(f"SELECT COUNT(*) FROM {table}").fetchone()[0]
         if n_csv != n_db:
             differ.append((f"core/{table}.csv", n_csv, n_db))
-    counts = {t: rel.execute(f"SELECT COUNT(*) FROM {t}").fetchone()[0] for t in ("paper", "step", "connection")}
+    counts = {t: rel.execute(f"SELECT COUNT(*) FROM {t}").fetchone()[0]
+              for t in ("paper", "step", "connection", "step_timing", "process_value", "human_intervention")}
     return not differ, f"{counts}; differing {differ}"
 
 

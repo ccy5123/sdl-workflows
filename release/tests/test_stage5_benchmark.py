@@ -198,14 +198,14 @@ class RecordedBuild(unittest.TestCase):
 
     def test_split(self):
         self.assertEqual(self.rel.execute("SELECT split, COUNT(*) FROM benchmark_split GROUP BY 1 ORDER BY 1")
-                         .fetchall(), [("excluded", 4), ("test", 99), ("train", 135)])
+                         .fetchall(), [("excluded", 4), ("test", 98), ("train", 135)])
 
     def test_evaluate_reproduces_the_recorded_values(self):
         for task_id, (task, result, _) in self.results.items():
             self.assertEqual(ev.mismatches(task, result), [], task_id)
-        self.assertEqual(round(self.results["chrono2023-module_type"][1]["baseline_top1"], 4), 0.6681)
-        self.assertEqual(round(self.results["chrono2023-transfer_mode"][1]["reference_model_top1"], 4), 0.5117)
-        self.assertEqual([self.results[t][1]["n_test_items"] for t in sorted(ev.ITEM_FILES)], [1199, 426])
+        self.assertEqual(round(self.results["chrono2023-module_type"][1]["baseline_top1"], 4), 0.6669)
+        self.assertEqual(round(self.results["chrono2023-transfer_mode"][1]["reference_model_top1"], 4), 0.5118)
+        self.assertEqual([self.results[t][1]["n_test_items"] for t in sorted(ev.ITEM_FILES)], [1189, 424])
 
     def test_shipped_script_runs_alone(self):
         # a copy beside the files, isolated mode: nothing from the workspace can be imported
@@ -216,17 +216,19 @@ class RecordedBuild(unittest.TestCase):
         self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
         self.assertEqual(run.stdout.count("matches the recorded values"), 2)
 
-    @unittest.skipUnless((ex.SDL_DB_02 / "out/evaluation/predictions.csv").exists(), "sdl-db-02 predictions absent")
+    # sdl-db-02 evaluation on the 237-paper build (Evidence evi-exp-h1-20261102-112907); out/evaluation/ holds the
+    # 238-paper evaluation it supersedes
+    @unittest.skipUnless((ex.SDL_DB_02 / "out/evaluation-237/predictions.csv").exists(), "sdl-db-02 predictions absent")
     def test_per_item_predictions_match_sdl_db_02(self):
         field = {"a": "chrono2023-module_type", "b": "chrono2023-transfer_mode"}
-        with (ex.SDL_DB_02 / "out/evaluation/predictions.csv").open(encoding="utf-8") as f:
+        with (ex.SDL_DB_02 / "out/evaluation-237/predictions.csv").open(encoding="utf-8") as f:
             old = {(field[r["field"]], r["item"]): (r["y"], r["tool_top1"], r["tool_top3"], r["tool_level"],
                                                     r["baseline_top1"], r["baseline_top3"])
                    for r in csv.DictReader(f) if r["set"] == "main"}
         new = {(p["task_id"], p["item_id"]): (p["label"], p["reference_top1"], p["reference_top3"],
                                               str(p["reference_level"]), p["baseline_top1"], p["baseline_top3"])
                for _, _, preds in self.results.values() for p in preds}
-        self.assertEqual(len(old), 1625)
+        self.assertEqual(len(old), 1613)
         self.assertEqual(new, old)
 
 

@@ -1,0 +1,5515 @@
+{
+ "summary": {
+  "reproduction_own_durations": {
+   "n": 35,
+   "n_simulated": 34,
+   "n_within_1p5x": 12,
+   "share_within_1p5x": 0.34285714285714286,
+   "ci95": [
+    0.2,
+    0.5142857142857142
+   ],
+   "flagged": 1
+  },
+  "prediction_pooled_durations": {
+   "n": 127,
+   "n_simulated": 123,
+   "mean_d": 0.03711318075798048,
+   "ci95": [
+    -0.05536359428557937,
+    0.12611385546091616
+   ],
+   "flagged": 2
+  },
+  "automation_gain": {
+   "n": 12,
+   "n_simulated": 12,
+   "n_within_1p5x": 4,
+   "share_within_1p5x": 0.3333333333333333,
+   "per_paper": [
+    {
+     "paper": "Dave2022",
+     "q": 3.3070754716981137,
+     "log10_q": 0.519444106183138,
+     "errors": [
+      null,
+      null
+     ]
+    },
+    {
+     "paper": "Fratarcangeli2026",
+     "q": 0.7444444444444445,
+     "log10_q": -0.12816770673849842,
+     "errors": [
+      null,
+      null
+     ]
+    },
+    {
+     "paper": "Harris2024",
+     "q": 0.4988662131519274,
+     "log10_q": -0.3020159086456323,
+     "errors": [
+      null,
+      null
+     ]
+    },
+    {
+     "paper": "Li2026",
+     "q": 0.3333333333333333,
+     "log10_q": -0.4771212547196625,
+     "errors": [
+      null,
+      null
+     ]
+    },
+    {
+     "paper": "Nazeri2026",
+     "q": 0.42000000000000004,
+     "log10_q": -0.3767507096020995,
+     "errors": [
+      null,
+      null
+     ]
+    },
+    {
+     "paper": "Noh2024",
+     "q": 0.11028571428571429,
+     "log10_q": -0.9574807396785207,
+     "errors": [
+      null,
+      null
+     ]
+    },
+    {
+     "paper": "Ramezani2026",
+     "q": 0.7346024636058232,
+     "log10_q": -0.13394761951288608,
+     "errors": [
+      null,
+      null
+     ]
+    },
+    {
+     "paper": "Shimizu2020",
+     "q": 0.6993911719939118,
+     "log10_q": -0.15527985383765067,
+     "errors": [
+      null,
+      null
+     ]
+    },
+    {
+     "paper": "Suzumura2022",
+     "q": 0.544390243902439,
+     "log10_q": -0.2640896664541944,
+     "errors": [
+      null,
+      null
+     ]
+    },
+    {
+     "paper": "Wakabayashi2026",
+     "q": 1.678740157480315,
+     "log10_q": 0.22498347939857777,
+     "errors": [
+      null,
+      null
+     ]
+    },
+    {
+     "paper": "Wang2025",
+     "q": 0.6125,
+     "log10_q": -0.21289390696342989,
+     "errors": [
+      null,
+      null
+     ]
+    },
+    {
+     "paper": "Wang2026a",
+     "q": 0.78,
+     "log10_q": -0.10790539730951959,
+     "errors": [
+      null,
+      null
+     ]
+    }
+   ]
+  }
+ },
+ "negative_control_shuffled_durations": {
+  "reproduction_own_durations": {
+   "pairing": {
+    "Aand2024": "King2009",
+    "Anker2026": "Langner2020",
+    "Brody2026": "Anker2026",
+    "Burger2020": "Fratarcangeli2026",
+    "Caramelli2021": "Munyebvu2025",
+    "Chang2026": "Suzumura2022",
+    "Dave2020": "Brody2026",
+    "Dave2022": "Jiang2022",
+    "Deneault2021": "Singh2025",
+    "Epps2020": "Toyama2025",
+    "Fei2026": "Low2024",
+    "Fratarcangeli2026": "Caramelli2021",
+    "Gao2026": "Noh2024",
+    "Ha2023": "Harris2024",
+    "Harris2024": "Aand2024",
+    "Horstkotte2010": "Kim2026",
+    "Jiang2022": "Dave2020",
+    "Kanda2022": "Ramirez2024",
+    "Kim2026": "Tamura2025",
+    "King2009": "Horstkotte2010",
+    "Langner2020": "Deneault2021",
+    "Liang2025": "Rapp2024",
+    "Low2024": "Epps2020",
+    "Mottafegh2024": "Kanda2022",
+    "Munyebvu2025": "Gao2026",
+    "Noh2024": "Ha2023",
+    "Ramirez2024": "Burger2020",
+    "Rapp2024": "Mottafegh2024",
+    "Shimizu2020": "Chang2026",
+    "Singh2025": "Wang2026",
+    "Suzumura2022": "Liang2025",
+    "Tamura2025": "Wu2025c",
+    "Toyama2025": "Shimizu2020",
+    "Wang2026": "Dave2022",
+    "Wu2025c": "Fei2026"
+   },
+   "summary": {
+    "n": 35,
+    "n_simulated": 31,
+    "n_within_1p5x": 1,
+    "share_within_1p5x": 0.02857142857142857,
+    "ci95": [
+     0.0,
+     0.08571428571428572
+    ],
+    "flagged": 1
+   },
+   "per_paper": {
+    "Aand2024": {
+     "reported": 240.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 0.03571428571428571,
+     "flagged": false,
+     "own_share": 0.42901406212759197,
+     "log10_r": -3.8273692730538253,
+     "bottleneck": "Aand2024/P1/M1",
+     "serial_sum": 137.2844998808294,
+     "bottleneck_rate": 137.2844998808294,
+     "cases": [],
+     "field": "chemistry_synthesis"
+    },
+    "Anker2026": {
+     "reported": 32.64072534945221,
+     "kind": "measured",
+     "error": null,
+     "simulated": 0.6428571428571429,
+     "flagged": false,
+     "own_share": 0.874053903917309,
+     "log10_r": -1.7056453274164582,
+     "bottleneck": "Anker2026/P1/M4",
+     "serial_sum": 81.203007518797,
+     "bottleneck_rate": 81.203007518797,
+     "cases": [
+      "long-incubation-step"
+     ],
+     "field": "nanomaterials"
+    },
+    "Brody2026": {
+     "reported": 12.7056,
+     "kind": "measured",
+     "error": null,
+     "simulated": 55.142857142857146,
+     "flagged": false,
+     "own_share": 0.9426551453260016,
+     "log10_r": 0.6374940859805627,
+     "bottleneck": "Brody2026/P1/M2",
+     "serial_sum": 16.967792615868028,
+     "bottleneck_rate": 16.96779261586803,
+     "cases": [
+      "long-incubation-step"
+     ],
+     "field": "catalysis"
+    },
+    "Burger2020": {
+     "reported": 86.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 53.714285714285715,
+     "flagged": false,
+     "own_share": 0.9030409632436941,
+     "log10_r": -0.2044086463301635,
+     "bottleneck": "Burger2020/P1/M7",
+     "serial_sum": 50.135093477433045,
+     "bottleneck_rate": 99.3103448275862,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent",
+      "long-incubation-step"
+     ],
+     "field": "catalysis"
+    },
+    "Caramelli2021": {
+     "reported": 36.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 4003.5714285714284,
+     "flagged": false,
+     "own_share": 0.9952727116075452,
+     "log10_r": 2.0461450804854664,
+     "bottleneck": "Caramelli2021/P1/M1",
+     "serial_sum": 5.973624787224186,
+     "bottleneck_rate": 5.973624787224186,
+     "cases": [
+      "parallel-or-batched-modules",
+      "long-incubation-step"
+     ],
+     "field": "chemistry_synthesis"
+    },
+    "Chang2026": {
+     "reported": 720.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 151.03571428571428,
+     "flagged": false,
+     "own_share": 0.4058544804144498,
+     "log10_r": -0.6782528426265874,
+     "bottleneck": "Chang2026/P1/M1",
+     "serial_sum": 361.5062761506276,
+     "bottleneck_rate": 361.5062761506276,
+     "cases": [
+      "shared-transfer-agent",
+      "long-incubation-step",
+      "long-planning-computation"
+     ],
+     "field": "materials_thin_film"
+    },
+    "Dave2020": {
+     "reported": 84.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 2.5714285714285716,
+     "flagged": false,
+     "own_share": 0.8718395815170008,
+     "log10_r": -1.5141048209728323,
+     "bottleneck": "Dave2020/P1/M1",
+     "serial_sum": 50.21795989537925,
+     "bottleneck_rate": 50.217959895379245,
+     "cases": [
+      "long-incubation-step"
+     ],
+     "field": "battery_electrochem"
+    },
+    "Dave2022": {
+     "reported": 21.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 2.4285714285714284,
+     "flagged": false,
+     "own_share": 0.7913247362250879,
+     "log10_r": -0.9368684133699022,
+     "bottleneck": "Dave2022/P1/M1",
+     "serial_sum": 25.322391559202813,
+     "bottleneck_rate": 25.322391559202813,
+     "cases": [
+      "long-incubation-step"
+     ],
+     "field": "battery_electrochem"
+    },
+    "Deneault2021": {
+     "reported": 1080.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 0.023809523809523808,
+     "flagged": false,
+     "own_share": 0.12442152836402393,
+     "log10_r": -4.65667304588485,
+     "bottleneck": "Deneault2021/P1/M2",
+     "serial_sum": 119.41948859709744,
+     "bottleneck_rate": 119.41948859709744,
+     "cases": [
+      "long-incubation-step"
+     ],
+     "field": "materials_polymer_soft"
+    },
+    "Epps2020": {
+     "reported": 220.00080000000003,
+     "kind": "measured",
+     "error": null,
+     "simulated": 3.857142857142857,
+     "flagged": false,
+     "own_share": 0.5787781350482315,
+     "log10_r": -1.7561585359272658,
+     "bottleneck": "Epps2020/P1/M1",
+     "serial_sum": 138.90675241157555,
+     "bottleneck_rate": 138.90675241157555,
+     "cases": [
+      "long-incubation-step"
+     ],
+     "field": "nanomaterials"
+    },
+    "Fei2026": {
+     "reported": 6.6415,
+     "kind": "measured",
+     "error": null,
+     "simulated": 1.7857142857142858,
+     "flagged": false,
+     "own_share": 0.9781798119304713,
+     "log10_r": -0.5704542039875333,
+     "bottleneck": "Fei2026/P1/M3",
+     "serial_sum": 1.0476600440162727,
+     "bottleneck_rate": 1.0476600440162724,
+     "cases": [
+      "parallel-or-batched-modules",
+      "human-transfer-or-human-step",
+      "long-incubation-step"
+     ],
+     "field": "materials_inorganic"
+    },
+    "Fratarcangeli2026": {
+     "reported": 21.492537313432837,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 0.5714285714285714,
+     "flagged": false,
+     "own_share": 0.8087588028169014,
+     "log10_r": -1.5753257380807177,
+     "bottleneck": "Fratarcangeli2026/P1/M1",
+     "serial_sum": 47.53521126760563,
+     "bottleneck_rate": 47.53521126760563,
+     "cases": [
+      "parallel-or-batched-modules",
+      "human-transfer-or-human-step",
+      "long-incubation-step"
+     ],
+     "field": "materials_polymer_soft"
+    },
+    "Gao2026": {
+     "reported": 172.8,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 1.7857142857142858,
+     "flagged": false,
+     "own_share": 0.9228560678704453,
+     "log10_r": -1.985731765149075,
+     "bottleneck": "Gao2026/P1/M2",
+     "serial_sum": 37.94633053713382,
+     "bottleneck_rate": 37.94633053713382,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent",
+      "long-incubation-step"
+     ],
+     "field": "materials_thin_film"
+    },
+    "Ha2023": {
+     "reported": 12.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 4.357142857142857,
+     "flagged": false,
+     "own_share": 0.9954326542609717,
+     "log10_r": -0.4399794467150958,
+     "bottleneck": "Ha2023/P1/M7",
+     "serial_sum": 0.4883894453614308,
+     "bottleneck_rate": 2.930336672168585,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent",
+      "long-incubation-step"
+     ],
+     "field": "chemistry_synthesis"
+    },
+    "Harris2024": {
+     "reported": 21.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 72.89285714285714,
+     "flagged": false,
+     "own_share": 0.9691629955947136,
+     "log10_r": 0.540465678639932,
+     "bottleneck": "Harris2024/P1/M1",
+     "serial_sum": 25.374449339207047,
+     "bottleneck_rate": 25.37444933920705,
+     "cases": [
+      "long-incubation-step"
+     ],
+     "field": "materials_thin_film"
+    },
+    "Horstkotte2010": {
+     "reported": 133.71359999999999,
+     "kind": "measured",
+     "error": null,
+     "simulated": 1.1428571428571428,
+     "flagged": false,
+     "own_share": 0.7150664137877437,
+     "log10_r": -2.0681836345892615,
+     "bottleneck": "Horstkotte2010/P1/M1",
+     "serial_sum": 102.97973778307508,
+     "bottleneck_rate": 102.9797377830751,
+     "cases": [
+      "long-incubation-step"
+     ],
+     "field": "analytical_chemistry"
+    },
+    "Jiang2022": {
+     "reported": 116.35199999999999,
+     "kind": "measured",
+     "error": null,
+     "simulated": 131.42857142857142,
+     "flagged": false,
+     "own_share": 0.9204307739986054,
+     "log10_r": 0.0529159344614626,
+     "bottleneck": "Jiang2022/P1/M2",
+     "serial_sum": 102.64197722166266,
+     "bottleneck_rate": 102.64197722166266,
+     "cases": [
+      "parallel-or-batched-modules"
+     ],
+     "field": "nanomaterials"
+    },
+    "Kanda2022": {
+     "reported": 1.1676,
+     "kind": "measured",
+     "error": null,
+     "simulated": 0.0,
+     "flagged": true,
+     "own_share": 0.9982738181893809,
+     "log10_r": null,
+     "bottleneck": "Kanda2022/P1/M1",
+     "serial_sum": 1.1979285818272571,
+     "bottleneck_rate": 1.1979285818272571,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent",
+      "human-transfer-or-human-step",
+      "long-incubation-step"
+     ],
+     "field": "biology_biochem"
+    },
+    "Kim2026": {
+     "reported": 2.823529411764706,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 0.09523809523809523,
+     "flagged": false,
+     "own_share": 0.9770602716148397,
+     "log10_r": -1.4719816150672513,
+     "bottleneck": "Kim2026/P1/M6",
+     "serial_sum": 2.8498063022278957,
+     "bottleneck_rate": 5.699612604455792,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent",
+      "human-transfer-or-human-step"
+     ],
+     "field": "catalysis"
+    },
+    "King2009": {
+     "reported": 1000.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 17.357142857142858,
+     "flagged": false,
+     "own_share": 0.9994470651653368,
+     "log10_r": -1.7605217620799258,
+     "bottleneck": "King2009/P1/M1",
+     "serial_sum": 0.19988941303306734,
+     "bottleneck_rate": 0.19988941303306734,
+     "cases": [
+      "parallel-or-batched-modules",
+      "long-incubation-step"
+     ],
+     "field": "biology_biochem"
+    },
+    "Langner2020": {
+     "reported": 4.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 34.285714285714285,
+     "flagged": false,
+     "own_share": 0.9596357336158879,
+     "log10_r": 0.9330532103693868,
+     "bottleneck": "Langner2020/P1/M2",
+     "serial_sum": 4.948524463408697,
+     "bottleneck_rate": 5.333333333333334,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent",
+      "human-transfer-or-human-step",
+      "long-incubation-step"
+     ],
+     "field": "materials_thin_film"
+    },
+    "Liang2025": {
+     "reported": 189.36,
+     "kind": "measured",
+     "error": null,
+     "simulated": 3.0,
+     "flagged": false,
+     "own_share": 0.505685834397748,
+     "log10_r": -1.800166990201364,
+     "bottleneck": "Liang2025/P1/M2",
+     "serial_sum": 66.20689655172414,
+     "bottleneck_rate": 66.20689655172414,
+     "cases": [],
+     "field": "materials_thin_film"
+    },
+    "Low2024": {
+     "reported": 137.14285714285714,
+     "kind": "nominal",
+     "error": "unknown transfer mode unmapped",
+     "simulated": null,
+     "flagged": null,
+     "own_share": null,
+     "log10_r": null,
+     "bottleneck": null,
+     "serial_sum": 129.82719759579263,
+     "bottleneck_rate": 137.14285714285714,
+     "cases": [
+      "parallel-or-batched-modules",
+      "long-incubation-step"
+     ],
+     "field": "nanomaterials"
+    },
+    "Mottafegh2024": {
+     "reported": 76.0008,
+     "kind": "measured",
+     "error": null,
+     "simulated": 0.0,
+     "flagged": false,
+     "own_share": 0.8509646986841071,
+     "log10_r": null,
+     "bottleneck": "Mottafegh2024/P2/M1",
+     "serial_sum": 50.01447178002894,
+     "bottleneck_rate": 50.014471780028934,
+     "cases": [
+      "long-incubation-step"
+     ],
+     "field": "nanomaterials"
+    },
+    "Munyebvu2025": {
+     "reported": 240.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 2.7142857142857144,
+     "flagged": false,
+     "own_share": 0.29068240132599454,
+     "log10_r": -1.946555680773034,
+     "bottleneck": "Munyebvu2025/P1/M1",
+     "serial_sum": 55.7941299925737,
+     "bottleneck_rate": 55.794129992573694,
+     "cases": [],
+     "field": "nanomaterials"
+    },
+    "Noh2024": {
+     "reported": 37.333333333333336,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 0.0,
+     "flagged": false,
+     "own_share": 0.7521612810394648,
+     "log10_r": null,
+     "bottleneck": "Noh2024/P1/M2",
+     "serial_sum": 27.248106784825897,
+     "bottleneck_rate": 27.248106784825897,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent",
+      "human-transfer-or-human-step"
+     ],
+     "field": "battery_electrochem"
+    },
+    "Ramirez2024": {
+     "reported": 3.4285714285714284,
+     "kind": "measured",
+     "error": null,
+     "simulated": 6.857142857142857,
+     "flagged": false,
+     "own_share": 0.9960963169799835,
+     "log10_r": 0.3010299956639812,
+     "bottleneck": "Ramirez2024/P1/M2",
+     "serial_sum": 4.781262321503921,
+     "bottleneck_rate": 4.781262321503921,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent",
+      "human-transfer-or-human-step",
+      "long-incubation-step"
+     ],
+     "field": "catalysis"
+    },
+    "Rapp2024": {
+     "reported": 7.199999999999999,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 28.285714285714285,
+     "flagged": false,
+     "own_share": 0.9824564504452354,
+     "log10_r": 0.5942346538160058,
+     "bottleneck": "Rapp2024/P1/M1",
+     "serial_sum": 8.84326238594085,
+     "bottleneck_rate": 24.0,
+     "cases": [
+      "parallel-or-batched-modules"
+     ],
+     "field": "biology_biochem"
+    },
+    "Shimizu2020": {
+     "reported": 12.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 366.85714285714283,
+     "flagged": false,
+     "own_share": 0.8794485615362952,
+     "log10_r": 1.485315733334934,
+     "bottleneck": "Shimizu2020/P1/M2",
+     "serial_sum": 11.514626507629773,
+     "bottleneck_rate": 11.514626507629773,
+     "cases": [
+      "shared-transfer-agent"
+     ],
+     "field": "materials_thin_film"
+    },
+    "Singh2025": {
+     "reported": 16.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 1.0714285714285714,
+     "flagged": false,
+     "own_share": 0.9214294039275014,
+     "log10_r": -1.1741567592784816,
+     "bottleneck": "Singh2025/P1/M1",
+     "serial_sum": 11.846949479067876,
+     "bottleneck_rate": 11.846949479067877,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent",
+      "long-incubation-step"
+     ],
+     "field": "biology_biochem"
+    },
+    "Suzumura2022": {
+     "reported": 600.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 190.28571428571428,
+     "flagged": false,
+     "own_share": 0.8536360100929792,
+     "log10_r": -0.4987450655636182,
+     "bottleneck": "Suzumura2022/P1/M1",
+     "serial_sum": 171.52310576817027,
+     "bottleneck_rate": 171.5231057681703,
+     "cases": [
+      "parallel-or-batched-modules",
+      "long-incubation-step"
+     ],
+     "field": "battery_electrochem"
+    },
+    "Tamura2025": {
+     "reported": 36.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 2.142857142857143,
+     "flagged": false,
+     "own_share": 0.9829823033666405,
+     "log10_r": -1.2253092817258628,
+     "bottleneck": "Tamura2025/P1/M5",
+     "serial_sum": 19.12830428172922,
+     "bottleneck_rate": 19.12830428172922,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent",
+      "long-incubation-step"
+     ],
+     "field": "chemistry_synthesis"
+    },
+    "Toyama2025": {
+     "reported": 89.14285714285714,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 7.428571428571429,
+     "flagged": false,
+     "own_share": 0.6166363344395676,
+     "log10_r": -1.0791812460476247,
+     "bottleneck": "Toyama2025/P1/M4",
+     "serial_sum": 60.12204260785783,
+     "bottleneck_rate": 60.12204260785783,
+     "cases": [
+      "parallel-or-batched-modules",
+      "human-transfer-or-human-step"
+     ],
+     "field": "materials_thin_film"
+    },
+    "Wang2026": {
+     "reported": 9.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 47.57142857142857,
+     "flagged": false,
+     "own_share": 0.8871591034558904,
+     "log10_r": 0.7231036840527382,
+     "bottleneck": "Wang2026/P1/M2",
+     "serial_sum": 14.309373964889035,
+     "bottleneck_rate": 14.309373964889033,
+     "cases": [
+      "parallel-or-batched-modules",
+      "long-incubation-step"
+     ],
+     "field": "materials_polymer_soft"
+    },
+    "Wu2025c": {
+     "reported": 12.857142857142856,
+     "kind": "measured",
+     "error": null,
+     "simulated": 3.2142857142857144,
+     "flagged": false,
+     "own_share": 0.9841087081672333,
+     "log10_r": -0.6020599913279623,
+     "bottleneck": "Wu2025c/P1/M2",
+     "serial_sum": 5.630926648056222,
+     "bottleneck_rate": 5.630926648056222,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent",
+      "long-incubation-step"
+     ],
+     "field": "materials_polymer_soft"
+    }
+   }
+  },
+  "prediction_pooled_durations": {
+   "pairing": {
+    "Aand2024": "Zhu2024",
+    "AbdelLatif2021": "Gongora2020",
+    "Ahn2023": "Koscher2023",
+    "Amara2015": "Ramirez2024",
+    "Anker2026": "Suzumura2022",
+    "Asche2021": "Ginsburg2023",
+    "Bai2023a": "Jackson2025",
+    "Bateni2022": "Ruan2024",
+    "Bateni2024": "Clayton2023",
+    "Bedard2018": "Li2026a",
+    "Bennett2024": "Knox2025",
+    "Bourne2011": "Aand2024",
+    "Brody2026": "Wu2025b",
+    "Burger2020": "Noh2024",
+    "Cao2021": "Holmes2016",
+    "Caramelli2021": "Cao2021",
+    "Chang2020": "Amara2015",
+    "Chang2023": "Munyebvu2025",
+    "Chang2026": "King2009",
+    "Christensen2021": "Bourne2011",
+    "Clayton2020": "FiskerBdker2025",
+    "Clayton2020a": "Grizou2020",
+    "Clayton2023": "Duros2017",
+    "CortesBorda2018": "Wu2025a",
+    "Dave2020": "Kim2025c",
+    "Dave2022": "Elder2021",
+    "Deneault2021": "Harris2024",
+    "Desai2013": "Salley2020",
+    "Duros2017": "Nambiar2022",
+    "Elder2021": "Holmes2016a",
+    "Epps2020": "Christensen2021",
+    "Fabry2019": "Kershaw2023",
+    "Fei2026": "Ramezani2026",
+    "FiskerBdker2025": "Moosavi2019",
+    "Fitzpatrick2016": "Bedard2018",
+    "Fitzpatrick2018": "Roch2020",
+    "Fratarcangeli2026": "Snapp2024",
+    "Gao2026": "Sheng2023",
+    "Gerardy2022": "Nikolaev2016",
+    "Ginsburg2023": "Nazeri2026",
+    "Gongora2020": "Bai2023a",
+    "Granda2018": "Fitzpatrick2018",
+    "Grizou2020": "Putz2025",
+    "Ha2023": "Li2026",
+    "Hall2021": "Fabry2019",
+    "Harris2024": "Mikami2026",
+    "Holmes2016": "Caramelli2021",
+    "Holmes2016a": "Chang2026",
+    "Horstkotte2010": "Bateni2022",
+    "Hsieh2018": "Hu2022",
+    "Hu2022": "Rubens2019",
+    "Hu2025": "CortesBorda2018",
+    "Jackson2025": "Wu2025c",
+    "Jeraal2020": "Xu2022",
+    "Jiang2022": "Gerardy2022",
+    "Kanda2022": "Wang2026a",
+    "Kershaw2023": "Wang2026",
+    "Kim2025c": "Pittaway2025",
+    "Kim2026": "Rapp2024",
+    "King2009": "McMullen2010",
+    "Knox2025": "Vargas2026",
+    "Koscher2023": "Liang2026",
+    "Langner2020": "Tamura2023",
+    "Laws2023": "Tamura2025",
+    "Lee2026a": "Bennett2024",
+    "Li2020": "Asche2021",
+    "Li2026": "Bateni2024",
+    "Li2026a": "Epps2020",
+    "Liang2025": "Langner2020",
+    "Liang2026": "Liang2025",
+    "Low2024": "Singh2025",
+    "MMehr2023": "Low2024",
+    "MacLeod2020": "Tao2021",
+    "MacLeod2022": "Shimizu2020",
+    "McMullen2010": "Fitzpatrick2016",
+    "McMullen2010a": "Wagner2024",
+    "Mikami2026": "Jiang2022",
+    "Moosavi2019": "Ha2023",
+    "Mottafegh2024": "Chang2023",
+    "Mueller2023": "Vikram2021",
+    "Munyebvu2025": "Pant2018",
+    "Nambiar2022": "Wakabayashi2026",
+    "Nazeri2026": "Clayton2020",
+    "Nikolaev2016": "Pence2026",
+    "Noh2024": "Fratarcangeli2026",
+    "Olansky1978": "Hu2025",
+    "OrtizPerez2024": "Mottafegh2024",
+    "Pant2018": "Granda2018",
+    "Pence2026": "Ahn2023",
+    "Pittaway2025": "Reizman2012",
+    "Poscharny2018": "Lee2026a",
+    "Putz2025": "Gao2026",
+    "Ramezani2026": "Hsieh2018",
+    "Ramirez2024": "Olansky1978",
+    "Rapp2024": "Burger2020",
+    "Reizman2012": "Laws2023",
+    "Roch2020": "Dave2020",
+    "Ruan2024": "Wang2020",
+    "Rubens2019": "Kanda2022",
+    "Rupnow2023": "OrtizPerez2024",
+    "Salley2020": "MacLeod2022",
+    "Sheng2023": "Deneault2021",
+    "Shimizu2020": "Brody2026",
+    "Singh2025": "Hall2021",
+    "Skilton2013": "Dave2022",
+    "Slattery2024": "Horstkotte2010",
+    "Snapp2024": "Wang2025",
+    "Suzumura2022": "Li2020",
+    "Szymanski2023": "Mueller2023",
+    "Tamura2023": "Poscharny2018",
+    "Tamura2025": "Rupnow2023",
+    "Tao2021": "Slattery2024",
+    "Toyama2025": "Clayton2020a",
+    "Vargas2026": "Kim2026",
+    "Vikram2021": "Xu2025",
+    "Wagner2024": "Desai2013",
+    "Wakabayashi2026": "Skilton2013",
+    "Wang2020": "McMullen2010a",
+    "Wang2025": "Anker2026",
+    "Wang2026": "Szymanski2023",
+    "Wang2026a": "Toyama2025",
+    "Wu2025a": "MMehr2023",
+    "Wu2025b": "AbdelLatif2021",
+    "Wu2025c": "Chang2020",
+    "Xu2022": "Fei2026",
+    "Xu2025": "MacLeod2020",
+    "Zhu2024": "Jeraal2020"
+   },
+   "summary": {
+    "n": 127,
+    "n_simulated": 121,
+    "mean_d": 0.40908432730284766,
+    "ci95": [
+     0.2738890368786026,
+     0.5563518075780837
+    ],
+    "flagged": 2
+   },
+   "per_paper": {
+    "Aand2024": {
+     "reported": 240.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 52.035714285714285,
+     "flagged": false,
+     "baseline": 39.5736,
+     "d": -0.11889596070966035,
+     "serial_sum": 55.26593533117984,
+     "bottleneck_rate": 55.26593533117984,
+     "cases": [
+      "long-incubation-step"
+     ],
+     "field": "chemistry_synthesis"
+    },
+    "AbdelLatif2021": {
+     "reported": 180.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 26.678571428571427,
+     "flagged": false,
+     "baseline": 144.0,
+     "d": 0.7321999216220701,
+     "serial_sum": 66.63067787460476,
+     "bottleneck_rate": 66.63067787460477,
+     "cases": [],
+     "field": "nanomaterials"
+    },
+    "Ahn2023": {
+     "reported": 240.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 0.7142857142857143,
+     "flagged": false,
+     "baseline": 39.5736,
+     "d": 1.7435335953963487,
+     "serial_sum": 34.548253593778114,
+     "bottleneck_rate": 34.54825359377812,
+     "cases": [
+      "long-incubation-step"
+     ],
+     "field": "chemistry_synthesis"
+    },
+    "Amara2015": {
+     "reported": 50.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 0.023809523809523808,
+     "flagged": false,
+     "baseline": 39.5736,
+     "d": 3.2206548501160106,
+     "serial_sum": 35.39315486553468,
+     "bottleneck_rate": 35.39315486553468,
+     "cases": [
+      "long-incubation-step"
+     ],
+     "field": "chemistry_synthesis"
+    },
+    "Anker2026": {
+     "reported": 32.64072534945221,
+     "kind": "measured",
+     "error": null,
+     "simulated": 88.25,
+     "flagged": false,
+     "baseline": 159.984,
+     "d": -0.25836183697625703,
+     "serial_sum": 7.114595213293754,
+     "bottleneck_rate": 7.114595213293754,
+     "cases": [
+      "long-incubation-step"
+     ],
+     "field": "nanomaterials"
+    },
+    "Asche2021": {
+     "reported": 1.99992,
+     "kind": "measured",
+     "error": null,
+     "simulated": 23.142857142857142,
+     "flagged": false,
+     "baseline": 41.1888,
+     "d": -0.2503621648189176,
+     "serial_sum": 6.931519157948784,
+     "bottleneck_rate": 6.931519157948784,
+     "cases": [
+      "long-incubation-step"
+     ],
+     "field": "chemistry_synthesis"
+    },
+    "Bai2023a": {
+     "reported": 8.347826086956522,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 14.285714285714286,
+     "flagged": false,
+     "baseline": 80.57142857142857,
+     "d": -0.7512791039833422,
+     "serial_sum": 17.026895202810227,
+     "bottleneck_rate": 17.026895202810227,
+     "cases": [
+      "parallel-or-batched-modules",
+      "human-transfer-or-human-step",
+      "long-incubation-step"
+     ],
+     "field": "materials_thin_film"
+    },
+    "Bateni2022": {
+     "reported": 159.984,
+     "kind": "measured",
+     "error": null,
+     "simulated": 2.642857142857143,
+     "flagged": false,
+     "baseline": 144.0,
+     "d": 1.7362888037064927,
+     "serial_sum": 53.343211705871454,
+     "bottleneck_rate": 53.343211705871454,
+     "cases": [],
+     "field": "nanomaterials"
+    },
+    "Bateni2024": {
+     "reported": 120.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 11.214285714285714,
+     "flagged": false,
+     "baseline": 159.984,
+     "d": 0.9045143243281368,
+     "serial_sum": 23.927884016228866,
+     "bottleneck_rate": 23.927884016228866,
+     "cases": [],
+     "field": "nanomaterials"
+    },
+    "Bedard2018": {
+     "reported": 76.80000000000001,
+     "kind": "measured",
+     "error": null,
+     "simulated": 23.035714285714285,
+     "flagged": false,
+     "baseline": 39.5736,
+     "d": 0.23500387642506199,
+     "serial_sum": 38.28090385467435,
+     "bottleneck_rate": 38.28090385467435,
+     "cases": [],
+     "field": "chemistry_synthesis"
+    },
+    "Bennett2024": {
+     "reported": 8.571428571428571,
+     "kind": "measured",
+     "error": null,
+     "simulated": 31.535714285714285,
+     "flagged": false,
+     "baseline": 12.7056,
+     "d": 0.394807493558414,
+     "serial_sum": 50.804104313056776,
+     "bottleneck_rate": 50.804104313056776,
+     "cases": [],
+     "field": "catalysis"
+    },
+    "Bourne2011": {
+     "reported": 40.3776,
+     "kind": "measured",
+     "error": null,
+     "simulated": 103.42857142857143,
+     "flagged": false,
+     "baseline": 40.3848,
+     "d": 0.40842258974210494,
+     "serial_sum": 29.331386960433182,
+     "bottleneck_rate": 29.331386960433182,
+     "cases": [],
+     "field": "chemistry_synthesis"
+    },
+    "Brody2026": {
+     "reported": 12.7056,
+     "kind": "measured",
+     "error": null,
+     "simulated": 22.178571428571427,
+     "flagged": false,
+     "baseline": 10.714285714285714,
+     "d": 0.16790643485793325,
+     "serial_sum": 72.46498364505578,
+     "bottleneck_rate": 72.46498364505577,
+     "cases": [
+      "long-incubation-step"
+     ],
+     "field": "catalysis"
+    },
+    "Burger2020": {
+     "reported": 86.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 16.0,
+     "flagged": false,
+     "baseline": 10.714285714285714,
+     "d": -0.1741567592784815,
+     "serial_sum": 18.922496334998268,
+     "bottleneck_rate": 25.6,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent",
+      "long-incubation-step"
+     ],
+     "field": "catalysis"
+    },
+    "Cao2021": {
+     "reported": 8.5333,
+     "kind": "measured",
+     "error": null,
+     "simulated": 29.714285714285715,
+     "flagged": false,
+     "baseline": 51.3604,
+     "d": -0.23766310245489897,
+     "serial_sum": 19.45474913168546,
+     "bottleneck_rate": 19.45474913168546,
+     "cases": [
+      "parallel-or-batched-modules",
+      "human-transfer-or-human-step",
+      "long-incubation-step"
+     ],
+     "field": "materials_polymer_soft"
+    },
+    "Caramelli2021": {
+     "reported": 36.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 75.0,
+     "flagged": false,
+     "baseline": 41.1888,
+     "d": 0.2602821240444082,
+     "serial_sum": 27.103926618628304,
+     "bottleneck_rate": 27.1039266186283,
+     "cases": [
+      "parallel-or-batched-modules",
+      "long-incubation-step"
+     ],
+     "field": "chemistry_synthesis"
+    },
+    "Chang2020": {
+     "reported": 300.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 16.535714285714285,
+     "flagged": false,
+     "baseline": 144.0,
+     "d": 0.9399395324195157,
+     "serial_sum": 7.0053107390440665,
+     "bottleneck_rate": 7.0053107390440665,
+     "cases": [
+      "long-incubation-step"
+     ],
+     "field": "nanomaterials"
+    },
+    "Chang2023": {
+     "reported": 144.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 437.89285714285717,
+     "flagged": false,
+     "baseline": 39.5736,
+     "d": -0.07795156338335213,
+     "serial_sum": 95.34494491548804,
+     "bottleneck_rate": 95.34494491548806,
+     "cases": [
+      "parallel-or-batched-modules"
+     ],
+     "field": "chemistry_synthesis"
+    },
+    "Chang2026": {
+     "reported": 720.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 0.047619047619047616,
+     "flagged": false,
+     "baseline": 60.0,
+     "d": 3.1003705451175625,
+     "serial_sum": 56.32333767926988,
+     "bottleneck_rate": 56.32333767926988,
+     "cases": [
+      "shared-transfer-agent",
+      "long-incubation-step"
+     ],
+     "field": "materials_thin_film"
+    },
+    "Christensen2021": {
+     "reported": 48.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 56.857142857142854,
+     "flagged": false,
+     "baseline": 39.5736,
+     "d": -0.010291882973632885,
+     "serial_sum": 18.770112289372562,
+     "bottleneck_rate": 18.770112289372566,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent",
+      "long-incubation-step"
+     ],
+     "field": "chemistry_synthesis"
+    },
+    "Clayton2020": {
+     "reported": 147.6912,
+     "kind": "measured",
+     "error": null,
+     "simulated": 359.85714285714283,
+     "flagged": false,
+     "baseline": 39.5736,
+     "d": -0.18517355114980122,
+     "serial_sum": 57.62785346250688,
+     "bottleneck_rate": 57.62785346250688,
+     "cases": [
+      "parallel-or-batched-modules"
+     ],
+     "field": "chemistry_synthesis"
+    },
+    "Clayton2020a": {
+     "reported": 112.61520000000002,
+     "kind": "measured",
+     "error": null,
+     "simulated": 493.2857142857143,
+     "flagged": false,
+     "baseline": 39.5736,
+     "d": 0.18731007313973647,
+     "serial_sum": 88.46793805196468,
+     "bottleneck_rate": 88.46793805196468,
+     "cases": [
+      "parallel-or-batched-modules",
+      "long-incubation-step"
+     ],
+     "field": "chemistry_synthesis"
+    },
+    "Clayton2023": {
+     "reported": 22.2864,
+     "kind": "measured",
+     "error": null,
+     "simulated": 0.25,
+     "flagged": false,
+     "baseline": 41.1888,
+     "d": 1.683360694064193,
+     "serial_sum": 37.28477106977948,
+     "bottleneck_rate": 37.28477106977948,
+     "cases": [],
+     "field": "chemistry_synthesis"
+    },
+    "CortesBorda2018": {
+     "reported": 19.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 19.821428571428573,
+     "flagged": false,
+     "baseline": 41.1888,
+     "d": -0.3176441875668348,
+     "serial_sum": 55.10731256178843,
+     "bottleneck_rate": 55.10731256178844,
+     "cases": [],
+     "field": "chemistry_synthesis"
+    },
+    "Dave2020": {
+     "reported": 84.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 19.821428571428573,
+     "flagged": false,
+     "baseline": 153.9996,
+     "d": 0.36390402754592355,
+     "serial_sum": 32.799331865462,
+     "bottleneck_rate": 32.799331865462,
+     "cases": [],
+     "field": "battery_electrochem"
+    },
+    "Dave2022": {
+     "reported": 21.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 2.7142857142857144,
+     "flagged": false,
+     "baseline": 162.0,
+     "d": 0.0012680139866354523,
+     "serial_sum": 39.526957476496555,
+     "bottleneck_rate": 39.526957476496555,
+     "cases": [],
+     "field": "battery_electrochem"
+    },
+    "Deneault2021": {
+     "reported": 1080.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 5.178571428571429,
+     "flagged": false,
+     "baseline": 35.74626865671642,
+     "d": 0.8390207441569999,
+     "serial_sum": 52.570733191359906,
+     "bottleneck_rate": 52.570733191359906,
+     "cases": [],
+     "field": "materials_polymer_soft"
+    },
+    "Desai2013": {
+     "reported": 23.2008,
+     "kind": "measured",
+     "error": null,
+     "simulated": 4.321428571428571,
+     "flagged": false,
+     "baseline": 41.1888,
+     "d": 0.48059944228746554,
+     "serial_sum": 33.66255625036526,
+     "bottleneck_rate": 33.66255625036527,
+     "cases": [
+      "shared-transfer-agent"
+     ],
+     "field": "chemistry_synthesis"
+    },
+    "Duros2017": {
+     "reported": 10.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 14.285714285714286,
+     "flagged": false,
+     "baseline": 41.1888,
+     "d": -0.4598771793615487,
+     "serial_sum": 26.206436349297825,
+     "bottleneck_rate": 26.20643634929782,
+     "cases": [
+      "parallel-or-batched-modules",
+      "human-transfer-or-human-step",
+      "long-incubation-step"
+     ],
+     "field": "chemistry_synthesis"
+    },
+    "Elder2021": {
+     "reported": 144.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 523.6428571428571,
+     "flagged": false,
+     "baseline": 35.42857142857143,
+     "d": -0.04833615955069159,
+     "serial_sum": 5.317839381554975,
+     "bottleneck_rate": 12.0,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent"
+     ],
+     "field": "biology_biochem"
+    },
+    "Epps2020": {
+     "reported": 220.00080000000003,
+     "kind": "measured",
+     "error": null,
+     "simulated": 5.428571428571429,
+     "flagged": false,
+     "baseline": 144.0,
+     "d": 1.4236769354926964,
+     "serial_sum": 81.4441249941085,
+     "bottleneck_rate": 81.4441249941085,
+     "cases": [],
+     "field": "nanomaterials"
+    },
+    "Fabry2019": {
+     "reported": 16.999200000000002,
+     "kind": "measured",
+     "error": null,
+     "simulated": 137.35714285714286,
+     "flagged": false,
+     "baseline": 10.714285714285714,
+     "d": 0.706957504917694,
+     "serial_sum": 72.48322147651007,
+     "bottleneck_rate": 72.48322147651007,
+     "cases": [],
+     "field": "catalysis"
+    },
+    "Fei2026": {
+     "reported": 6.6415,
+     "kind": "measured",
+     "error": null,
+     "simulated": 13.571428571428571,
+     "flagged": false,
+     "baseline": 25.382350000000002,
+     "d": -0.2719062630745505,
+     "serial_sum": 2.3210613482841205,
+     "bottleneck_rate": 2.32106134828412,
+     "cases": [
+      "parallel-or-batched-modules",
+      "human-transfer-or-human-step",
+      "long-incubation-step"
+     ],
+     "field": "materials_inorganic"
+    },
+    "FiskerBdker2025": {
+     "reported": 75.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 4.964285714285714,
+     "flagged": false,
+     "baseline": 10.714285714285714,
+     "d": 0.3341064544655672,
+     "serial_sum": 6.794108627102517,
+     "bottleneck_rate": 6.794108627102517,
+     "cases": [
+      "shared-transfer-agent",
+      "long-incubation-step"
+     ],
+     "field": "catalysis"
+    },
+    "Fitzpatrick2016": {
+     "reported": 16.9416,
+     "kind": "measured",
+     "error": null,
+     "simulated": 35.25,
+     "flagged": false,
+     "baseline": 41.1888,
+     "d": -0.06762001801987444,
+     "serial_sum": 43.457485602192996,
+     "bottleneck_rate": 43.457485602192996,
+     "cases": [],
+     "field": "chemistry_synthesis"
+    },
+    "Fitzpatrick2018": {
+     "reported": 58.6656,
+     "kind": "measured",
+     "error": null,
+     "simulated": 32.107142857142854,
+     "flagged": false,
+     "baseline": 39.5736,
+     "d": 0.09080389932710106,
+     "serial_sum": 80.98608051741107,
+     "bottleneck_rate": 80.98608051741107,
+     "cases": [],
+     "field": "chemistry_synthesis"
+    },
+    "Fratarcangeli2026": {
+     "reported": 21.492537313432837,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 3.857142857142857,
+     "flagged": false,
+     "baseline": 51.3604,
+     "d": 0.3676812572407122,
+     "serial_sum": 32.381380706094,
+     "bottleneck_rate": 32.381380706094,
+     "cases": [
+      "parallel-or-batched-modules",
+      "human-transfer-or-human-step"
+     ],
+     "field": "materials_polymer_soft"
+    },
+    "Gao2026": {
+     "reported": 172.8,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 63.035714285714285,
+     "flagged": false,
+     "baseline": 60.0,
+     "d": -0.021435427997978485,
+     "serial_sum": 26.29136553822746,
+     "bottleneck_rate": 26.291365538227463,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent"
+     ],
+     "field": "materials_thin_film"
+    },
+    "Gerardy2022": {
+     "reported": 18.8568,
+     "kind": "measured",
+     "error": null,
+     "simulated": 33.75,
+     "flagged": false,
+     "baseline": 41.1888,
+     "d": -0.08650536218024812,
+     "serial_sum": 41.00325083643784,
+     "bottleneck_rate": 41.00325083643784,
+     "cases": [],
+     "field": "chemistry_synthesis"
+    },
+    "Ginsburg2023": {
+     "reported": 374.688,
+     "kind": "measured",
+     "error": null,
+     "simulated": 284.67857142857144,
+     "flagged": false,
+     "baseline": 39.5736,
+     "d": -0.8569492180696102,
+     "serial_sum": 238.44349385952808,
+     "bottleneck_rate": 238.4434938595281,
+     "cases": [
+      "shared-transfer-agent",
+      "long-incubation-step"
+     ],
+     "field": "chemistry_synthesis"
+    },
+    "Gongora2020": {
+     "reported": 64.0008,
+     "kind": "measured",
+     "error": null,
+     "simulated": 59.107142857142854,
+     "flagged": false,
+     "baseline": 35.74626865671642,
+     "d": -0.21840925171976266,
+     "serial_sum": 29.775648757624843,
+     "bottleneck_rate": 29.77564875762484,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent"
+     ],
+     "field": "materials_polymer_soft"
+    },
+    "Granda2018": {
+     "reported": 36.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 20.571428571428573,
+     "flagged": false,
+     "baseline": 41.1888,
+     "d": 0.1845614101062897,
+     "serial_sum": 6.8007398953126845,
+     "bottleneck_rate": 40.80443937187611,
+     "cases": [
+      "parallel-or-batched-modules",
+      "long-incubation-step"
+     ],
+     "field": "chemistry_synthesis"
+    },
+    "Grizou2020": {
+     "reported": 300.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 56.25,
+     "flagged": false,
+     "baseline": 35.74626865671642,
+     "d": -0.19689181173364456,
+     "serial_sum": 56.45582854155776,
+     "bottleneck_rate": 56.45582854155776,
+     "cases": [
+      "shared-transfer-agent"
+     ],
+     "field": "materials_polymer_soft"
+    },
+    "Ha2023": {
+     "reported": 12.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 28.285714285714285,
+     "flagged": false,
+     "baseline": 41.1888,
+     "d": -0.16321198910001755,
+     "serial_sum": 6.515001847425292,
+     "bottleneck_rate": 39.090011084551755,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent",
+      "long-incubation-step"
+     ],
+     "field": "chemistry_synthesis"
+    },
+    "Hall2021": {
+     "reported": 278.4,
+     "kind": "measured",
+     "error": null,
+     "simulated": 32.107142857142854,
+     "flagged": false,
+     "baseline": 10.714285714285714,
+     "d": -0.47663843701356634,
+     "serial_sum": 67.19290741532839,
+     "bottleneck_rate": 67.19290741532839,
+     "cases": [],
+     "field": "catalysis"
+    },
+    "Harris2024": {
+     "reported": 21.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 0.39285714285714285,
+     "flagged": false,
+     "baseline": 80.57142857142857,
+     "d": 1.1440228716827472,
+     "serial_sum": 22.01834862385321,
+     "bottleneck_rate": 22.018348623853207,
+     "cases": [],
+     "field": "materials_thin_film"
+    },
+    "Holmes2016": {
+     "reported": 38.7696,
+     "kind": "measured",
+     "error": null,
+     "simulated": 1.2857142857142858,
+     "flagged": false,
+     "baseline": 41.1888,
+     "d": 1.4530590317414716,
+     "serial_sum": 54.6739321497627,
+     "bottleneck_rate": 54.6739321497627,
+     "cases": [
+      "parallel-or-batched-modules"
+     ],
+     "field": "chemistry_synthesis"
+    },
+    "Holmes2016a": {
+     "reported": 42.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 257.14285714285717,
+     "flagged": false,
+     "baseline": 39.5736,
+     "d": 0.7610814440113588,
+     "serial_sum": 28.20165488877646,
+     "bottleneck_rate": 28.201654888776456,
+     "cases": [],
+     "field": "chemistry_synthesis"
+    },
+    "Horstkotte2010": {
+     "reported": 133.71359999999999,
+     "kind": "measured",
+     "error": null,
+     "simulated": 103.0,
+     "flagged": false,
+     "baseline": 219.4284,
+     "d": -0.10177889795981523,
+     "serial_sum": 31.847838106822955,
+     "bottleneck_rate": 31.847838106822955,
+     "cases": [],
+     "field": "analytical_chemistry"
+    },
+    "Hsieh2018": {
+     "reported": 33.333600000000004,
+     "kind": "measured",
+     "error": null,
+     "simulated": 0.17857142857142858,
+     "flagged": false,
+     "baseline": 41.1888,
+     "d": 2.1791733269034994,
+     "serial_sum": 25.489357308276666,
+     "bottleneck_rate": 25.48935730827667,
+     "cases": [],
+     "field": "chemistry_synthesis"
+    },
+    "Hu2022": {
+     "reported": 54.857142857142854,
+     "kind": "measured",
+     "error": null,
+     "simulated": 548.5714285714286,
+     "flagged": true,
+     "baseline": 80.0,
+     "d": 0.8361431973613304,
+     "serial_sum": 4.674628650817261,
+     "bottleneck_rate": 4.674628650817261,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent",
+      "human-transfer-or-human-step"
+     ],
+     "field": "biology_biochem"
+    },
+    "Hu2025": {
+     "reported": 144.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 17.321428571428573,
+     "flagged": false,
+     "baseline": 159.984,
+     "d": 0.8740647258943375,
+     "serial_sum": 80.3085932053725,
+     "bottleneck_rate": 80.3085932053725,
+     "cases": [],
+     "field": "nanomaterials"
+    },
+    "Jackson2025": {
+     "reported": 102.8568,
+     "kind": "measured",
+     "error": null,
+     "simulated": 1.5,
+     "flagged": false,
+     "baseline": 159.984,
+     "d": 1.6442982074408532,
+     "serial_sum": 73.67822626492327,
+     "bottleneck_rate": 73.67822626492327,
+     "cases": [
+      "parallel-or-batched-modules"
+     ],
+     "field": "nanomaterials"
+    },
+    "Jeraal2020": {
+     "reported": 44.8704,
+     "kind": "measured",
+     "error": null,
+     "simulated": 74.35714285714286,
+     "flagged": false,
+     "baseline": 39.5736,
+     "d": 0.16480837135885576,
+     "serial_sum": 55.57520985430804,
+     "bottleneck_rate": 55.57520985430804,
+     "cases": [],
+     "field": "chemistry_synthesis"
+    },
+    "Jiang2022": {
+     "reported": 116.35199999999999,
+     "kind": "measured",
+     "error": null,
+     "simulated": 41.07142857142857,
+     "flagged": false,
+     "baseline": 159.984,
+     "d": 0.31393134569216175,
+     "serial_sum": 20.22983544425572,
+     "bottleneck_rate": 20.22983544425572,
+     "cases": [
+      "parallel-or-batched-modules",
+      "long-incubation-step"
+     ],
+     "field": "nanomaterials"
+    },
+    "Kanda2022": {
+     "reported": 1.1676,
+     "kind": "measured",
+     "error": null,
+     "simulated": 102.85714285714286,
+     "flagged": false,
+     "baseline": 99.42857142857143,
+     "d": 0.014723256820706299,
+     "serial_sum": 5.853519733610653,
+     "bottleneck_rate": 5.853519733610653,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent",
+      "human-transfer-or-human-step"
+     ],
+     "field": "biology_biochem"
+    },
+    "Kershaw2023": {
+     "reported": 132.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 0.6428571428571429,
+     "flagged": false,
+     "baseline": 39.5736,
+     "d": 1.7892910859570237,
+     "serial_sum": 69.61285904201748,
+     "bottleneck_rate": 69.61285904201748,
+     "cases": [],
+     "field": "chemistry_synthesis"
+    },
+    "Kim2025c": {
+     "reported": 597.5999999999999,
+     "kind": "measured",
+     "error": null,
+     "simulated": 8.607142857142858,
+     "flagged": false,
+     "baseline": 144.0,
+     "d": 1.2235034808626004,
+     "serial_sum": 61.181135816456596,
+     "bottleneck_rate": 246.15384615384616,
+     "cases": [
+      "parallel-or-batched-modules"
+     ],
+     "field": "nanomaterials"
+    },
+    "Kim2026": {
+     "reported": 2.823529411764706,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 1.1428571428571428,
+     "flagged": false,
+     "baseline": 12.7056,
+     "d": -0.26040249365999557,
+     "serial_sum": 5.054419838597867,
+     "bottleneck_rate": 10.108839677195734,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent",
+      "human-transfer-or-human-step"
+     ],
+     "field": "catalysis"
+    },
+    "King2009": {
+     "reported": 1000.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 20.285714285714285,
+     "flagged": false,
+     "baseline": 35.42857142857143,
+     "d": 0.2421633364431599,
+     "serial_sum": 3.8203548862073693,
+     "bottleneck_rate": 3.8203548862073693,
+     "cases": [
+      "parallel-or-batched-modules"
+     ],
+     "field": "biology_biochem"
+    },
+    "Knox2025": {
+     "reported": 16.75,
+     "kind": "measured",
+     "error": null,
+     "simulated": 98.28571428571429,
+     "flagged": false,
+     "baseline": 51.3604,
+     "d": 0.28186200081785073,
+     "serial_sum": 25.612901313254085,
+     "bottleneck_rate": 25.612901313254085,
+     "cases": [],
+     "field": "materials_polymer_soft"
+    },
+    "Koscher2023": {
+     "reported": 42.192,
+     "kind": "measured",
+     "error": null,
+     "simulated": 10.142857142857142,
+     "flagged": false,
+     "baseline": 39.5736,
+     "d": 0.5912452510132921,
+     "serial_sum": 3.7849665858418593,
+     "bottleneck_rate": 3.7849665858418593,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent"
+     ],
+     "field": "chemistry_synthesis"
+    },
+    "Langner2020": {
+     "reported": 4.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 5.142857142857143,
+     "flagged": false,
+     "baseline": 80.57142857142857,
+     "d": -1.194976603216055,
+     "serial_sum": 3.5963324900960374,
+     "bottleneck_rate": 4.0,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent",
+      "human-transfer-or-human-step",
+      "long-incubation-step"
+     ],
+     "field": "materials_thin_film"
+    },
+    "Laws2023": {
+     "reported": 30.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 0.5714285714285714,
+     "flagged": false,
+     "baseline": 13.703100000000001,
+     "d": 1.3798568757402783,
+     "serial_sum": 18.11909530350533,
+     "bottleneck_rate": 18.11909530350533,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent"
+     ],
+     "field": "materials_inorganic"
+    },
+    "Lee2026a": {
+     "reported": 24.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 151.71428571428572,
+     "flagged": false,
+     "baseline": 41.1888,
+     "d": 0.5662473373839015,
+     "serial_sum": 109.66032587139661,
+     "bottleneck_rate": 109.66032587139661,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent"
+     ],
+     "field": "chemistry_synthesis"
+    },
+    "Li2020": {
+     "reported": 720.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 3.5714285714285716,
+     "flagged": false,
+     "baseline": 144.0,
+     "d": 1.6055205234374688,
+     "serial_sum": 51.336898395721924,
+     "bottleneck_rate": 51.336898395721924,
+     "cases": [],
+     "field": "nanomaterials"
+    },
+    "Li2026": {
+     "reported": 3.4285714285714284,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 5.714285714285714,
+     "flagged": false,
+     "baseline": 25.382350000000002,
+     "d": -0.6475698770354359,
+     "serial_sum": 1.8975394579494056,
+     "bottleneck_rate": 1.8975394579494056,
+     "cases": [
+      "shared-transfer-agent",
+      "human-transfer-or-human-step",
+      "long-incubation-step"
+     ],
+     "field": "materials_inorganic"
+    },
+    "Li2026a": {
+     "reported": 240.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 162.14285714285714,
+     "flagged": false,
+     "baseline": 144.0,
+     "d": -0.051535329419634984,
+     "serial_sum": 38.61884009386524,
+     "bottleneck_rate": 38.61884009386524,
+     "cases": [
+      "parallel-or-batched-modules",
+      "long-incubation-step"
+     ],
+     "field": "nanomaterials"
+    },
+    "Liang2025": {
+     "reported": 189.36,
+     "kind": "measured",
+     "error": null,
+     "simulated": 1.2857142857142858,
+     "flagged": false,
+     "baseline": 60.0,
+     "d": 1.6690067809585756,
+     "serial_sum": 36.22641509433962,
+     "bottleneck_rate": 36.22641509433962,
+     "cases": [],
+     "field": "materials_thin_film"
+    },
+    "Liang2026": {
+     "reported": 72.0,
+     "kind": "nominal",
+     "error": "unknown transfer mode unmapped",
+     "simulated": null,
+     "flagged": null,
+     "baseline": 68.57142857142857,
+     "d": null,
+     "serial_sum": 42.910355103054385,
+     "bottleneck_rate": 42.910355103054385,
+     "cases": [
+      "long-incubation-step"
+     ],
+     "field": "materials_thin_film"
+    },
+    "Low2024": {
+     "reported": 137.14285714285714,
+     "kind": "nominal",
+     "error": "unknown transfer mode unmapped",
+     "simulated": null,
+     "flagged": null,
+     "baseline": 159.984,
+     "d": null,
+     "serial_sum": 89.13189250528707,
+     "bottleneck_rate": 178.26378501057414,
+     "cases": [
+      "parallel-or-batched-modules"
+     ],
+     "field": "nanomaterials"
+    },
+    "MMehr2023": {
+     "reported": 24.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 34.285714285714285,
+     "flagged": false,
+     "baseline": 41.1888,
+     "d": -0.0796659376499427,
+     "serial_sum": 7.953384330728233,
+     "bottleneck_rate": 159.06768661456465,
+     "cases": [
+      "parallel-or-batched-modules",
+      "long-incubation-step"
+     ],
+     "field": "chemistry_synthesis"
+    },
+    "MacLeod2020": {
+     "reported": 28.0008,
+     "kind": "measured",
+     "error": null,
+     "simulated": 24.964285714285715,
+     "flagged": false,
+     "baseline": 80.57142857142857,
+     "d": -0.4091593292150912,
+     "serial_sum": 21.68212103341406,
+     "bottleneck_rate": 21.68212103341406,
+     "cases": [
+      "shared-transfer-agent"
+     ],
+     "field": "materials_thin_film"
+    },
+    "MacLeod2022": {
+     "reported": 48.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 3.4285714285714284,
+     "flagged": false,
+     "baseline": 80.57142857142857,
+     "d": 0.92118820908474,
+     "serial_sum": 18.209216308207846,
+     "bottleneck_rate": 18.209216308207846,
+     "cases": [],
+     "field": "materials_thin_film"
+    },
+    "McMullen2010": {
+     "reported": 72.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 12.428571428571429,
+     "flagged": false,
+     "baseline": 39.5736,
+     "d": 0.5029843471137487,
+     "serial_sum": 56.12758631890083,
+     "bottleneck_rate": 56.12758631890083,
+     "cases": [],
+     "field": "chemistry_synthesis"
+    },
+    "McMullen2010a": {
+     "reported": 78.5448,
+     "kind": "measured",
+     "error": null,
+     "simulated": 49.964285714285715,
+     "flagged": false,
+     "baseline": 39.5736,
+     "d": -0.10125412343149787,
+     "serial_sum": 23.72876701042253,
+     "bottleneck_rate": 23.728767010422533,
+     "cases": [],
+     "field": "chemistry_synthesis"
+    },
+    "Mikami2026": {
+     "reported": 10.714285714285714,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 0.4642857142857143,
+     "flagged": false,
+     "baseline": 12.7056,
+     "d": 1.2891459471133335,
+     "serial_sum": 6.054426774020623,
+     "bottleneck_rate": 6.054426774020623,
+     "cases": [
+      "parallel-or-batched-modules",
+      "human-transfer-or-human-step",
+      "long-incubation-step"
+     ],
+     "field": "catalysis"
+    },
+    "Moosavi2019": {
+     "reported": 30.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 0.0,
+     "flagged": false,
+     "baseline": 13.703100000000001,
+     "d": null,
+     "serial_sum": 26.54663327853994,
+     "bottleneck_rate": 26.54663327853994,
+     "cases": [
+      "parallel-or-batched-modules",
+      "human-transfer-or-human-step",
+      "long-incubation-step"
+     ],
+     "field": "materials_inorganic"
+    },
+    "Mottafegh2024": {
+     "reported": 720.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 102.42857142857143,
+     "flagged": false,
+     "baseline": 144.0,
+     "d": 0.14794137644170646,
+     "serial_sum": 116.38714891897352,
+     "bottleneck_rate": 116.38714891897352,
+     "cases": [
+      "long-incubation-step"
+     ],
+     "field": "nanomaterials"
+    },
+    "Mueller2023": {
+     "reported": 30.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 32.107142857142854,
+     "flagged": false,
+     "baseline": 41.1888,
+     "d": -0.10817747895628232,
+     "serial_sum": 69.19473030873343,
+     "bottleneck_rate": 69.19473030873343,
+     "cases": [],
+     "field": "chemistry_synthesis"
+    },
+    "Munyebvu2025": {
+     "reported": 240.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 6.214285714285714,
+     "flagged": false,
+     "baseline": 144.0,
+     "d": 1.364971275154869,
+     "serial_sum": 37.588914750603635,
+     "bottleneck_rate": 37.588914750603635,
+     "cases": [],
+     "field": "nanomaterials"
+    },
+    "Nambiar2022": {
+     "reported": 72.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 1.7142857142857142,
+     "flagged": false,
+     "baseline": 39.5736,
+     "d": 1.3633223536847425,
+     "serial_sum": 46.460355443228565,
+     "bottleneck_rate": 46.460355443228565,
+     "cases": [],
+     "field": "chemistry_synthesis"
+    },
+    "Nazeri2026": {
+     "reported": 199.98,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 42.892857142857146,
+     "flagged": false,
+     "baseline": 35.74626865671642,
+     "d": -0.07915426101093126,
+     "serial_sum": 63.010501750291716,
+     "bottleneck_rate": 63.010501750291716,
+     "cases": [],
+     "field": "materials_polymer_soft"
+    },
+    "Nikolaev2016": {
+     "reported": 100.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 237.71428571428572,
+     "flagged": false,
+     "baseline": 159.984,
+     "d": 0.17197873090433105,
+     "serial_sum": 7.760362868819329,
+     "bottleneck_rate": 7.760362868819329,
+     "cases": [
+      "long-incubation-step"
+     ],
+     "field": "nanomaterials"
+    },
+    "Noh2024": {
+     "reported": 37.333333333333336,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 11.428571428571429,
+     "flagged": false,
+     "baseline": 162.0,
+     "d": -0.12331342561927938,
+     "serial_sum": 19.65618734803566,
+     "bottleneck_rate": 19.65618734803566,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent",
+      "human-transfer-or-human-step"
+     ],
+     "field": "battery_electrochem"
+    },
+    "Olansky1978": {
+     "reported": 96.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 23.285714285714285,
+     "flagged": false,
+     "baseline": 238.2852,
+     "d": 0.22035583272920423,
+     "serial_sum": 64.19019316493313,
+     "bottleneck_rate": 64.19019316493313,
+     "cases": [],
+     "field": "analytical_chemistry"
+    },
+    "OrtizPerez2024": {
+     "reported": 2.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 16.785714285714285,
+     "flagged": false,
+     "baseline": 159.984,
+     "d": -0.979136724442619,
+     "serial_sum": 3.2164216192672592,
+     "bottleneck_rate": 3.216421619267259,
+     "cases": [
+      "parallel-or-batched-modules",
+      "human-transfer-or-human-step"
+     ],
+     "field": "nanomaterials"
+    },
+    "Pant2018": {
+     "reported": 16.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 0.75,
+     "flagged": false,
+     "baseline": 41.1888,
+     "d": 0.9183995625728576,
+     "serial_sum": 8.161992886596478,
+     "bottleneck_rate": 8.161992886596478,
+     "cases": [
+      "shared-transfer-agent",
+      "long-incubation-step"
+     ],
+     "field": "chemistry_synthesis"
+    },
+    "Pence2026": {
+     "reported": 150.0,
+     "kind": "measured",
+     "error": "unknown transfer mode unmapped",
+     "simulated": null,
+     "flagged": null,
+     "baseline": 60.0,
+     "d": null,
+     "serial_sum": 6.383992729341614,
+     "bottleneck_rate": 6.383992729341614,
+     "cases": [
+      "long-incubation-step"
+     ],
+     "field": "materials_thin_film"
+    },
+    "Pittaway2025": {
+     "reported": 5.25,
+     "kind": "measured",
+     "error": null,
+     "simulated": 14.25,
+     "flagged": false,
+     "baseline": 51.3604,
+     "d": -0.5568135330588747,
+     "serial_sum": 38.12549642573471,
+     "bottleneck_rate": 38.12549642573471,
+     "cases": [],
+     "field": "materials_polymer_soft"
+    },
+    "Poscharny2018": {
+     "reported": 12.499991999999999,
+     "kind": "measured",
+     "error": null,
+     "simulated": 0.32142857142857145,
+     "flagged": false,
+     "baseline": 41.1888,
+     "d": 1.0719558526746007,
+     "serial_sum": 67.79129070223617,
+     "bottleneck_rate": 67.79129070223617,
+     "cases": [],
+     "field": "chemistry_synthesis"
+    },
+    "Putz2025": {
+     "reported": 153.6,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 22.857142857142858,
+     "flagged": false,
+     "baseline": 35.42857142857143,
+     "d": 0.1903316981702915,
+     "serial_sum": 17.196767644600136,
+     "bottleneck_rate": 17.196767644600136,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent",
+      "long-incubation-step"
+     ],
+     "field": "biology_biochem"
+    },
+    "Ramezani2026": {
+     "reported": 240.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 11.571428571428571,
+     "flagged": false,
+     "baseline": 75.9996,
+     "d": 0.8174243276499522,
+     "serial_sum": 35.159826642521416,
+     "bottleneck_rate": 35.159826642521416,
+     "cases": [],
+     "field": "battery_electrochem"
+    },
+    "Ramirez2024": {
+     "reported": 3.4285714285714284,
+     "kind": "measured",
+     "error": null,
+     "simulated": 68.57142857142857,
+     "flagged": false,
+     "baseline": 12.7056,
+     "d": 0.7321480186843949,
+     "serial_sum": 3.46594147546546,
+     "bottleneck_rate": 3.46594147546546,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent",
+      "human-transfer-or-human-step",
+      "long-incubation-step"
+     ],
+     "field": "catalysis"
+    },
+    "Rapp2024": {
+     "reported": 7.199999999999999,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 1.7142857142857142,
+     "flagged": false,
+     "baseline": 99.42857142857143,
+     "d": -0.5169294127671366,
+     "serial_sum": 8.074238133953854,
+     "bottleneck_rate": 32.296952535815414,
+     "cases": [
+      "parallel-or-batched-modules"
+     ],
+     "field": "biology_biochem"
+    },
+    "Reizman2012": {
+     "reported": 11.1429,
+     "kind": "measured",
+     "error": null,
+     "simulated": 0.11904761904761904,
+     "flagged": false,
+     "baseline": 41.1888,
+     "d": 1.4034966127873965,
+     "serial_sum": 30.073094326487993,
+     "bottleneck_rate": 30.073094326487993,
+     "cases": [],
+     "field": "chemistry_synthesis"
+    },
+    "Roch2020": {
+     "reported": 342.8568,
+     "kind": "measured",
+     "error": null,
+     "simulated": 11.321428571428571,
+     "flagged": false,
+     "baseline": 114.85679999999999,
+     "d": 1.0062554814552886,
+     "serial_sum": 53.709632300376086,
+     "bottleneck_rate": 53.709632300376086,
+     "cases": [],
+     "field": "analytical_chemistry"
+    },
+    "Ruan2024": {
+     "reported": 17.0928,
+     "kind": "measured",
+     "error": null,
+     "simulated": 46.57142857142857,
+     "flagged": false,
+     "baseline": 41.1888,
+     "d": 0.053340420706390224,
+     "serial_sum": 10.950362160415201,
+     "bottleneck_rate": 10.950362160415201,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent",
+      "long-incubation-step"
+     ],
+     "field": "chemistry_synthesis"
+    },
+    "Rubens2019": {
+     "reported": 52.7208,
+     "kind": "measured",
+     "error": null,
+     "simulated": 0.0,
+     "flagged": false,
+     "baseline": 35.74626865671642,
+     "d": null,
+     "serial_sum": 55.19003513254551,
+     "bottleneck_rate": 55.19003513254551,
+     "cases": [],
+     "field": "materials_polymer_soft"
+    },
+    "Rupnow2023": {
+     "reported": 100.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 0.17857142857142858,
+     "flagged": false,
+     "baseline": 60.0,
+     "d": 2.5263392773898437,
+     "serial_sum": 8.636674880171135,
+     "bottleneck_rate": 8.636674880171135,
+     "cases": [
+      "long-incubation-step"
+     ],
+     "field": "materials_thin_film"
+    },
+    "Salley2020": {
+     "reported": 360.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 27.321428571428573,
+     "flagged": false,
+     "baseline": 144.0,
+     "d": 0.7218590882838513,
+     "serial_sum": 26.700866851059228,
+     "bottleneck_rate": 26.700866851059224,
+     "cases": [
+      "parallel-or-batched-modules",
+      "long-incubation-step"
+     ],
+     "field": "nanomaterials"
+    },
+    "Sheng2023": {
+     "reported": 67.9992,
+     "kind": "measured",
+     "error": null,
+     "simulated": 150.64285714285714,
+     "flagged": false,
+     "baseline": 162.0,
+     "d": -0.03156647048138256,
+     "serial_sum": 52.1314146076568,
+     "bottleneck_rate": 52.1314146076568,
+     "cases": [],
+     "field": "battery_electrochem"
+    },
+    "Shimizu2020": {
+     "reported": 12.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 3.5714285714285716,
+     "flagged": false,
+     "baseline": 80.57142857142857,
+     "d": -0.3006605405316165,
+     "serial_sum": 32.80805012340991,
+     "bottleneck_rate": 32.80805012340991,
+     "cases": [
+      "shared-transfer-agent"
+     ],
+     "field": "materials_thin_film"
+    },
+    "Singh2025": {
+     "reported": 16.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 1838.5714285714287,
+     "flagged": true,
+     "baseline": 99.42857142857143,
+     "d": 1.2669693072938246,
+     "serial_sum": 3.8589488681831003,
+     "bottleneck_rate": 3.8589488681831003,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent"
+     ],
+     "field": "biology_biochem"
+    },
+    "Skilton2013": {
+     "reported": 450.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 5.285714285714286,
+     "flagged": false,
+     "baseline": 39.5736,
+     "d": 0.8743018756653722,
+     "serial_sum": 80.44318234719053,
+     "bottleneck_rate": 80.44318234719054,
+     "cases": [],
+     "field": "chemistry_synthesis"
+    },
+    "Slattery2024": {
+     "reported": 24.828,
+     "kind": "measured",
+     "error": null,
+     "simulated": 27.5,
+     "flagged": false,
+     "baseline": 41.1888,
+     "d": -0.1754464455170292,
+     "serial_sum": 54.27647077299997,
+     "bottleneck_rate": 54.27647077299997,
+     "cases": [],
+     "field": "chemistry_synthesis"
+    },
+    "Snapp2024": {
+     "reported": 50.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 443.07142857142856,
+     "flagged": false,
+     "baseline": 37.106668656716415,
+     "d": 0.817985703048471,
+     "serial_sum": 39.6985848189671,
+     "bottleneck_rate": 174.54545454545456,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent"
+     ],
+     "field": "materials_polymer_soft"
+    },
+    "Suzumura2022": {
+     "reported": 600.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 290.89285714285717,
+     "flagged": false,
+     "baseline": 75.9996,
+     "d": -0.582921750787964,
+     "serial_sum": 47.43545947001123,
+     "bottleneck_rate": 47.43545947001123,
+     "cases": [
+      "parallel-or-batched-modules",
+      "long-incubation-step"
+     ],
+     "field": "battery_electrochem"
+    },
+    "Szymanski2023": {
+     "reported": 20.7647,
+     "kind": "measured",
+     "error": null,
+     "simulated": 20.071428571428573,
+     "flagged": false,
+     "baseline": 18.32075,
+     "d": -0.03963503573593347,
+     "serial_sum": 1.4142095321650827,
+     "bottleneck_rate": 1.4142095321650827,
+     "cases": [
+      "parallel-or-batched-modules",
+      "long-incubation-step"
+     ],
+     "field": "materials_inorganic"
+    },
+    "Tamura2023": {
+     "reported": 384.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 1277.7142857142858,
+     "flagged": false,
+     "baseline": 75.9996,
+     "d": -0.18141739169262516,
+     "serial_sum": 60.30532186613214,
+     "bottleneck_rate": 60.30532186613215,
+     "cases": [
+      "parallel-or-batched-modules",
+      "long-incubation-step"
+     ],
+     "field": "battery_electrochem"
+    },
+    "Tamura2025": {
+     "reported": 36.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 739.2857142857143,
+     "flagged": false,
+     "baseline": 41.1888,
+     "d": 1.2540331747674067,
+     "serial_sum": 17.757742464777394,
+     "bottleneck_rate": 17.757742464777394,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent"
+     ],
+     "field": "chemistry_synthesis"
+    },
+    "Tao2021": {
+     "reported": 24.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 14.964285714285714,
+     "flagged": false,
+     "baseline": 159.984,
+     "d": -0.6187100592369814,
+     "serial_sum": 80.98608051741107,
+     "bottleneck_rate": 80.98608051741107,
+     "cases": [],
+     "field": "nanomaterials"
+    },
+    "Toyama2025": {
+     "reported": 89.14285714285714,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 102.14285714285714,
+     "flagged": false,
+     "baseline": 60.0,
+     "d": -0.11281384716586688,
+     "serial_sum": 67.09677419354838,
+     "bottleneck_rate": 67.09677419354838,
+     "cases": [
+      "parallel-or-batched-modules",
+      "human-transfer-or-human-step",
+      "long-incubation-step"
+     ],
+     "field": "materials_thin_film"
+    },
+    "Vargas2026": {
+     "reported": 102.8568,
+     "kind": "measured",
+     "error": null,
+     "simulated": 12.321428571428571,
+     "flagged": false,
+     "baseline": 39.5736,
+     "d": 0.5067444959870555,
+     "serial_sum": 37.90554324697831,
+     "bottleneck_rate": 37.90554324697831,
+     "cases": [
+      "long-incubation-step"
+     ],
+     "field": "chemistry_synthesis"
+    },
+    "Vikram2021": {
+     "reported": 15.273599999999998,
+     "kind": "measured",
+     "error": null,
+     "simulated": 62.0,
+     "flagged": false,
+     "baseline": 159.984,
+     "d": -0.41168486153786354,
+     "serial_sum": 74.41219533201274,
+     "bottleneck_rate": 74.41219533201274,
+     "cases": [
+      "parallel-or-batched-modules"
+     ],
+     "field": "nanomaterials"
+    },
+    "Wagner2024": {
+     "reported": 142.66559999999998,
+     "kind": "measured",
+     "error": null,
+     "simulated": 11.714285714285714,
+     "flagged": false,
+     "baseline": 39.5736,
+     "d": 0.5286897473486507,
+     "serial_sum": 45.3984184115808,
+     "bottleneck_rate": 45.3984184115808,
+     "cases": [],
+     "field": "chemistry_synthesis"
+    },
+    "Wakabayashi2026": {
+     "reported": 7.5,
+     "kind": "measured",
+     "error": null,
+     "simulated": 523.6428571428571,
+     "flagged": false,
+     "baseline": 80.57142857142857,
+     "d": 0.8128541198587627,
+     "serial_sum": 76.12334801762115,
+     "bottleneck_rate": 76.12334801762115,
+     "cases": [
+      "shared-transfer-agent",
+      "human-transfer-or-human-step",
+      "long-incubation-step"
+     ],
+     "field": "materials_thin_film"
+    },
+    "Wang2020": {
+     "reported": 720.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 87.67857142857143,
+     "flagged": false,
+     "baseline": 144.0,
+     "d": 0.2154690269784817,
+     "serial_sum": 86.46917534027222,
+     "bottleneck_rate": 86.46917534027222,
+     "cases": [],
+     "field": "nanomaterials"
+    },
+    "Wang2025": {
+     "reported": 100.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 17.5,
+     "flagged": false,
+     "baseline": 60.0,
+     "d": 0.5351132016973492,
+     "serial_sum": 1.7560297468187205,
+     "bottleneck_rate": 1.7560297468187205,
+     "cases": [
+      "shared-transfer-agent"
+     ],
+     "field": "materials_thin_film"
+    },
+    "Wang2026": {
+     "reported": 9.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 11.571428571428571,
+     "flagged": false,
+     "baseline": 51.3604,
+     "d": -0.647241418539011,
+     "serial_sum": 84.72757187297401,
+     "bottleneck_rate": 84.72757187297401,
+     "cases": [
+      "parallel-or-batched-modules"
+     ],
+     "field": "materials_polymer_soft"
+    },
+    "Wang2026a": {
+     "reported": 2.526315789473684,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 80.57142857142857,
+     "flagged": false,
+     "baseline": 159.984,
+     "d": -0.29789548706703184,
+     "serial_sum": 22.618183444419053,
+     "bottleneck_rate": 22.618183444419053,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent",
+      "long-incubation-step"
+     ],
+     "field": "nanomaterials"
+    },
+    "Wu2025a": {
+     "reported": 700.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 0.0,
+     "flagged": false,
+     "baseline": 35.74626865671642,
+     "d": null,
+     "serial_sum": 10.517346317711503,
+     "bottleneck_rate": 10.517346317711503,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent"
+     ],
+     "field": "materials_polymer_soft"
+    },
+    "Wu2025b": {
+     "reported": 30.0,
+     "kind": "measured",
+     "error": null,
+     "simulated": 220.42857142857142,
+     "flagged": false,
+     "baseline": 159.984,
+     "d": 0.13919133501277403,
+     "serial_sum": 82.61222928718269,
+     "bottleneck_rate": 82.61222928718269,
+     "cases": [],
+     "field": "nanomaterials"
+    },
+    "Wu2025c": {
+     "reported": 12.857142857142856,
+     "kind": "measured",
+     "error": null,
+     "simulated": 25.928571428571427,
+     "flagged": false,
+     "baseline": 51.3604,
+     "d": -0.2968498080455294,
+     "serial_sum": 17.218415467345128,
+     "bottleneck_rate": 17.218415467345128,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent",
+      "long-incubation-step"
+     ],
+     "field": "materials_polymer_soft"
+    },
+    "Xu2022": {
+     "reported": 144.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 1.1428571428571428,
+     "flagged": false,
+     "baseline": 39.5736,
+     "d": 1.5394136127404239,
+     "serial_sum": 75.59055118110236,
+     "bottleneck_rate": 226.77165354330708,
+     "cases": [
+      "parallel-or-batched-modules"
+     ],
+     "field": "chemistry_synthesis"
+    },
+    "Xu2025": {
+     "reported": 230.0,
+     "kind": "nominal",
+     "error": null,
+     "simulated": 1248.857142857143,
+     "flagged": false,
+     "baseline": 144.0,
+     "d": 0.5314195821994409,
+     "serial_sum": 13.117267843146928,
+     "bottleneck_rate": 13.11726784314693,
+     "cases": [
+      "parallel-or-batched-modules",
+      "shared-transfer-agent"
+     ],
+     "field": "nanomaterials"
+    },
+    "Zhu2024": {
+     "reported": 5.785714285714286,
+     "kind": "measured",
+     "error": null,
+     "simulated": 11.821428571428571,
+     "flagged": false,
+     "baseline": 12.7056,
+     "d": -0.03132521624343587,
+     "serial_sum": 1.492751344599229,
+     "bottleneck_rate": 1.492751344599229,
+     "cases": [
+      "shared-transfer-agent",
+      "long-incubation-step"
+     ],
+     "field": "catalysis"
+    }
+   }
+  }
+ },
+ "breakdowns": {
+  "reproduction_own_durations": {
+   "by_kind": {
+    "measured": {
+     "n": 18,
+     "share_within_1p5x": 0.5
+    },
+    "nominal": {
+     "n": 17,
+     "share_within_1p5x": 0.1875
+    }
+   },
+   "by_case": {
+    "parallel-or-batched-modules": {
+     "n": 21,
+     "share_within_1p5x": 0.35
+    },
+    "shared-transfer-agent": {
+     "n": 13,
+     "share_within_1p5x": 0.46153846153846156
+    },
+    "human-transfer-or-human-step": {
+     "n": 8,
+     "share_within_1p5x": 0.375
+    },
+    "long-incubation-step": {
+     "n": 26,
+     "share_within_1p5x": 0.36
+    },
+    "long-planning-computation": {
+     "n": 1,
+     "share_within_1p5x": 0.0
+    }
+   },
+   "by_field": {
+    "analytical_chemistry": {
+     "n": 1,
+     "share_within_1p5x": 1.0
+    },
+    "battery_electrochem": {
+     "n": 4,
+     "share_within_1p5x": 0.25
+    },
+    "biology_biochem": {
+     "n": 4,
+     "share_within_1p5x": 0.75
+    },
+    "catalysis": {
+     "n": 4,
+     "share_within_1p5x": 0.75
+    },
+    "chemistry_synthesis": {
+     "n": 4,
+     "share_within_1p5x": 0.0
+    },
+    "materials_inorganic": {
+     "n": 1,
+     "share_within_1p5x": 0.0
+    },
+    "materials_polymer_soft": {
+     "n": 4,
+     "share_within_1p5x": 0.0
+    },
+    "materials_thin_film": {
+     "n": 7,
+     "share_within_1p5x": 0.42857142857142855
+    },
+    "nanomaterials": {
+     "n": 6,
+     "share_within_1p5x": 0.2
+    }
+   },
+   "simple_estimates_within_1p5x": {
+    "serial_sum": 0.42857142857142855,
+    "bottleneck_rate": 0.4
+   },
+   "flagged": 1,
+   "failed": [
+    "Low2024"
+   ],
+   "by_own_duration_coverage": {
+    "<0.5": {
+     "n": 4,
+     "share_within_1p5x": 0.0
+    },
+    "0.5-0.75": {
+     "n": 4,
+     "share_within_1p5x": 0.25
+    },
+    ">=0.75": {
+     "n": 26,
+     "share_within_1p5x": 0.4230769230769231
+    }
+   },
+   "bottleneck_module": {
+    "Aand2024": "Aand2024/P1/M1",
+    "Anker2026": "Anker2026/P1/M4",
+    "Brody2026": "Brody2026/P1/M2",
+    "Burger2020": "Burger2020/P1/M7",
+    "Caramelli2021": "Caramelli2021/P1/M1",
+    "Chang2026": "Chang2026/P1/M1",
+    "Dave2020": "Dave2020/P1/M1",
+    "Dave2022": "Dave2022/P1/M1",
+    "Deneault2021": "Deneault2021/P1/M2",
+    "Epps2020": "Epps2020/P1/M1",
+    "Fei2026": "Fei2026/P1/M3",
+    "Fratarcangeli2026": "Fratarcangeli2026/P1/M1",
+    "Gao2026": "Gao2026/P1/M2",
+    "Ha2023": "Ha2023/P1/M7",
+    "Harris2024": "Harris2024/P1/M1",
+    "Horstkotte2010": "Horstkotte2010/P1/M1",
+    "Jiang2022": "Jiang2022/P1/M2",
+    "Kanda2022": "Kanda2022/P1/M1",
+    "Kim2026": "Kim2026/P1/M6",
+    "King2009": "King2009/P1/M1",
+    "Langner2020": "Langner2020/P1/M2",
+    "Liang2025": "Liang2025/P1/M2",
+    "Low2024": null,
+    "Mottafegh2024": "Mottafegh2024/P2/M1",
+    "Munyebvu2025": "Munyebvu2025/P1/M1",
+    "Noh2024": "Noh2024/P1/M2",
+    "Ramirez2024": "Ramirez2024/P1/M2",
+    "Rapp2024": "Rapp2024/P1/M1",
+    "Shimizu2020": "Shimizu2020/P1/M2",
+    "Singh2025": "Singh2025/P1/M1",
+    "Suzumura2022": "Suzumura2022/P1/M1",
+    "Tamura2025": "Tamura2025/P1/M5",
+    "Toyama2025": "Toyama2025/P1/M4",
+    "Wang2026": "Wang2026/P1/M2",
+    "Wu2025c": "Wu2025c/P1/M2"
+   }
+  },
+  "prediction_pooled_durations": {
+   "by_kind": {
+    "measured": {
+     "n": 83,
+     "mean_d": 0.015956982167568058
+    },
+    "nominal": {
+     "n": 44,
+     "mean_d": 0.07791442089663302
+    }
+   },
+   "by_case": {
+    "parallel-or-batched-modules": {
+     "n": 54,
+     "mean_d": -0.0048323284913837925
+    },
+    "shared-transfer-agent": {
+     "n": 36,
+     "mean_d": -0.024105741874088142
+    },
+    "human-transfer-or-human-step": {
+     "n": 17,
+     "mean_d": -0.36372699198962266
+    },
+    "long-incubation-step": {
+     "n": 46,
+     "mean_d": 0.05543876180647143
+    },
+    "long-planning-computation": {
+     "n": 0,
+     "mean_d": null
+    }
+   },
+   "by_field": {
+    "analytical_chemistry": {
+     "n": 3,
+     "mean_d": 0.17265792082700682
+    },
+    "battery_electrochem": {
+     "n": 7,
+     "mean_d": -0.06889626757335769
+    },
+    "biology_biochem": {
+     "n": 7,
+     "mean_d": -0.0955673281414498
+    },
+    "catalysis": {
+     "n": 10,
+     "mean_d": 0.09422265654155246
+    },
+    "chemistry_synthesis": {
+     "n": 43,
+     "mean_d": -0.026577776996569748
+    },
+    "materials_inorganic": {
+     "n": 5,
+     "mean_d": 0.21736824553072434
+    },
+    "materials_polymer_soft": {
+     "n": 13,
+     "mean_d": -0.08725964431376787
+    },
+    "materials_thin_film": {
+     "n": 15,
+     "mean_d": 0.02317335224505473
+    },
+    "nanomaterials": {
+     "n": 24,
+     "mean_d": 0.21954450988214805
+    }
+   },
+   "simple_estimates_within_1p5x": {
+    "serial_sum": 0.1889763779527559,
+    "bottleneck_rate": 0.1889763779527559
+   },
+   "flagged": 2,
+   "failed": [
+    "Liang2026",
+    "Low2024",
+    "Pence2026"
+   ]
+  }
+ },
+ "per_paper": {
+  "reproduction_own_durations": {
+   "Aand2024": {
+    "reported": 240.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 137.28571428571428,
+    "flagged": false,
+    "own_share": 0.42901406212759197,
+    "log10_r": -0.24258589405731754,
+    "bottleneck": "Aand2024/P1/M1",
+    "serial_sum": 137.2844998808294,
+    "bottleneck_rate": 137.2844998808294,
+    "cases": [],
+    "field": "chemistry_synthesis"
+   },
+   "Anker2026": {
+    "reported": 32.64072534945221,
+    "kind": "measured",
+    "error": null,
+    "simulated": 81.21428571428571,
+    "flagged": false,
+    "own_share": 0.874053903917309,
+    "log10_r": 0.39587262783195165,
+    "bottleneck": "Anker2026/P1/M4",
+    "serial_sum": 81.203007518797,
+    "bottleneck_rate": 81.203007518797,
+    "cases": [
+     "long-incubation-step"
+    ],
+    "field": "nanomaterials"
+   },
+   "Brody2026": {
+    "reported": 12.7056,
+    "kind": "measured",
+    "error": null,
+    "simulated": 16.964285714285715,
+    "flagged": false,
+    "own_share": 0.9426551453260016,
+    "log10_r": 0.1255403996057119,
+    "bottleneck": "Brody2026/P1/M2",
+    "serial_sum": 16.967792615868028,
+    "bottleneck_rate": 16.96779261586803,
+    "cases": [
+     "long-incubation-step"
+    ],
+    "field": "catalysis"
+   },
+   "Burger2020": {
+    "reported": 86.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 89.14285714285714,
+    "flagged": false,
+    "own_share": 0.9030409632436941,
+    "log10_r": 0.015588098424599394,
+    "bottleneck": "Burger2020/P1/M7",
+    "serial_sum": 50.135093477433045,
+    "bottleneck_rate": 99.3103448275862,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent",
+     "long-incubation-step"
+    ],
+    "field": "catalysis"
+   },
+   "Caramelli2021": {
+    "reported": 36.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 19.642857142857142,
+    "flagged": false,
+    "own_share": 0.9952727116075452,
+    "log10_r": -0.2630978426152627,
+    "bottleneck": "Caramelli2021/P1/M1",
+    "serial_sum": 5.973624787224186,
+    "bottleneck_rate": 5.973624787224186,
+    "cases": [
+     "parallel-or-batched-modules",
+     "long-incubation-step"
+    ],
+    "field": "chemistry_synthesis"
+   },
+   "Chang2026": {
+    "reported": 720.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 361.5,
+    "flagged": false,
+    "own_share": 0.4058544804144498,
+    "log10_r": -0.2992241948007188,
+    "bottleneck": "Chang2026/P1/M1",
+    "serial_sum": 361.5062761506276,
+    "bottleneck_rate": 361.5062761506276,
+    "cases": [
+     "shared-transfer-agent",
+     "long-incubation-step",
+     "long-planning-computation"
+    ],
+    "field": "materials_thin_film"
+   },
+   "Dave2020": {
+    "reported": 84.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 50.214285714285715,
+    "flagged": false,
+    "own_share": 0.8718395815170008,
+    "log10_r": -0.22345199672029575,
+    "bottleneck": "Dave2020/P1/M1",
+    "serial_sum": 50.21795989537925,
+    "bottleneck_rate": 50.217959895379245,
+    "cases": [
+     "long-incubation-step"
+    ],
+    "field": "battery_electrochem"
+   },
+   "Dave2022": {
+    "reported": 21.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 25.321428571428573,
+    "flagged": false,
+    "own_share": 0.7913247362250879,
+    "log10_r": 0.08126890910692808,
+    "bottleneck": "Dave2022/P1/M1",
+    "serial_sum": 25.322391559202813,
+    "bottleneck_rate": 25.322391559202813,
+    "cases": [
+     "long-incubation-step"
+    ],
+    "field": "battery_electrochem"
+   },
+   "Deneault2021": {
+    "reported": 1080.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 119.42857142857143,
+    "flagged": false,
+    "own_share": 0.12442152836402393,
+    "log10_r": -0.9563155180621902,
+    "bottleneck": "Deneault2021/P1/M2",
+    "serial_sum": 119.41948859709744,
+    "bottleneck_rate": 119.41948859709744,
+    "cases": [
+     "long-incubation-step"
+    ],
+    "field": "materials_polymer_soft"
+   },
+   "Epps2020": {
+    "reported": 220.00080000000003,
+    "kind": "measured",
+    "error": null,
+    "simulated": 138.89285714285714,
+    "flagged": false,
+    "own_share": 0.5787781350482315,
+    "log10_r": -0.1997443482667559,
+    "bottleneck": "Epps2020/P1/M1",
+    "serial_sum": 138.90675241157555,
+    "bottleneck_rate": 138.90675241157555,
+    "cases": [
+     "long-incubation-step"
+    ],
+    "field": "nanomaterials"
+   },
+   "Fei2026": {
+    "reported": 6.6415,
+    "kind": "measured",
+    "error": null,
+    "simulated": 0.7142857142857143,
+    "flagged": false,
+    "own_share": 0.9781798119304713,
+    "log10_r": -0.9683942126595709,
+    "bottleneck": "Fei2026/P1/M3",
+    "serial_sum": 1.0476600440162727,
+    "bottleneck_rate": 1.0476600440162724,
+    "cases": [
+     "parallel-or-batched-modules",
+     "human-transfer-or-human-step",
+     "long-incubation-step"
+    ],
+    "field": "materials_inorganic"
+   },
+   "Fratarcangeli2026": {
+    "reported": 21.492537313432837,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 11.428571428571429,
+    "flagged": false,
+    "own_share": 0.8087588028169014,
+    "log10_r": -0.27429574241673643,
+    "bottleneck": "Fratarcangeli2026/P1/M1",
+    "serial_sum": 47.53521126760563,
+    "bottleneck_rate": 47.53521126760563,
+    "cases": [
+     "parallel-or-batched-modules",
+     "human-transfer-or-human-step",
+     "long-incubation-step"
+    ],
+    "field": "materials_polymer_soft"
+   },
+   "Gao2026": {
+    "reported": 172.8,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 37.857142857142854,
+    "flagged": false,
+    "own_share": 0.9228560678704453,
+    "log10_r": -0.6593959042203236,
+    "bottleneck": "Gao2026/P1/M2",
+    "serial_sum": 37.94633053713382,
+    "bottleneck_rate": 37.94633053713382,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent",
+     "long-incubation-step"
+    ],
+    "field": "materials_thin_film"
+   },
+   "Ha2023": {
+    "reported": 12.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 3.0,
+    "flagged": false,
+    "own_share": 0.9954326542609717,
+    "log10_r": -0.6020599913279624,
+    "bottleneck": "Ha2023/P1/M7",
+    "serial_sum": 0.4883894453614308,
+    "bottleneck_rate": 2.930336672168585,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent",
+     "long-incubation-step"
+    ],
+    "field": "chemistry_synthesis"
+   },
+   "Harris2024": {
+    "reported": 21.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 25.392857142857142,
+    "flagged": false,
+    "own_share": 0.9691629955947136,
+    "log10_r": 0.0824922746536278,
+    "bottleneck": "Harris2024/P1/M1",
+    "serial_sum": 25.374449339207047,
+    "bottleneck_rate": 25.37444933920705,
+    "cases": [
+     "long-incubation-step"
+    ],
+    "field": "materials_thin_film"
+   },
+   "Horstkotte2010": {
+    "reported": 133.71359999999999,
+    "kind": "measured",
+    "error": null,
+    "simulated": 103.0,
+    "flagged": false,
+    "own_share": 0.7150664137877437,
+    "log10_r": -0.11333835686177621,
+    "bottleneck": "Horstkotte2010/P1/M1",
+    "serial_sum": 102.97973778307508,
+    "bottleneck_rate": 102.9797377830751,
+    "cases": [
+     "long-incubation-step"
+    ],
+    "field": "analytical_chemistry"
+   },
+   "Jiang2022": {
+    "reported": 116.35199999999999,
+    "kind": "measured",
+    "error": null,
+    "simulated": 102.67857142857143,
+    "flagged": false,
+    "own_share": 0.9204307739986054,
+    "log10_r": -0.054294035186405715,
+    "bottleneck": "Jiang2022/P1/M2",
+    "serial_sum": 102.64197722166266,
+    "bottleneck_rate": 102.64197722166266,
+    "cases": [
+     "parallel-or-batched-modules"
+    ],
+    "field": "nanomaterials"
+   },
+   "Kanda2022": {
+    "reported": 1.1676,
+    "kind": "measured",
+    "error": null,
+    "simulated": 1.1428571428571428,
+    "flagged": true,
+    "own_share": 0.9982738181893809,
+    "log10_r": -0.009302139338289998,
+    "bottleneck": "Kanda2022/P1/M1",
+    "serial_sum": 1.1979285818272571,
+    "bottleneck_rate": 1.1979285818272571,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent",
+     "human-transfer-or-human-step",
+     "long-incubation-step"
+    ],
+    "field": "biology_biochem"
+   },
+   "Kim2026": {
+    "reported": 2.823529411764706,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 1.1428571428571428,
+    "flagged": false,
+    "own_share": 0.9770602716148397,
+    "log10_r": -0.39280036901962656,
+    "bottleneck": "Kim2026/P1/M6",
+    "serial_sum": 2.8498063022278957,
+    "bottleneck_rate": 5.699612604455792,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent",
+     "human-transfer-or-human-step"
+    ],
+    "field": "catalysis"
+   },
+   "King2009": {
+    "reported": 1000.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 0.21428571428571427,
+    "flagged": false,
+    "own_share": 0.9994470651653368,
+    "log10_r": -3.6690067809585756,
+    "bottleneck": "King2009/P1/M1",
+    "serial_sum": 0.19988941303306734,
+    "bottleneck_rate": 0.19988941303306734,
+    "cases": [
+     "parallel-or-batched-modules",
+     "long-incubation-step"
+    ],
+    "field": "biology_biochem"
+   },
+   "Langner2020": {
+    "reported": 4.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 4.0,
+    "flagged": false,
+    "own_share": 0.9596357336158879,
+    "log10_r": 0.0,
+    "bottleneck": "Langner2020/P1/M2",
+    "serial_sum": 4.948524463408697,
+    "bottleneck_rate": 5.333333333333334,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent",
+     "human-transfer-or-human-step",
+     "long-incubation-step"
+    ],
+    "field": "materials_thin_film"
+   },
+   "Liang2025": {
+    "reported": 189.36,
+    "kind": "measured",
+    "error": null,
+    "simulated": 66.21428571428571,
+    "flagged": false,
+    "own_share": 0.505685834397748,
+    "log10_r": -0.45633654645476734,
+    "bottleneck": "Liang2025/P1/M2",
+    "serial_sum": 66.20689655172414,
+    "bottleneck_rate": 66.20689655172414,
+    "cases": [],
+    "field": "materials_thin_film"
+   },
+   "Low2024": {
+    "reported": 137.14285714285714,
+    "kind": "nominal",
+    "error": "unknown transfer mode unmapped",
+    "simulated": null,
+    "flagged": null,
+    "own_share": null,
+    "log10_r": null,
+    "bottleneck": null,
+    "serial_sum": 129.82719759579263,
+    "bottleneck_rate": 137.14285714285714,
+    "cases": [
+     "parallel-or-batched-modules",
+     "long-incubation-step"
+    ],
+    "field": "nanomaterials"
+   },
+   "Mottafegh2024": {
+    "reported": 76.0008,
+    "kind": "measured",
+    "error": null,
+    "simulated": 50.0,
+    "flagged": false,
+    "own_share": 0.8509646986841071,
+    "log10_r": -0.1818481594415742,
+    "bottleneck": "Mottafegh2024/P2/M1",
+    "serial_sum": 50.01447178002894,
+    "bottleneck_rate": 50.014471780028934,
+    "cases": [
+     "long-incubation-step"
+    ],
+    "field": "nanomaterials"
+   },
+   "Munyebvu2025": {
+    "reported": 240.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 55.785714285714285,
+    "flagged": false,
+    "own_share": 0.29068240132599454,
+    "log10_r": -0.6336882435125437,
+    "bottleneck": "Munyebvu2025/P1/M1",
+    "serial_sum": 55.7941299925737,
+    "bottleneck_rate": 55.794129992573694,
+    "cases": [],
+    "field": "nanomaterials"
+   },
+   "Noh2024": {
+    "reported": 37.333333333333336,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 17.142857142857142,
+    "flagged": false,
+    "own_share": 0.7521612810394648,
+    "log10_r": -0.3380135619171512,
+    "bottleneck": "Noh2024/P1/M2",
+    "serial_sum": 27.248106784825897,
+    "bottleneck_rate": 27.248106784825897,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent",
+     "human-transfer-or-human-step"
+    ],
+    "field": "battery_electrochem"
+   },
+   "Ramirez2024": {
+    "reported": 3.4285714285714284,
+    "kind": "measured",
+    "error": null,
+    "simulated": 3.4285714285714284,
+    "flagged": false,
+    "own_share": 0.9960963169799835,
+    "log10_r": 0.0,
+    "bottleneck": "Ramirez2024/P1/M2",
+    "serial_sum": 4.781262321503921,
+    "bottleneck_rate": 4.781262321503921,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent",
+     "human-transfer-or-human-step",
+     "long-incubation-step"
+    ],
+    "field": "catalysis"
+   },
+   "Rapp2024": {
+    "reported": 7.199999999999999,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 9.0,
+    "flagged": false,
+    "own_share": 0.9824564504452354,
+    "log10_r": 0.09691001300805649,
+    "bottleneck": "Rapp2024/P1/M1",
+    "serial_sum": 8.84326238594085,
+    "bottleneck_rate": 24.0,
+    "cases": [
+     "parallel-or-batched-modules"
+    ],
+    "field": "biology_biochem"
+   },
+   "Shimizu2020": {
+    "reported": 12.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 11.535714285714286,
+    "flagged": false,
+    "own_share": 0.8794485615362952,
+    "log10_r": -0.017136755058741147,
+    "bottleneck": "Shimizu2020/P1/M2",
+    "serial_sum": 11.514626507629773,
+    "bottleneck_rate": 11.514626507629773,
+    "cases": [
+     "shared-transfer-agent"
+    ],
+    "field": "materials_thin_film"
+   },
+   "Singh2025": {
+    "reported": 16.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 12.857142857142858,
+    "flagged": false,
+    "own_share": 0.9214294039275014,
+    "log10_r": -0.09497551323085672,
+    "bottleneck": "Singh2025/P1/M1",
+    "serial_sum": 11.846949479067876,
+    "bottleneck_rate": 11.846949479067877,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent",
+     "long-incubation-step"
+    ],
+    "field": "biology_biochem"
+   },
+   "Suzumura2022": {
+    "reported": 600.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 386.0357142857143,
+    "flagged": false,
+    "own_share": 0.8536360100929792,
+    "log10_r": -0.19152376488363196,
+    "bottleneck": "Suzumura2022/P1/M1",
+    "serial_sum": 171.52310576817027,
+    "bottleneck_rate": 171.5231057681703,
+    "cases": [
+     "parallel-or-batched-modules",
+     "long-incubation-step"
+    ],
+    "field": "battery_electrochem"
+   },
+   "Tamura2025": {
+    "reported": 36.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 19.285714285714285,
+    "flagged": false,
+    "own_share": 0.9829823033666405,
+    "log10_r": -0.27106677228653797,
+    "bottleneck": "Tamura2025/P1/M5",
+    "serial_sum": 19.12830428172922,
+    "bottleneck_rate": 19.12830428172922,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent",
+     "long-incubation-step"
+    ],
+    "field": "chemistry_synthesis"
+   },
+   "Toyama2025": {
+    "reported": 89.14285714285714,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 18.571428571428573,
+    "flagged": false,
+    "own_share": 0.6166363344395676,
+    "log10_r": -0.6812412373755872,
+    "bottleneck": "Toyama2025/P1/M4",
+    "serial_sum": 60.12204260785783,
+    "bottleneck_rate": 60.12204260785783,
+    "cases": [
+     "parallel-or-batched-modules",
+     "human-transfer-or-human-step"
+    ],
+    "field": "materials_thin_film"
+   },
+   "Wang2026": {
+    "reported": 9.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 14.142857142857142,
+    "flagged": false,
+    "own_share": 0.8871591034558904,
+    "log10_r": 0.1962946451439682,
+    "bottleneck": "Wang2026/P1/M2",
+    "serial_sum": 14.309373964889035,
+    "bottleneck_rate": 14.309373964889033,
+    "cases": [
+     "parallel-or-batched-modules",
+     "long-incubation-step"
+    ],
+    "field": "materials_polymer_soft"
+   },
+   "Wu2025c": {
+    "reported": 12.857142857142856,
+    "kind": "measured",
+    "error": null,
+    "simulated": 5.571428571428571,
+    "flagged": false,
+    "own_share": 0.9841087081672333,
+    "log10_r": -0.36317790241282566,
+    "bottleneck": "Wu2025c/P1/M2",
+    "serial_sum": 5.630926648056222,
+    "bottleneck_rate": 5.630926648056222,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent",
+     "long-incubation-step"
+    ],
+    "field": "materials_polymer_soft"
+   }
+  },
+  "prediction_pooled_durations": {
+   "Aand2024": {
+    "reported": 240.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 55.285714285714285,
+    "flagged": false,
+    "baseline": 39.5736,
+    "d": -0.145207365286544,
+    "serial_sum": 55.26593533117984,
+    "bottleneck_rate": 55.26593533117984,
+    "cases": [
+     "long-incubation-step"
+    ],
+    "field": "chemistry_synthesis"
+   },
+   "AbdelLatif2021": {
+    "reported": 180.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 66.64285714285714,
+    "flagged": false,
+    "baseline": 144.0,
+    "d": 0.3346088840269878,
+    "serial_sum": 66.63067787460476,
+    "bottleneck_rate": 66.63067787460477,
+    "cases": [],
+    "field": "nanomaterials"
+   },
+   "Ahn2023": {
+    "reported": 240.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 34.57142857142857,
+    "flagged": false,
+    "baseline": 39.5736,
+    "d": 0.058688233751936214,
+    "serial_sum": 34.548253593778114,
+    "bottleneck_rate": 34.54825359377812,
+    "cases": [
+     "long-incubation-step"
+    ],
+    "field": "chemistry_synthesis"
+   },
+   "Amara2015": {
+    "reported": 50.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 35.392857142857146,
+    "flagged": false,
+    "baseline": 39.5736,
+    "d": 0.048489936575054335,
+    "serial_sum": 35.39315486553468,
+    "bottleneck_rate": 35.39315486553468,
+    "cases": [
+     "long-incubation-step"
+    ],
+    "field": "chemistry_synthesis"
+   },
+   "Anker2026": {
+    "reported": 32.64072534945221,
+    "kind": "measured",
+    "error": null,
+    "simulated": 7.142857142857143,
+    "flagged": false,
+    "baseline": 159.984,
+    "d": -0.03042891300278916,
+    "serial_sum": 7.114595213293754,
+    "bottleneck_rate": 7.114595213293754,
+    "cases": [
+     "long-incubation-step"
+    ],
+    "field": "nanomaterials"
+   },
+   "Asche2021": {
+    "reported": 1.99992,
+    "kind": "measured",
+    "error": null,
+    "simulated": 6.928571428571429,
+    "flagged": false,
+    "baseline": 41.1888,
+    "d": -0.7741354407592849,
+    "serial_sum": 6.931519157948784,
+    "bottleneck_rate": 6.931519157948784,
+    "cases": [
+     "long-incubation-step"
+    ],
+    "field": "chemistry_synthesis"
+   },
+   "Bai2023a": {
+    "reported": 8.347826086956522,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 5.714285714285714,
+    "flagged": false,
+    "baseline": 80.57142857142857,
+    "d": -0.8199962299108775,
+    "serial_sum": 17.026895202810227,
+    "bottleneck_rate": 17.026895202810227,
+    "cases": [
+     "parallel-or-batched-modules",
+     "human-transfer-or-human-step",
+     "long-incubation-step"
+    ],
+    "field": "materials_thin_film"
+   },
+   "Bateni2022": {
+    "reported": 159.984,
+    "kind": "measured",
+    "error": null,
+    "simulated": 53.357142857142854,
+    "flagged": false,
+    "baseline": 144.0,
+    "d": 0.431169925958089,
+    "serial_sum": 53.343211705871454,
+    "bottleneck_rate": 53.343211705871454,
+    "cases": [],
+    "field": "nanomaterials"
+   },
+   "Bateni2024": {
+    "reported": 120.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 23.928571428571427,
+    "flagged": false,
+    "baseline": 159.984,
+    "d": 0.5753691697005252,
+    "serial_sum": 23.927884016228866,
+    "bottleneck_rate": 23.927884016228866,
+    "cases": [],
+    "field": "nanomaterials"
+   },
+   "Bedard2018": {
+    "reported": 76.80000000000001,
+    "kind": "measured",
+    "error": null,
+    "simulated": 38.285714285714285,
+    "flagged": false,
+    "baseline": 39.5736,
+    "d": 0.014368805703578569,
+    "serial_sum": 38.28090385467435,
+    "bottleneck_rate": 38.28090385467435,
+    "cases": [],
+    "field": "chemistry_synthesis"
+   },
+   "Bennett2024": {
+    "reported": 8.571428571428571,
+    "kind": "measured",
+    "error": null,
+    "simulated": 50.82142857142857,
+    "flagged": false,
+    "baseline": 12.7056,
+    "d": 0.6020516900651296,
+    "serial_sum": 50.804104313056776,
+    "bottleneck_rate": 50.804104313056776,
+    "cases": [],
+    "field": "catalysis"
+   },
+   "Bourne2011": {
+    "reported": 40.3776,
+    "kind": "measured",
+    "error": null,
+    "simulated": 29.321428571428573,
+    "flagged": false,
+    "baseline": 40.3848,
+    "d": 0.13887794056173472,
+    "serial_sum": 29.331386960433182,
+    "bottleneck_rate": 29.331386960433182,
+    "cases": [],
+    "field": "chemistry_synthesis"
+   },
+   "Brody2026": {
+    "reported": 12.7056,
+    "kind": "measured",
+    "error": null,
+    "simulated": 72.46428571428571,
+    "flagged": false,
+    "baseline": 10.714285714285714,
+    "d": 0.6820968817146991,
+    "serial_sum": 72.46498364505578,
+    "bottleneck_rate": 72.46498364505577,
+    "cases": [
+     "long-incubation-step"
+    ],
+    "field": "catalysis"
+   },
+   "Burger2020": {
+    "reported": 86.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 23.428571428571427,
+    "flagged": false,
+    "baseline": 10.714285714285714,
+    "d": -0.33978258465599787,
+    "serial_sum": 18.922496334998268,
+    "bottleneck_rate": 25.6,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent",
+     "long-incubation-step"
+    ],
+    "field": "catalysis"
+   },
+   "Cao2021": {
+    "reported": 8.5333,
+    "kind": "measured",
+    "error": null,
+    "simulated": 5.714285714285714,
+    "flagged": false,
+    "baseline": 51.3604,
+    "d": -0.6053563204650017,
+    "serial_sum": 19.45474913168546,
+    "bottleneck_rate": 19.45474913168546,
+    "cases": [
+     "parallel-or-batched-modules",
+     "human-transfer-or-human-step",
+     "long-incubation-step"
+    ],
+    "field": "materials_polymer_soft"
+   },
+   "Caramelli2021": {
+    "reported": 36.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 50.0,
+    "flagged": false,
+    "baseline": 41.1888,
+    "d": 0.08419086498872688,
+    "serial_sum": 27.103926618628304,
+    "bottleneck_rate": 27.1039266186283,
+    "cases": [
+     "parallel-or-batched-modules",
+     "long-incubation-step"
+    ],
+    "field": "chemistry_synthesis"
+   },
+   "Chang2020": {
+    "reported": 300.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 7.0,
+    "flagged": false,
+    "baseline": 144.0,
+    "d": 1.3132644520809929,
+    "serial_sum": 7.0053107390440665,
+    "bottleneck_rate": 7.0053107390440665,
+    "cases": [
+     "long-incubation-step"
+    ],
+    "field": "nanomaterials"
+   },
+   "Chang2023": {
+    "reported": 144.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 95.35714285714286,
+    "flagged": false,
+    "baseline": 39.5736,
+    "d": -0.3819476703042455,
+    "serial_sum": 95.34494491548804,
+    "bottleneck_rate": 95.34494491548806,
+    "cases": [
+     "parallel-or-batched-modules"
+    ],
+    "field": "chemistry_synthesis"
+   },
+   "Chang2026": {
+    "reported": 720.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 56.32142857142857,
+    "flagged": false,
+    "baseline": 60.0,
+    "d": 0.027477588396960018,
+    "serial_sum": 56.32333767926988,
+    "bottleneck_rate": 56.32333767926988,
+    "cases": [
+     "shared-transfer-agent",
+     "long-incubation-step"
+    ],
+    "field": "materials_thin_film"
+   },
+   "Christensen2021": {
+    "reported": 48.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 18.857142857142858,
+    "flagged": false,
+    "baseline": 39.5736,
+    "d": 0.3219296685265175,
+    "serial_sum": 18.770112289372562,
+    "bottleneck_rate": 18.770112289372566,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent",
+     "long-incubation-step"
+    ],
+    "field": "chemistry_synthesis"
+   },
+   "Clayton2020": {
+    "reported": 147.6912,
+    "kind": "measured",
+    "error": null,
+    "simulated": 57.714285714285715,
+    "flagged": false,
+    "baseline": 39.5736,
+    "d": -0.1638777653782375,
+    "serial_sum": 57.62785346250688,
+    "bottleneck_rate": 57.62785346250688,
+    "cases": [
+     "parallel-or-batched-modules"
+    ],
+    "field": "chemistry_synthesis"
+   },
+   "Clayton2020a": {
+    "reported": 112.61520000000002,
+    "kind": "measured",
+    "error": null,
+    "simulated": 88.57142857142857,
+    "flagged": false,
+    "baseline": 39.5736,
+    "d": -0.34988808976588653,
+    "serial_sum": 88.46793805196468,
+    "bottleneck_rate": 88.46793805196468,
+    "cases": [
+     "parallel-or-batched-modules",
+     "long-incubation-step"
+    ],
+    "field": "chemistry_synthesis"
+   },
+   "Clayton2023": {
+    "reported": 22.2864,
+    "kind": "measured",
+    "error": null,
+    "simulated": 37.285714285714285,
+    "flagged": false,
+    "baseline": 41.1888,
+    "d": -0.04323667202326775,
+    "serial_sum": 37.28477106977948,
+    "bottleneck_rate": 37.28477106977948,
+    "cases": [],
+    "field": "chemistry_synthesis"
+   },
+   "CortesBorda2018": {
+    "reported": 19.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 55.107142857142854,
+    "flagged": false,
+    "baseline": 41.1888,
+    "d": 0.12642875537363713,
+    "serial_sum": 55.10731256178843,
+    "bottleneck_rate": 55.10731256178844,
+    "cases": [],
+    "field": "chemistry_synthesis"
+   },
+   "Dave2020": {
+    "reported": 84.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 32.785714285714285,
+    "flagged": false,
+    "baseline": 153.9996,
+    "d": 0.1453543294673575,
+    "serial_sum": 32.799331865462,
+    "bottleneck_rate": 32.799331865462,
+    "cases": [],
+    "field": "battery_electrochem"
+   },
+   "Dave2022": {
+    "reported": 21.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 39.535714285714285,
+    "flagged": false,
+    "baseline": 162.0,
+    "d": -0.6125254250061274,
+    "serial_sum": 39.526957476496555,
+    "bottleneck_rate": 39.526957476496555,
+    "cases": [],
+    "field": "battery_electrochem"
+   },
+   "Deneault2021": {
+    "reported": 1080.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 52.57142857142857,
+    "flagged": false,
+    "baseline": 35.74626865671642,
+    "d": -0.1675190636095052,
+    "serial_sum": 52.570733191359906,
+    "bottleneck_rate": 52.570733191359906,
+    "cases": [],
+    "field": "materials_polymer_soft"
+   },
+   "Desai2013": {
+    "reported": 23.2008,
+    "kind": "measured",
+    "error": null,
+    "simulated": 33.67857142857143,
+    "flagged": false,
+    "baseline": 41.1888,
+    "d": -0.0874254779521827,
+    "serial_sum": 33.66255625036526,
+    "bottleneck_rate": 33.66255625036527,
+    "cases": [
+     "shared-transfer-agent"
+    ],
+    "field": "chemistry_synthesis"
+   },
+   "Duros2017": {
+    "reported": 10.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 7.142857142857143,
+    "flagged": false,
+    "baseline": 41.1888,
+    "d": -0.4686511036690539,
+    "serial_sum": 26.206436349297825,
+    "bottleneck_rate": 26.20643634929782,
+    "cases": [
+     "parallel-or-batched-modules",
+     "human-transfer-or-human-step",
+     "long-incubation-step"
+    ],
+    "field": "chemistry_synthesis"
+   },
+   "Elder2021": {
+    "reported": 144.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 5.75,
+    "flagged": false,
+    "baseline": 35.42857142857143,
+    "d": 0.789685796122329,
+    "serial_sum": 5.317839381554975,
+    "bottleneck_rate": 12.0,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent"
+    ],
+    "field": "biology_biochem"
+   },
+   "Epps2020": {
+    "reported": 220.00080000000003,
+    "kind": "measured",
+    "error": null,
+    "simulated": 81.42857142857143,
+    "flagged": false,
+    "baseline": 144.0,
+    "d": 0.24758567643701504,
+    "serial_sum": 81.4441249941085,
+    "bottleneck_rate": 81.4441249941085,
+    "cases": [],
+    "field": "nanomaterials"
+   },
+   "Fabry2019": {
+    "reported": 16.999200000000002,
+    "kind": "measured",
+    "error": null,
+    "simulated": 72.46428571428571,
+    "flagged": false,
+    "baseline": 10.714285714285714,
+    "d": 0.429230272048579,
+    "serial_sum": 72.48322147651007,
+    "bottleneck_rate": 72.48322147651007,
+    "cases": [],
+    "field": "catalysis"
+   },
+   "Fei2026": {
+    "reported": 6.6415,
+    "kind": "measured",
+    "error": null,
+    "simulated": 0.7142857142857143,
+    "flagged": false,
+    "baseline": 25.382350000000002,
+    "d": 0.38612856129176243,
+    "serial_sum": 2.3210613482841205,
+    "bottleneck_rate": 2.32106134828412,
+    "cases": [
+     "parallel-or-batched-modules",
+     "human-transfer-or-human-step",
+     "long-incubation-step"
+    ],
+    "field": "materials_inorganic"
+   },
+   "FiskerBdker2025": {
+    "reported": 75.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 6.785714285714286,
+    "flagged": false,
+    "baseline": 10.714285714285714,
+    "d": 0.1983676537668333,
+    "serial_sum": 6.794108627102517,
+    "bottleneck_rate": 6.794108627102517,
+    "cases": [
+     "shared-transfer-agent",
+     "long-incubation-step"
+    ],
+    "field": "catalysis"
+   },
+   "Fitzpatrick2016": {
+    "reported": 16.9416,
+    "kind": "measured",
+    "error": null,
+    "simulated": 43.464285714285715,
+    "flagged": false,
+    "baseline": 41.1888,
+    "d": 0.023353407540553872,
+    "serial_sum": 43.457485602192996,
+    "bottleneck_rate": 43.457485602192996,
+    "cases": [],
+    "field": "chemistry_synthesis"
+   },
+   "Fitzpatrick2018": {
+    "reported": 58.6656,
+    "kind": "measured",
+    "error": null,
+    "simulated": 81.0,
+    "flagged": false,
+    "baseline": 39.5736,
+    "d": -0.030876454922029645,
+    "serial_sum": 80.98608051741107,
+    "bottleneck_rate": 80.98608051741107,
+    "cases": [],
+    "field": "chemistry_synthesis"
+   },
+   "Fratarcangeli2026": {
+    "reported": 21.492537313432837,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 8.571428571428571,
+    "flagged": false,
+    "baseline": 51.3604,
+    "d": 0.020893771016055884,
+    "serial_sum": 32.381380706094,
+    "bottleneck_rate": 32.381380706094,
+    "cases": [
+     "parallel-or-batched-modules",
+     "human-transfer-or-human-step"
+    ],
+    "field": "materials_polymer_soft"
+   },
+   "Gao2026": {
+    "reported": 172.8,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 26.428571428571427,
+    "flagged": false,
+    "baseline": 60.0,
+    "d": 0.35607756199488666,
+    "serial_sum": 26.29136553822746,
+    "bottleneck_rate": 26.291365538227463,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent"
+    ],
+    "field": "materials_thin_film"
+   },
+   "Gerardy2022": {
+    "reported": 18.8568,
+    "kind": "measured",
+    "error": null,
+    "simulated": 41.0,
+    "flagged": false,
+    "baseline": 41.1888,
+    "d": -0.001995282627556383,
+    "serial_sum": 41.00325083643784,
+    "bottleneck_rate": 41.00325083643784,
+    "cases": [],
+    "field": "chemistry_synthesis"
+   },
+   "Ginsburg2023": {
+    "reported": 374.688,
+    "kind": "measured",
+    "error": null,
+    "simulated": 238.42857142857142,
+    "flagged": false,
+    "baseline": 39.5736,
+    "d": -0.7799527369468794,
+    "serial_sum": 238.44349385952808,
+    "bottleneck_rate": 238.4434938595281,
+    "cases": [
+     "shared-transfer-agent",
+     "long-incubation-step"
+    ],
+    "field": "chemistry_synthesis"
+   },
+   "Gongora2020": {
+    "reported": 64.0008,
+    "kind": "measured",
+    "error": null,
+    "simulated": 29.785714285714285,
+    "flagged": false,
+    "baseline": 35.74626865671642,
+    "d": 0.07922269575423618,
+    "serial_sum": 29.775648757624843,
+    "bottleneck_rate": 29.77564875762484,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent"
+    ],
+    "field": "materials_polymer_soft"
+   },
+   "Granda2018": {
+    "reported": 36.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 39.785714285714285,
+    "flagged": false,
+    "baseline": 41.1888,
+    "d": -0.015051979851801012,
+    "serial_sum": 6.8007398953126845,
+    "bottleneck_rate": 40.80443937187611,
+    "cases": [
+     "parallel-or-batched-modules",
+     "long-incubation-step"
+    ],
+    "field": "chemistry_synthesis"
+   },
+   "Grizou2020": {
+    "reported": 300.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 56.42857142857143,
+    "flagged": false,
+    "baseline": 35.74626865671642,
+    "d": -0.1982683405624478,
+    "serial_sum": 56.45582854155776,
+    "bottleneck_rate": 56.45582854155776,
+    "cases": [
+     "shared-transfer-agent"
+    ],
+    "field": "materials_polymer_soft"
+   },
+   "Ha2023": {
+    "reported": 12.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 36.857142857142854,
+    "flagged": false,
+    "baseline": 41.1888,
+    "d": -0.04825747339831854,
+    "serial_sum": 6.515001847425292,
+    "bottleneck_rate": 39.090011084551755,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent",
+     "long-incubation-step"
+    ],
+    "field": "chemistry_synthesis"
+   },
+   "Hall2021": {
+    "reported": 278.4,
+    "kind": "measured",
+    "error": null,
+    "simulated": 67.17857142857143,
+    "flagged": false,
+    "baseline": 10.714285714285714,
+    "d": -0.7972675408307166,
+    "serial_sum": 67.19290741532839,
+    "bottleneck_rate": 67.19290741532839,
+    "cases": [],
+    "field": "catalysis"
+   },
+   "Harris2024": {
+    "reported": 21.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 22.0,
+    "flagged": false,
+    "baseline": 80.57142857142857,
+    "d": -0.5637583831468792,
+    "serial_sum": 22.01834862385321,
+    "bottleneck_rate": 22.018348623853207,
+    "cases": [],
+    "field": "materials_thin_film"
+   },
+   "Holmes2016": {
+    "reported": 38.7696,
+    "kind": "measured",
+    "error": null,
+    "simulated": 54.642857142857146,
+    "flagged": false,
+    "baseline": 41.1888,
+    "d": 0.12275426012808775,
+    "serial_sum": 54.6739321497627,
+    "bottleneck_rate": 54.6739321497627,
+    "cases": [
+     "parallel-or-batched-modules"
+    ],
+    "field": "chemistry_synthesis"
+   },
+   "Holmes2016a": {
+    "reported": 42.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 28.214285714285715,
+    "flagged": false,
+    "baseline": 39.5736,
+    "d": 0.14693649976988832,
+    "serial_sum": 28.20165488877646,
+    "bottleneck_rate": 28.201654888776456,
+    "cases": [],
+    "field": "chemistry_synthesis"
+   },
+   "Horstkotte2010": {
+    "reported": 133.71359999999999,
+    "kind": "measured",
+    "error": null,
+    "simulated": 31.857142857142858,
+    "flagged": false,
+    "baseline": 219.4284,
+    "d": 0.4078515037114531,
+    "serial_sum": 31.847838106822955,
+    "bottleneck_rate": 31.847838106822955,
+    "cases": [],
+    "field": "analytical_chemistry"
+   },
+   "Hsieh2018": {
+    "reported": 33.333600000000004,
+    "kind": "measured",
+    "error": null,
+    "simulated": 25.5,
+    "flagged": false,
+    "baseline": 41.1888,
+    "d": 0.02444511946334396,
+    "serial_sum": 25.489357308276666,
+    "bottleneck_rate": 25.48935730827667,
+    "cases": [],
+    "field": "chemistry_synthesis"
+   },
+   "Hu2022": {
+    "reported": 54.857142857142854,
+    "kind": "measured",
+    "error": null,
+    "simulated": 0.0,
+    "flagged": true,
+    "baseline": 80.0,
+    "d": null,
+    "serial_sum": 4.674628650817261,
+    "bottleneck_rate": 4.674628650817261,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent",
+     "human-transfer-or-human-step"
+    ],
+    "field": "biology_biochem"
+   },
+   "Hu2025": {
+    "reported": 144.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 80.28571428571429,
+    "flagged": false,
+    "baseline": 159.984,
+    "d": 0.20801015759957775,
+    "serial_sum": 80.3085932053725,
+    "bottleneck_rate": 80.3085932053725,
+    "cases": [],
+    "field": "nanomaterials"
+   },
+   "Jackson2025": {
+    "reported": 102.8568,
+    "kind": "measured",
+    "error": null,
+    "simulated": 73.71428571428571,
+    "flagged": false,
+    "baseline": 159.984,
+    "d": -0.04716219511642,
+    "serial_sum": 73.67822626492327,
+    "bottleneck_rate": 73.67822626492327,
+    "cases": [
+     "parallel-or-batched-modules"
+    ],
+    "field": "nanomaterials"
+   },
+   "Jeraal2020": {
+    "reported": 44.8704,
+    "kind": "measured",
+    "error": null,
+    "simulated": 55.57142857142857,
+    "flagged": false,
+    "baseline": 39.5736,
+    "d": 0.038337238838008485,
+    "serial_sum": 55.57520985430804,
+    "bottleneck_rate": 55.57520985430804,
+    "cases": [],
+    "field": "chemistry_synthesis"
+   },
+   "Jiang2022": {
+    "reported": 116.35199999999999,
+    "kind": "measured",
+    "error": null,
+    "simulated": 19.714285714285715,
+    "flagged": false,
+    "baseline": 159.984,
+    "d": 0.6326901083165746,
+    "serial_sum": 20.22983544425572,
+    "bottleneck_rate": 20.22983544425572,
+    "cases": [
+     "parallel-or-batched-modules",
+     "long-incubation-step"
+    ],
+    "field": "nanomaterials"
+   },
+   "Kanda2022": {
+    "reported": 1.1676,
+    "kind": "measured",
+    "error": null,
+    "simulated": 3.4285714285714284,
+    "flagged": false,
+    "baseline": 99.42857142857143,
+    "d": -1.462397997898956,
+    "serial_sum": 5.853519733610653,
+    "bottleneck_rate": 5.853519733610653,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent",
+     "human-transfer-or-human-step"
+    ],
+    "field": "biology_biochem"
+   },
+   "Kershaw2023": {
+    "reported": 132.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 69.60714285714286,
+    "flagged": false,
+    "baseline": 39.5736,
+    "d": -0.24524824805729167,
+    "serial_sum": 69.61285904201748,
+    "bottleneck_rate": 69.61285904201748,
+    "cases": [],
+    "field": "chemistry_synthesis"
+   },
+   "Kim2025c": {
+    "reported": 597.5999999999999,
+    "kind": "measured",
+    "error": null,
+    "simulated": 132.71428571428572,
+    "flagged": false,
+    "baseline": 144.0,
+    "d": 0.03544481811586464,
+    "serial_sum": 61.181135816456596,
+    "bottleneck_rate": 246.15384615384616,
+    "cases": [
+     "parallel-or-batched-modules"
+    ],
+    "field": "nanomaterials"
+   },
+   "Kim2026": {
+    "reported": 2.823529411764706,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 5.714285714285714,
+    "flagged": false,
+    "baseline": 12.7056,
+    "d": -0.3470332273632299,
+    "serial_sum": 5.054419838597867,
+    "bottleneck_rate": 10.108839677195734,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent",
+     "human-transfer-or-human-step"
+    ],
+    "field": "catalysis"
+   },
+   "King2009": {
+    "reported": 1000.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 3.8214285714285716,
+    "flagged": false,
+    "baseline": 35.42857142857143,
+    "d": 0.9671278944689692,
+    "serial_sum": 3.8203548862073693,
+    "bottleneck_rate": 3.8203548862073693,
+    "cases": [
+     "parallel-or-batched-modules"
+    ],
+    "field": "biology_biochem"
+   },
+   "Knox2025": {
+    "reported": 16.75,
+    "kind": "measured",
+    "error": null,
+    "simulated": 25.607142857142858,
+    "flagged": false,
+    "baseline": 51.3604,
+    "d": -0.30226727307782286,
+    "serial_sum": 25.612901313254085,
+    "bottleneck_rate": 25.612901313254085,
+    "cases": [],
+    "field": "materials_polymer_soft"
+   },
+   "Koscher2023": {
+    "reported": 42.192,
+    "kind": "measured",
+    "error": null,
+    "simulated": 3.7857142857142856,
+    "flagged": false,
+    "baseline": 39.5736,
+    "d": 1.0192577257955595,
+    "serial_sum": 3.7849665858418593,
+    "bottleneck_rate": 3.7849665858418593,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent"
+    ],
+    "field": "chemistry_synthesis"
+   },
+   "Langner2020": {
+    "reported": 4.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 3.4285714285714284,
+    "flagged": false,
+    "baseline": 80.57142857142857,
+    "d": -1.2371742830105097,
+    "serial_sum": 3.5963324900960374,
+    "bottleneck_rate": 4.0,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent",
+     "human-transfer-or-human-step",
+     "long-incubation-step"
+    ],
+    "field": "materials_thin_film"
+   },
+   "Laws2023": {
+    "reported": 30.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 18.142857142857142,
+    "flagged": false,
+    "baseline": 13.703100000000001,
+    "d": -0.12188685388771642,
+    "serial_sum": 18.11909530350533,
+    "bottleneck_rate": 18.11909530350533,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent"
+    ],
+    "field": "materials_inorganic"
+   },
+   "Lee2026a": {
+    "reported": 24.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 109.71428571428571,
+    "flagged": false,
+    "baseline": 41.1888,
+    "d": 0.42548404066996326,
+    "serial_sum": 109.66032587139661,
+    "bottleneck_rate": 109.66032587139661,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent"
+    ],
+    "field": "chemistry_synthesis"
+   },
+   "Li2020": {
+    "reported": 720.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 51.32142857142857,
+    "flagged": false,
+    "baseline": 144.0,
+    "d": 0.4480637553032434,
+    "serial_sum": 51.336898395721924,
+    "bottleneck_rate": 51.336898395721924,
+    "cases": [],
+    "field": "nanomaterials"
+   },
+   "Li2026": {
+    "reported": 3.4285714285714284,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 0.7142857142857143,
+    "flagged": false,
+    "baseline": 25.382350000000002,
+    "d": -0.1881773892762051,
+    "serial_sum": 1.8975394579494056,
+    "bottleneck_rate": 1.8975394579494056,
+    "cases": [
+     "shared-transfer-agent",
+     "human-transfer-or-human-step",
+     "long-incubation-step"
+    ],
+    "field": "materials_inorganic"
+   },
+   "Li2026a": {
+    "reported": 240.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 38.57142857142857,
+    "flagged": false,
+    "baseline": 144.0,
+    "d": 0.5720967679505192,
+    "serial_sum": 38.61884009386524,
+    "bottleneck_rate": 38.61884009386524,
+    "cases": [
+     "parallel-or-batched-modules",
+     "long-incubation-step"
+    ],
+    "field": "nanomaterials"
+   },
+   "Liang2025": {
+    "reported": 189.36,
+    "kind": "measured",
+    "error": null,
+    "simulated": 36.214285714285715,
+    "flagged": false,
+    "baseline": 60.0,
+    "d": 0.21927132672854577,
+    "serial_sum": 36.22641509433962,
+    "bottleneck_rate": 36.22641509433962,
+    "cases": [],
+    "field": "materials_thin_film"
+   },
+   "Liang2026": {
+    "reported": 72.0,
+    "kind": "nominal",
+    "error": "unknown transfer mode unmapped",
+    "simulated": null,
+    "flagged": null,
+    "baseline": 68.57142857142857,
+    "d": null,
+    "serial_sum": 42.910355103054385,
+    "bottleneck_rate": 42.910355103054385,
+    "cases": [
+     "long-incubation-step"
+    ],
+    "field": "materials_thin_film"
+   },
+   "Low2024": {
+    "reported": 137.14285714285714,
+    "kind": "nominal",
+    "error": "unknown transfer mode unmapped",
+    "simulated": null,
+    "flagged": null,
+    "baseline": 159.984,
+    "d": null,
+    "serial_sum": 89.13189250528707,
+    "bottleneck_rate": 178.26378501057414,
+    "cases": [
+     "parallel-or-batched-modules"
+    ],
+    "field": "nanomaterials"
+   },
+   "MMehr2023": {
+    "reported": 24.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 110.17857142857143,
+    "flagged": false,
+    "baseline": 41.1888,
+    "d": 0.4273179976797493,
+    "serial_sum": 7.953384330728233,
+    "bottleneck_rate": 159.06768661456465,
+    "cases": [
+     "parallel-or-batched-modules",
+     "long-incubation-step"
+    ],
+    "field": "chemistry_synthesis"
+   },
+   "MacLeod2020": {
+    "reported": 28.0008,
+    "kind": "measured",
+    "error": null,
+    "simulated": 21.678571428571427,
+    "flagged": false,
+    "baseline": 80.57142857142857,
+    "d": -0.3478708445446673,
+    "serial_sum": 21.68212103341406,
+    "bottleneck_rate": 21.68212103341406,
+    "cases": [
+     "shared-transfer-agent"
+    ],
+    "field": "materials_thin_film"
+   },
+   "MacLeod2022": {
+    "reported": 48.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 18.214285714285715,
+    "flagged": false,
+    "baseline": 80.57142857142857,
+    "d": 0.19588926602637177,
+    "serial_sum": 18.209216308207846,
+    "bottleneck_rate": 18.209216308207846,
+    "cases": [],
+    "field": "materials_thin_film"
+   },
+   "McMullen2010": {
+    "reported": 72.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 56.142857142857146,
+    "flagged": false,
+    "baseline": 39.5736,
+    "d": -0.1518889506430594,
+    "serial_sum": 56.12758631890083,
+    "bottleneck_rate": 56.12758631890083,
+    "cases": [],
+    "field": "chemistry_synthesis"
+   },
+   "McMullen2010a": {
+    "reported": 78.5448,
+    "kind": "measured",
+    "error": null,
+    "simulated": 23.714285714285715,
+    "flagged": false,
+    "baseline": 39.5736,
+    "d": 0.2223955116923123,
+    "serial_sum": 23.72876701042253,
+    "bottleneck_rate": 23.728767010422533,
+    "cases": [],
+    "field": "chemistry_synthesis"
+   },
+   "Mikami2026": {
+    "reported": 10.714285714285714,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 1.5714285714285714,
+    "flagged": false,
+    "baseline": 12.7056,
+    "d": 0.7596366229339828,
+    "serial_sum": 6.054426774020623,
+    "bottleneck_rate": 6.054426774020623,
+    "cases": [
+     "parallel-or-batched-modules",
+     "human-transfer-or-human-step",
+     "long-incubation-step"
+    ],
+    "field": "catalysis"
+   },
+   "Moosavi2019": {
+    "reported": 30.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 17.142857142857142,
+    "flagged": false,
+    "baseline": 13.703100000000001,
+    "d": -0.09726437897938439,
+    "serial_sum": 26.54663327853994,
+    "bottleneck_rate": 26.54663327853994,
+    "cases": [
+     "parallel-or-batched-modules",
+     "human-transfer-or-human-step",
+     "long-incubation-step"
+    ],
+    "field": "materials_inorganic"
+   },
+   "Mottafegh2024": {
+    "reported": 720.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 116.39285714285714,
+    "flagged": false,
+    "baseline": 144.0,
+    "d": 0.09243616297232482,
+    "serial_sum": 116.38714891897352,
+    "bottleneck_rate": 116.38714891897352,
+    "cases": [
+     "long-incubation-step"
+    ],
+    "field": "nanomaterials"
+   },
+   "Mueller2023": {
+    "reported": 30.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 69.17857142857143,
+    "flagged": false,
+    "baseline": 41.1888,
+    "d": 0.22519245002959978,
+    "serial_sum": 69.19473030873343,
+    "bottleneck_rate": 69.19473030873343,
+    "cases": [],
+    "field": "chemistry_synthesis"
+   },
+   "Munyebvu2025": {
+    "reported": 240.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 37.57142857142857,
+    "flagged": false,
+    "baseline": 144.0,
+    "d": 0.5835047836197487,
+    "serial_sum": 37.588914750603635,
+    "bottleneck_rate": 37.588914750603635,
+    "cases": [],
+    "field": "nanomaterials"
+   },
+   "Nambiar2022": {
+    "reported": 72.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 46.464285714285715,
+    "flagged": false,
+    "baseline": 39.5736,
+    "d": -0.06971370550125658,
+    "serial_sum": 46.460355443228565,
+    "bottleneck_rate": 46.460355443228565,
+    "cases": [],
+    "field": "chemistry_synthesis"
+   },
+   "Nazeri2026": {
+    "reported": 199.98,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 63.0,
+    "flagged": false,
+    "baseline": 35.74626865671642,
+    "d": -0.24610983440382606,
+    "serial_sum": 63.010501750291716,
+    "bottleneck_rate": 63.010501750291716,
+    "cases": [],
+    "field": "materials_polymer_soft"
+   },
+   "Nikolaev2016": {
+    "reported": 100.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 7.75,
+    "flagged": false,
+    "baseline": 159.984,
+    "d": 0.9066217464575723,
+    "serial_sum": 7.760362868819329,
+    "bottleneck_rate": 7.760362868819329,
+    "cases": [
+     "long-incubation-step"
+    ],
+    "field": "nanomaterials"
+   },
+   "Noh2024": {
+    "reported": 37.333333333333336,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 17.142857142857142,
+    "flagged": false,
+    "baseline": 162.0,
+    "d": -0.29940468467496056,
+    "serial_sum": 19.65618734803566,
+    "bottleneck_rate": 19.65618734803566,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent",
+     "human-transfer-or-human-step"
+    ],
+    "field": "battery_electrochem"
+   },
+   "Olansky1978": {
+    "reported": 96.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 64.17857142857143,
+    "flagged": false,
+    "baseline": 238.2852,
+    "d": -0.2199446486478494,
+    "serial_sum": 64.19019316493313,
+    "bottleneck_rate": 64.19019316493313,
+    "cases": [],
+    "field": "analytical_chemistry"
+   },
+   "OrtizPerez2024": {
+    "reported": 2.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 0.7142857142857143,
+    "flagged": false,
+    "baseline": 159.984,
+    "d": -1.4558885240299169,
+    "serial_sum": 3.2164216192672592,
+    "bottleneck_rate": 3.216421619267259,
+    "cases": [
+     "parallel-or-batched-modules",
+     "human-transfer-or-human-step"
+    ],
+    "field": "nanomaterials"
+   },
+   "Pant2018": {
+    "reported": 16.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 8.142857142857142,
+    "flagged": false,
+    "baseline": 41.1888,
+    "d": -0.11731598969367685,
+    "serial_sum": 8.161992886596478,
+    "bottleneck_rate": 8.161992886596478,
+    "cases": [
+     "shared-transfer-agent",
+     "long-incubation-step"
+    ],
+    "field": "chemistry_synthesis"
+   },
+   "Pence2026": {
+    "reported": 150.0,
+    "kind": "measured",
+    "error": "unknown transfer mode unmapped",
+    "simulated": null,
+    "flagged": null,
+    "baseline": 60.0,
+    "d": null,
+    "serial_sum": 6.383992729341614,
+    "bottleneck_rate": 6.383992729341614,
+    "cases": [
+     "long-incubation-step"
+    ],
+    "field": "materials_thin_film"
+   },
+   "Pittaway2025": {
+    "reported": 5.25,
+    "kind": "measured",
+    "error": null,
+    "simulated": 38.142857142857146,
+    "flagged": false,
+    "baseline": 51.3604,
+    "d": -0.1292151760530853,
+    "serial_sum": 38.12549642573471,
+    "bottleneck_rate": 38.12549642573471,
+    "cases": [],
+    "field": "materials_polymer_soft"
+   },
+   "Poscharny2018": {
+    "reported": 12.499991999999999,
+    "kind": "measured",
+    "error": null,
+    "simulated": 67.78571428571429,
+    "flagged": false,
+    "baseline": 41.1888,
+    "d": 0.21635903740176288,
+    "serial_sum": 67.79129070223617,
+    "bottleneck_rate": 67.79129070223617,
+    "cases": [],
+    "field": "chemistry_synthesis"
+   },
+   "Putz2025": {
+    "reported": 153.6,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 17.142857142857142,
+    "flagged": false,
+    "baseline": 35.42857142857143,
+    "d": 0.3152704347785914,
+    "serial_sum": 17.196767644600136,
+    "bottleneck_rate": 17.196767644600136,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent",
+     "long-incubation-step"
+    ],
+    "field": "biology_biochem"
+   },
+   "Ramezani2026": {
+    "reported": 240.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 35.142857142857146,
+    "flagged": false,
+    "baseline": 75.9996,
+    "d": 0.33497423942522286,
+    "serial_sum": 35.159826642521416,
+    "bottleneck_rate": 35.159826642521416,
+    "cases": [],
+    "field": "battery_electrochem"
+   },
+   "Ramirez2024": {
+    "reported": 3.4285714285714284,
+    "kind": "measured",
+    "error": null,
+    "simulated": 2.857142857142857,
+    "flagged": false,
+    "baseline": 12.7056,
+    "d": -0.4897007309319615,
+    "serial_sum": 3.46594147546546,
+    "bottleneck_rate": 3.46594147546546,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent",
+     "human-transfer-or-human-step",
+     "long-incubation-step"
+    ],
+    "field": "catalysis"
+   },
+   "Rapp2024": {
+    "reported": 7.199999999999999,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 8.142857142857142,
+    "flagged": false,
+    "baseline": 99.42857142857143,
+    "d": -1.086734383938071,
+    "serial_sum": 8.074238133953854,
+    "bottleneck_rate": 32.296952535815414,
+    "cases": [
+     "parallel-or-batched-modules"
+    ],
+    "field": "biology_biochem"
+   },
+   "Reizman2012": {
+    "reported": 11.1429,
+    "kind": "measured",
+    "error": null,
+    "simulated": 30.071428571428573,
+    "flagged": false,
+    "baseline": 41.1888,
+    "d": -0.13662507918986155,
+    "serial_sum": 30.073094326487993,
+    "bottleneck_rate": 30.073094326487993,
+    "cases": [],
+    "field": "chemistry_synthesis"
+   },
+   "Roch2020": {
+    "reported": 342.8568,
+    "kind": "measured",
+    "error": null,
+    "simulated": 53.714285714285715,
+    "flagged": false,
+    "baseline": 114.85679999999999,
+    "d": 0.33006690741741673,
+    "serial_sum": 53.709632300376086,
+    "bottleneck_rate": 53.709632300376086,
+    "cases": [],
+    "field": "analytical_chemistry"
+   },
+   "Ruan2024": {
+    "reported": 17.0928,
+    "kind": "measured",
+    "error": null,
+    "simulated": 10.928571428571429,
+    "flagged": false,
+    "baseline": 41.1888,
+    "d": -0.18771611238697097,
+    "serial_sum": 10.950362160415201,
+    "bottleneck_rate": 10.950362160415201,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent",
+     "long-incubation-step"
+    ],
+    "field": "chemistry_synthesis"
+   },
+   "Rubens2019": {
+    "reported": 52.7208,
+    "kind": "measured",
+    "error": null,
+    "simulated": 55.17857142857143,
+    "flagged": false,
+    "baseline": 35.74626865671642,
+    "d": -0.1489628160126774,
+    "serial_sum": 55.19003513254551,
+    "bottleneck_rate": 55.19003513254551,
+    "cases": [],
+    "field": "materials_polymer_soft"
+   },
+   "Rupnow2023": {
+    "reported": 100.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 8.642857142857142,
+    "flagged": false,
+    "baseline": 60.0,
+    "d": 0.8414939157454315,
+    "serial_sum": 8.636674880171135,
+    "bottleneck_rate": 8.636674880171135,
+    "cases": [
+     "long-incubation-step"
+    ],
+    "field": "materials_thin_film"
+   },
+   "Salley2020": {
+    "reported": 360.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 26.785714285714285,
+    "flagged": false,
+    "baseline": 144.0,
+    "d": 0.7304592600457688,
+    "serial_sum": 26.700866851059228,
+    "bottleneck_rate": 26.700866851059224,
+    "cases": [
+     "parallel-or-batched-modules",
+     "long-incubation-step"
+    ],
+    "field": "nanomaterials"
+   },
+   "Sheng2023": {
+    "reported": 67.9992,
+    "kind": "measured",
+    "error": null,
+    "simulated": 52.142857142857146,
+    "flagged": false,
+    "baseline": 162.0,
+    "d": -0.2617022323261784,
+    "serial_sum": 52.1314146076568,
+    "bottleneck_rate": 52.1314146076568,
+    "cases": [],
+    "field": "battery_electrochem"
+   },
+   "Shimizu2020": {
+    "reported": 12.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 32.82142857142857,
+    "flagged": false,
+    "baseline": 80.57142857142857,
+    "d": -0.39002358392519343,
+    "serial_sum": 32.80805012340991,
+    "bottleneck_rate": 32.80805012340991,
+    "cases": [
+     "shared-transfer-agent"
+    ],
+    "field": "materials_thin_film"
+   },
+   "Singh2025": {
+    "reported": 16.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 3.2142857142857144,
+    "flagged": true,
+    "baseline": 99.42857142857143,
+    "d": -0.09635571238156138,
+    "serial_sum": 3.8589488681831003,
+    "bottleneck_rate": 3.8589488681831003,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent"
+    ],
+    "field": "biology_biochem"
+   },
+   "Skilton2013": {
+    "reported": 450.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 80.42857142857143,
+    "flagged": false,
+    "baseline": 39.5736,
+    "d": -0.30800479511897894,
+    "serial_sum": 80.44318234719053,
+    "bottleneck_rate": 80.44318234719054,
+    "cases": [],
+    "field": "chemistry_synthesis"
+   },
+   "Slattery2024": {
+    "reported": 24.828,
+    "kind": "measured",
+    "error": null,
+    "simulated": 54.285714285714285,
+    "flagged": false,
+    "baseline": 41.1888,
+    "d": 0.11990641725526152,
+    "serial_sum": 54.27647077299997,
+    "bottleneck_rate": 54.27647077299997,
+    "cases": [],
+    "field": "chemistry_synthesis"
+   },
+   "Snapp2024": {
+    "reported": 50.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 130.96428571428572,
+    "flagged": false,
+    "baseline": 37.106668656716415,
+    "d": 0.28866483618012617,
+    "serial_sum": 39.6985848189671,
+    "bottleneck_rate": 174.54545454545456,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent"
+    ],
+    "field": "materials_polymer_soft"
+   },
+   "Suzumura2022": {
+    "reported": 600.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 59.785714285714285,
+    "flagged": false,
+    "baseline": 75.9996,
+    "d": 0.10421388419932298,
+    "serial_sum": 47.43545947001123,
+    "bottleneck_rate": 47.43545947001123,
+    "cases": [
+     "parallel-or-batched-modules",
+     "long-incubation-step"
+    ],
+    "field": "battery_electrochem"
+   },
+   "Szymanski2023": {
+    "reported": 20.7647,
+    "kind": "measured",
+    "error": null,
+    "simulated": 1.4285714285714286,
+    "flagged": false,
+    "baseline": 18.32075,
+    "d": 1.1080412885051651,
+    "serial_sum": 1.4142095321650827,
+    "bottleneck_rate": 1.4142095321650827,
+    "cases": [
+     "parallel-or-batched-modules",
+     "long-incubation-step"
+    ],
+    "field": "materials_inorganic"
+   },
+   "Tamura2023": {
+    "reported": 384.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 59.42857142857143,
+    "flagged": false,
+    "baseline": 75.9996,
+    "d": 0.10681601590185918,
+    "serial_sum": 60.30532186613214,
+    "bottleneck_rate": 60.30532186613215,
+    "cases": [
+     "parallel-or-batched-modules",
+     "long-incubation-step"
+    ],
+    "field": "battery_electrochem"
+   },
+   "Tamura2025": {
+    "reported": 36.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 25.178571428571427,
+    "flagged": false,
+    "baseline": 41.1888,
+    "d": 0.09679477653810314,
+    "serial_sum": 17.757742464777394,
+    "bottleneck_rate": 17.757742464777394,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent"
+    ],
+    "field": "chemistry_synthesis"
+   },
+   "Tao2021": {
+    "reported": 24.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 81.0,
+    "flagged": false,
+    "baseline": 159.984,
+    "d": -0.2955915321574676,
+    "serial_sum": 80.98608051741107,
+    "bottleneck_rate": 80.98608051741107,
+    "cases": [],
+    "field": "nanomaterials"
+   },
+   "Toyama2025": {
+    "reported": 89.14285714285714,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 18.571428571428573,
+    "flagged": false,
+    "baseline": 60.0,
+    "d": 0.5093059380910637,
+    "serial_sum": 67.09677419354838,
+    "bottleneck_rate": 67.09677419354838,
+    "cases": [
+     "parallel-or-batched-modules",
+     "human-transfer-or-human-step",
+     "long-incubation-step"
+    ],
+    "field": "materials_thin_film"
+   },
+   "Vargas2026": {
+    "reported": 102.8568,
+    "kind": "measured",
+    "error": null,
+    "simulated": 37.892857142857146,
+    "flagged": false,
+    "baseline": 39.5736,
+    "d": 0.018848207158988994,
+    "serial_sum": 37.90554324697831,
+    "bottleneck_rate": 37.90554324697831,
+    "cases": [
+     "long-incubation-step"
+    ],
+    "field": "chemistry_synthesis"
+   },
+   "Vikram2021": {
+    "reported": 15.273599999999998,
+    "kind": "measured",
+    "error": null,
+    "simulated": 74.42857142857143,
+    "flagged": false,
+    "baseline": 159.984,
+    "d": -0.3323368677508497,
+    "serial_sum": 74.41219533201274,
+    "bottleneck_rate": 74.41219533201274,
+    "cases": [
+     "parallel-or-batched-modules"
+    ],
+    "field": "nanomaterials"
+   },
+   "Wagner2024": {
+    "reported": 142.66559999999998,
+    "kind": "measured",
+    "error": null,
+    "simulated": 45.392857142857146,
+    "flagged": false,
+    "baseline": 39.5736,
+    "d": -0.05958195949367845,
+    "serial_sum": 45.3984184115808,
+    "bottleneck_rate": 45.3984184115808,
+    "cases": [],
+    "field": "chemistry_synthesis"
+   },
+   "Wakabayashi2026": {
+    "reported": 7.5,
+    "kind": "measured",
+    "error": null,
+    "simulated": 76.14285714285714,
+    "flagged": false,
+    "baseline": 80.57142857142857,
+    "d": -0.024551894956770015,
+    "serial_sum": 76.12334801762115,
+    "bottleneck_rate": 76.12334801762115,
+    "cases": [
+     "shared-transfer-agent",
+     "human-transfer-or-human-step",
+     "long-incubation-step"
+    ],
+    "field": "materials_thin_film"
+   },
+   "Wang2020": {
+    "reported": 720.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 86.46428571428571,
+    "flagged": false,
+    "baseline": 144.0,
+    "d": 0.22152573399573616,
+    "serial_sum": 86.46917534027222,
+    "bottleneck_rate": 86.46917534027222,
+    "cases": [],
+    "field": "nanomaterials"
+   },
+   "Wang2025": {
+    "reported": 100.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 1.75,
+    "flagged": false,
+    "baseline": 60.0,
+    "d": 1.5351132016973492,
+    "serial_sum": 1.7560297468187205,
+    "bottleneck_rate": 1.7560297468187205,
+    "cases": [
+     "shared-transfer-agent"
+    ],
+    "field": "materials_thin_film"
+   },
+   "Wang2026": {
+    "reported": 9.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 84.85714285714286,
+    "flagged": false,
+    "baseline": 51.3604,
+    "d": 0.21806000756353294,
+    "serial_sum": 84.72757187297401,
+    "bottleneck_rate": 84.72757187297401,
+    "cases": [
+     "parallel-or-batched-modules"
+    ],
+    "field": "materials_polymer_soft"
+   },
+   "Wang2026a": {
+    "reported": 2.526315789473684,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 22.285714285714285,
+    "flagged": false,
+    "baseline": 159.984,
+    "d": -0.8560499926959125,
+    "serial_sum": 22.618183444419053,
+    "bottleneck_rate": 22.618183444419053,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent",
+     "long-incubation-step"
+    ],
+    "field": "nanomaterials"
+   },
+   "Wu2025a": {
+    "reported": 700.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 10.476190476190476,
+    "flagged": false,
+    "baseline": 35.74626865671642,
+    "d": 0.5330273289614686,
+    "serial_sum": 10.517346317711503,
+    "bottleneck_rate": 10.517346317711503,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent"
+    ],
+    "field": "materials_polymer_soft"
+   },
+   "Wu2025b": {
+    "reported": 30.0,
+    "kind": "measured",
+    "error": null,
+    "simulated": 82.60714285714286,
+    "flagged": false,
+    "baseline": 159.984,
+    "d": -0.2870589496077172,
+    "serial_sum": 82.61222928718269,
+    "bottleneck_rate": 82.61222928718269,
+    "cases": [],
+    "field": "nanomaterials"
+   },
+   "Wu2025c": {
+    "reported": 12.857142857142856,
+    "kind": "measured",
+    "error": null,
+    "simulated": 17.142857142857142,
+    "flagged": false,
+    "baseline": 51.3604,
+    "d": -0.4765451913700358,
+    "serial_sum": 17.218415467345128,
+    "bottleneck_rate": 17.218415467345128,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent",
+     "long-incubation-step"
+    ],
+    "field": "materials_polymer_soft"
+   },
+   "Xu2022": {
+    "reported": 144.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 167.0,
+    "flagged": false,
+    "baseline": 39.5736,
+    "d": -0.49660295332480553,
+    "serial_sum": 75.59055118110236,
+    "bottleneck_rate": 226.77165354330708,
+    "cases": [
+     "parallel-or-batched-modules"
+    ],
+    "field": "chemistry_synthesis"
+   },
+   "Xu2025": {
+    "reported": 230.0,
+    "kind": "nominal",
+    "error": null,
+    "simulated": 13.714285714285714,
+    "flagged": false,
+    "baseline": 144.0,
+    "d": 1.021189299069938,
+    "serial_sum": 13.117267843146928,
+    "bottleneck_rate": 13.11726784314693,
+    "cases": [
+     "parallel-or-batched-modules",
+     "shared-transfer-agent"
+    ],
+    "field": "nanomaterials"
+   },
+   "Zhu2024": {
+    "reported": 5.785714285714286,
+    "kind": "measured",
+    "error": null,
+    "simulated": 1.5,
+    "flagged": false,
+    "baseline": 12.7056,
+    "d": 0.24462752866820675,
+    "serial_sum": 1.492751344599229,
+    "bottleneck_rate": 1.492751344599229,
+    "cases": [
+     "shared-transfer-agent",
+     "long-incubation-step"
+    ],
+    "field": "catalysis"
+   }
+  }
+ },
+ "medians_for_negative_control": {
+  "steps": 8.5,
+  "transfers": 0.30833333333333335,
+  "planning": 1.75
+ },
+ "db_content_digest": "57b39af53554a4b7dbccbdfebfc3b254f88f6af050a378b3cb1f9435deeaa08a",
+ "python": "3.12.3",
+ "simpy": "4.1.2"
+}

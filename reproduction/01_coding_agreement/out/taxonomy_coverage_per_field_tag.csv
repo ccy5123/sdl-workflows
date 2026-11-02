@@ -1,0 +1,10 @@
+field_tag,n_papers,steps_mapped,steps_n,modules_mapped,modules_n,connections_mapped,connections_n
+analytical_chemistry,2,14,14,11,11,10,10
+battery_electrochem,2,21,21,7,7,10,10
+biology_biochem,3,62,63,28,28,36,36
+catalysis,3,23,23,18,18,19,19
+chemistry_synthesis,13,127,131,69,70,80,80
+materials_inorganic,1,6,6,4,4,4,4
+materials_polymer_soft,3,26,26,11,11,12,12
+materials_thin_film,2,13,13,9,9,13,13
+nanomaterials,7,86,86,43,44,46,46

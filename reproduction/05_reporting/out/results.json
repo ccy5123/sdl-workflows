@@ -1,0 +1,464 @@
+{
+ "n_papers": 237,
+ "n_platform_groups": 200,
+ "items": {
+  "durations_every_step": {
+   "share": 0.0970464135021097,
+   "n_eligible": 237,
+   "n_reported": 23,
+   "ci95_lo": 0.06329113924050633,
+   "ci95_hi": 0.1350210970464135
+  },
+  "batch_size": {
+   "share": 0.8523206751054853,
+   "n_eligible": 237,
+   "n_reported": 202,
+   "ci95_lo": 0.8059071729957806,
+   "ci95_hi": 0.8945147679324894
+  },
+  "planning_time": {
+   "share": 0.02531645569620253,
+   "n_eligible": 237,
+   "n_reported": 6,
+   "ci95_lo": 0.008438818565400843,
+   "ci95_hi": 0.046413502109704644
+  },
+  "operating_time": {
+   "share": 0.02531645569620253,
+   "n_eligible": 237,
+   "n_reported": 6,
+   "ci95_lo": 0.008438818565400843,
+   "ci95_hi": 0.046413502109704644
+  },
+  "any_throughput": {
+   "share": 0.5358649789029536,
+   "n_eligible": 237,
+   "n_reported": 127,
+   "ci95_lo": 0.47257383966244726,
+   "ci95_hi": 0.6033755274261603
+  },
+  "measured_throughput": {
+   "share": 0.350210970464135,
+   "n_eligible": 237,
+   "n_reported": 83,
+   "ci95_lo": 0.2911392405063291,
+   "ci95_hi": 0.41350210970464135
+  },
+  "cost": {
+   "share": 0.04219409282700422,
+   "n_eligible": 237,
+   "n_reported": 10,
+   "ci95_lo": 0.016877637130801686,
+   "ci95_hi": 0.07172995780590717
+  },
+  "transfer_time": {
+   "share": 0.01762114537444934,
+   "n_eligible": 227,
+   "n_reported": 4,
+   "ci95_lo": 0.004329004329004329,
+   "ci95_hi": 0.036036036036036036
+  },
+  "human_intervention_number_or_none": {
+   "share": 0.3206751054852321,
+   "n_eligible": 237,
+   "n_reported": 76,
+   "ci95_lo": 0.26571729957805906,
+   "ci95_hi": 0.379746835443038
+  },
+  "longest_unattended_run": {
+   "share": 0.20253164556962025,
+   "n_eligible": 237,
+   "n_reported": 48,
+   "ci95_lo": 0.1518987341772152,
+   "ci95_hi": 0.25316455696202533
+  }
+ },
+ "by_period": {
+  "items": {
+   "durations_every_step": {
+    "share_early": 0.08888888888888889,
+    "n_early": 135,
+    "share_late": 0.10784313725490197,
+    "n_late": 102,
+    "diff": 0.018954248366013074,
+    "ci95_lo": -0.05468954248366013,
+    "ci95_hi": 0.09978758169934637
+   },
+   "batch_size": {
+    "share_early": 0.8296296296296296,
+    "n_early": 135,
+    "share_late": 0.8823529411764706,
+    "n_late": 102,
+    "diff": 0.052723311546840956,
+    "ci95_lo": -0.033333333333333326,
+    "ci95_hi": 0.13877995642701524
+   },
+   "planning_time": {
+    "share_early": 0.007407407407407408,
+    "n_early": 135,
+    "share_late": 0.049019607843137254,
+    "n_late": 102,
+    "diff": 0.04161220043572984,
+    "ci95_lo": 0.002396514161220043,
+    "ci95_hi": 0.0906318082788671
+   },
+   "operating_time": {
+    "share_early": 0.037037037037037035,
+    "n_early": 135,
+    "share_late": 0.00980392156862745,
+    "n_late": 102,
+    "diff": -0.027233115468409584,
+    "ci95_lo": -0.06666666666666667,
+    "ci95_hi": 0.0071895424836601295
+   },
+   "any_throughput": {
+    "share_early": 0.5851851851851851,
+    "n_early": 135,
+    "share_late": 0.47058823529411764,
+    "n_late": 102,
+    "diff": -0.1145969498910675,
+    "ci95_lo": -0.2446677559912854,
+    "ci95_hi": 0.008540305010893088
+   },
+   "measured_throughput": {
+    "share_early": 0.4148148148148148,
+    "n_early": 135,
+    "share_late": 0.2647058823529412,
+    "n_late": 102,
+    "diff": -0.15010893246187362,
+    "ci95_lo": -0.2705882352941177,
+    "ci95_hi": -0.02483660130718951
+   },
+   "cost": {
+    "share_early": 0.037037037037037035,
+    "n_early": 135,
+    "share_late": 0.049019607843137254,
+    "n_late": 102,
+    "diff": 0.01198257080610022,
+    "ci95_lo": -0.0420479302832244,
+    "ci95_hi": 0.06367102396514132
+   },
+   "transfer_time": {
+    "share_early": 0.015151515151515152,
+    "n_early": 132,
+    "share_late": 0.021052631578947368,
+    "n_late": 95,
+    "diff": 0.005901116427432216,
+    "ci95_lo": -0.028375188415159347,
+    "ci95_hi": 0.04499799116110888
+   },
+   "human_intervention_number_or_none": {
+    "share_early": 0.362962962962963,
+    "n_early": 135,
+    "share_late": 0.2647058823529412,
+    "n_late": 102,
+    "diff": -0.09825708061002181,
+    "ci95_lo": -0.21612200435729848,
+    "ci95_hi": 0.017429193899782147
+   },
+   "longest_unattended_run": {
+    "share_early": 0.2518518518518518,
+    "n_early": 135,
+    "share_late": 0.13725490196078433,
+    "n_late": 102,
+    "diff": -0.1145969498910675,
+    "ci95_lo": -0.21574074074074073,
+    "ci95_hi": -0.013725490196078438
+   }
+  },
+  "n_early": 135,
+  "n_late": 102,
+  "n_no_era": 0
+ },
+ "by_field": {
+  "items": {
+   "durations_every_step": {
+    "fields": [
+     "analytical_chemistry",
+     "battery_electrochem",
+     "biology_biochem",
+     "catalysis",
+     "chemistry_synthesis",
+     "materials_inorganic",
+     "materials_polymer_soft",
+     "materials_thin_film",
+     "nanomaterials"
+    ],
+    "n_tested": 237,
+    "chi2": 16.26745333400443,
+    "p": 0.04447776111944028,
+    "p_holm": 0.40029985007496255
+   },
+   "batch_size": {
+    "fields": [
+     "analytical_chemistry",
+     "battery_electrochem",
+     "biology_biochem",
+     "catalysis",
+     "chemistry_synthesis",
+     "materials_inorganic",
+     "materials_polymer_soft",
+     "materials_thin_film",
+     "nanomaterials"
+    ],
+    "n_tested": 237,
+    "chi2": 11.641920119668963,
+    "p": 0.1629185407296352,
+    "p_holm": 0.9775112443778111
+   },
+   "planning_time": {
+    "fields": [
+     "analytical_chemistry",
+     "battery_electrochem",
+     "biology_biochem",
+     "catalysis",
+     "chemistry_synthesis",
+     "materials_inorganic",
+     "materials_polymer_soft",
+     "materials_thin_film",
+     "nanomaterials"
+    ],
+    "n_tested": 237,
+    "chi2": 5.918880193759547,
+    "p": 0.6261869065467266,
+    "p_holm": 1.0
+   },
+   "operating_time": {
+    "fields": [
+     "analytical_chemistry",
+     "battery_electrochem",
+     "biology_biochem",
+     "catalysis",
+     "chemistry_synthesis",
+     "materials_inorganic",
+     "materials_polymer_soft",
+     "materials_thin_film",
+     "nanomaterials"
+    ],
+    "n_tested": 237,
+    "chi2": 6.61412794305386,
+    "p": 0.5332333833083458,
+    "p_holm": 1.0
+   },
+   "any_throughput": {
+    "fields": [
+     "analytical_chemistry",
+     "battery_electrochem",
+     "biology_biochem",
+     "catalysis",
+     "chemistry_synthesis",
+     "materials_inorganic",
+     "materials_polymer_soft",
+     "materials_thin_film",
+     "nanomaterials"
+    ],
+    "n_tested": 237,
+    "chi2": 7.624323437962004,
+    "p": 0.4947526236881559,
+    "p_holm": 1.0
+   },
+   "measured_throughput": {
+    "fields": [
+     "analytical_chemistry",
+     "battery_electrochem",
+     "biology_biochem",
+     "catalysis",
+     "chemistry_synthesis",
+     "materials_inorganic",
+     "materials_polymer_soft",
+     "materials_thin_film",
+     "nanomaterials"
+    ],
+    "n_tested": 237,
+    "chi2": 9.177427565826287,
+    "p": 0.3248375812093953,
+    "p_holm": 1.0
+   },
+   "cost": {
+    "fields": [
+     "analytical_chemistry",
+     "battery_electrochem",
+     "biology_biochem",
+     "catalysis",
+     "chemistry_synthesis",
+     "materials_inorganic",
+     "materials_polymer_soft",
+     "materials_thin_film",
+     "nanomaterials"
+    ],
+    "n_tested": 237,
+    "chi2": 2.914282226852336,
+    "p": 0.9730134932533733,
+    "p_holm": 1.0
+   },
+   "transfer_time": {
+    "fields": [
+     "analytical_chemistry",
+     "battery_electrochem",
+     "biology_biochem",
+     "catalysis",
+     "chemistry_synthesis",
+     "materials_inorganic",
+     "materials_polymer_soft",
+     "materials_thin_film",
+     "nanomaterials"
+    ],
+    "n_tested": 227,
+    "chi2": 13.801749645471617,
+    "p": 0.09295352323838081,
+    "p_holm": 0.7436281859070465
+   },
+   "human_intervention_number_or_none": {
+    "fields": [
+     "analytical_chemistry",
+     "battery_electrochem",
+     "biology_biochem",
+     "catalysis",
+     "chemistry_synthesis",
+     "materials_inorganic",
+     "materials_polymer_soft",
+     "materials_thin_film",
+     "nanomaterials"
+    ],
+    "n_tested": 237,
+    "chi2": 12.53808429053259,
+    "p": 0.12493753123438281,
+    "p_holm": 0.8745627186406797
+   },
+   "longest_unattended_run": {
+    "fields": [
+     "analytical_chemistry",
+     "battery_electrochem",
+     "biology_biochem",
+     "catalysis",
+     "chemistry_synthesis",
+     "materials_inorganic",
+     "materials_polymer_soft",
+     "materials_thin_film",
+     "nanomaterials"
+    ],
+    "n_tested": 237,
+    "chi2": 16.32151010106982,
+    "p": 0.03248375812093953,
+    "p_holm": 0.3248375812093953
+   }
+  },
+  "n_mapped": 237
+ },
+ "descriptive": {
+  "at_least_one_step_duration": {
+   "share": 0.8016877637130801,
+   "n_eligible": 237,
+   "n_reported": 190,
+   "ci95_lo": 0.7510548523206751,
+   "ci95_hi": 0.8523206751054853
+  },
+  "nominal_throughput_only": {
+   "share": 0.18565400843881857,
+   "n_eligible": 237,
+   "n_reported": 44,
+   "ci95_lo": 0.13924050632911392,
+   "ci95_hi": 0.23628691983122363
+  },
+  "throughput_less_and_more_automated": {
+   "share": 0.05063291139240506,
+   "n_eligible": 237,
+   "n_reported": 12,
+   "ci95_lo": 0.02531645569620253,
+   "ci95_hi": 0.08016877637130802
+  },
+  "parallel_streams_gt1": {
+   "share": 0.05063291139240506,
+   "n_eligible": 237,
+   "n_reported": 12,
+   "ci95_lo": 0.02531645569620253,
+   "ci95_hi": 0.08016877637130802
+  },
+  "identical_units_gt1": {
+   "share": 0.08438818565400844,
+   "n_eligible": 237,
+   "n_reported": 20,
+   "ci95_lo": 0.05063291139240506,
+   "ci95_hi": 0.12236286919831224
+  },
+  "transfer_agents_gt1": {
+   "share": 0.046413502109704644,
+   "n_eligible": 237,
+   "n_reported": 11,
+   "ci95_lo": 0.02109704641350211,
+   "ci95_hi": 0.0759493670886076
+  },
+  "experiments_per_count": {
+   "share": 0.03375527426160337,
+   "n_eligible": 237,
+   "n_reported": 8,
+   "ci95_lo": 0.012658227848101266,
+   "ci95_hi": 0.05907172995780591
+  },
+  "human_intervention_number": {
+   "share": 0.10548523206751055,
+   "n_eligible": 237,
+   "n_reported": 25,
+   "ci95_lo": 0.06751054852320675,
+   "ci95_hi": 0.14345991561181434
+  }
+ },
+ "human_intervention_categories": {
+  "not_reported": 88,
+  "described": 73,
+  "quantified": 25,
+  "none_stated": 51
+ },
+ "items_reported_per_paper": {
+  "0": 10,
+  "1": 73,
+  "2": 44,
+  "3": 56,
+  "4": 22,
+  "5": 26,
+  "6": 5,
+  "8": 1
+ },
+ "platform_weighted": {
+  "durations_every_step": {
+   "weighted_share": 0.105,
+   "weighted_n": 200.0
+  },
+  "batch_size": {
+   "weighted_share": 0.8603333333333333,
+   "weighted_n": 200.0
+  },
+  "planning_time": {
+   "weighted_share": 0.03,
+   "weighted_n": 200.0
+  },
+  "operating_time": {
+   "weighted_share": 0.03,
+   "weighted_n": 200.0
+  },
+  "any_throughput": {
+   "weighted_share": 0.5441666666666667,
+   "weighted_n": 200.0
+  },
+  "measured_throughput": {
+   "weighted_share": 0.3383333333333334,
+   "weighted_n": 200.0
+  },
+  "cost": {
+   "weighted_share": 0.05,
+   "weighted_n": 200.0
+  },
+  "transfer_time": {
+   "weighted_share": 0.020942408376963352,
+   "weighted_n": 191.0
+  },
+  "human_intervention_number_or_none": {
+   "weighted_share": 0.322,
+   "weighted_n": 200.0
+  },
+  "longest_unattended_run": {
+   "weighted_share": 0.20600000000000002,
+   "weighted_n": 200.0
+  }
+ }
+}

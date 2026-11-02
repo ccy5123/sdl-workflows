@@ -19,7 +19,8 @@ sys.path.insert(0, str(HERE.parent))
 import export_release as ex  # noqa: E402
 from fixture import build_fixture, needs_frozen_documents  # noqa: E402
 from test_stage4_documents import workspace  # noqa: E402
-from test_stage6_bundle import build, candidate_sources, evidence, fixture_db, info, quality_evidence  # noqa: E402
+from test_stage6_bundle import (build, candidate_sources, evidence, fixture_db, info, quality_evidence,  # noqa: E402
+                                timing_quality)
 
 SCHEMA = """
 -- @column *.note: Shared note.
@@ -130,17 +131,19 @@ class Refusals(unittest.TestCase):
     def test_candidate_sources_must_match_the_candidates(self):
         db = fixture_db()
         meta = info(db)
-        rel = ex.build_release_db(db, meta, workspace(), versions=[], additions=[], evidence=evidence())
+        rel = ex.build_release_db(db, meta, workspace(), versions=[], additions=[], published=[], evidence=evidence())
         other = Path(tempfile.mkdtemp()) / "candidates.csv"
         other.write_text("cand_id,source_ids\nC0001,S0001\n", encoding="utf-8")
         with self.assertRaises(ex.ExportError):
-            ex.document_values(rel, db, meta, other, quality_evidence())
+            ex.document_values(rel, db, meta, other, quality_evidence(), timing_quality=timing_quality())
         with self.assertRaises(ex.ExportError):
-            ex.document_values(rel, db, dict(meta, authors=[]), candidate_sources(), quality_evidence())
+            ex.document_values(rel, db, dict(meta, authors=[]), candidate_sources(), quality_evidence(),
+                               timing_quality=timing_quality())
         # the shipped instruction file must be the one recorded with the codings
         db.execute("UPDATE coding SET prompt_sha256 = ? WHERE role = 'extractor_a'", ("3" * 64,))
         with self.assertRaises(ex.ExportError):
-            ex.document_values(rel, db, meta, candidate_sources(), quality_evidence())
+            ex.document_values(rel, db, meta, candidate_sources(), quality_evidence(),
+                               timing_quality=timing_quality())
 
 
 class CandidatesAndIdentities(unittest.TestCase):
@@ -184,11 +187,12 @@ class ZenodoDoi(unittest.TestCase):
     def setUp(self):
         self.db = fixture_db()
         self.meta = info(self.db)
-        self.rel = ex.build_release_db(self.db, self.meta, workspace(), versions=[], additions=[], evidence=evidence())
+        self.rel = ex.build_release_db(self.db, self.meta, workspace(), versions=[], additions=[], published=[],
+                                       evidence=evidence())
 
     def values(self, doi):
         return ex.document_values(self.rel, self.db, dict(self.meta, zenodo_doi=doi), candidate_sources(),
-                                  quality_evidence())
+                                  quality_evidence(), timing_quality=timing_quality())
 
     def test_doi_appears_in_citation_and_readme_only_when_given(self):
         cff = (ex.TEMPLATES / "CITATION.cff").read_text(encoding="utf-8")
@@ -237,8 +241,8 @@ class RecordedBuild(unittest.TestCase):
         self.assertEqual((v["f1_unit_operation"], v["f1_module_type"], v["f1_transfer_mode"]),
                          ("0.905", "0.898", "0.891"))
         self.assertEqual((v["module_baseline"], v["module_reference"], v["transfer_low"]),
-                         ("0.6681", "0.6881", "+0.0172"))
-        self.assertEqual((v["n_eligible"], v["n_ineligible"], v["n_fulltext"]), (238, 231, 469))
+                         ("0.6669", "0.6863", "+0.0163"))
+        self.assertEqual((v["n_eligible"], v["n_ineligible"], v["n_fulltext"]), (237, 232, 469))
 
 
 if __name__ == "__main__":

@@ -46,10 +46,12 @@ class SourceDigest(unittest.TestCase):
 
     @unittest.skipUnless(ex.INTERNAL_DB.exists(), "internal build not present")
     def test_recorded_build_digest(self):
-        # db/build-manifest.json and Evidence evi-obs-dbbuild-20261025-131159 record this digest
+        # db/build-manifest.json and Evidence evi-obs-processbuild-20261102-112453 record this digest (the
+        # 237-paper build of release 1.1.0, Snapp2023 removed; release 1.0.0 was exported from 6bc13fac...,
+        # evi-obs-dbbuild-20261025-131159)
         db = ex.open_internal()
         self.assertEqual(ex.internal_digest(db),
-                         "6bc13fac0303d08817c63b1615ef7c0e0c15161982b5853b808cd1226bef320a")
+                         "57b39af53554a4b7dbccbdfebfc3b254f88f6af050a378b3cb1f9435deeaa08a")
 
     @unittest.skipUnless(ex.INTERNAL_DB.exists(), "internal build not present")
     def test_internal_build_opens_read_only(self):
