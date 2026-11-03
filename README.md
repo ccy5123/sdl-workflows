@@ -3,6 +3,7 @@
 Code that builds, documents and checks the dataset **sdl-workflows**: hardware workflows of the closed-loop
 self-driving laboratories described in 237 published papers (version 1.1.0).
 
+- Paper: preprint on ChemRxiv, https://doi.org/10.26434/chemrxiv.15011572/v1
 - Dataset: Zenodo, https://doi.org/10.5281/zenodo.23875743 (version 1.1.0, CC BY 4.0); all versions:
   https://doi.org/10.5281/zenodo.23857125
 - Explorer: https://ccy5123.github.io/sdl-workflows-explorer (browse platforms, trends, taxonomy and benchmark, and lay out a workflow to compare with the recorded platforms, in a web browser)
@@ -128,4 +129,10 @@ three issue forms and how contributions are reviewed and credited.
 
 ## Citation and licence
 
-Cite the dataset by its DOI (see `CITATION.cff` in the bundle). Code: MIT (`LICENSE`).
+Cite the dataset by its DOI (see `CITATION.cff` in the bundle). The paper that describes the database and the
+analyses in `analysis/` and `reproduction/`:
+
+> Joe, C. Y. (2026). What Can the Records of Published Self-Driving Laboratories Predict About a New Platform? A
+> Step-Level Database and Explorer [Preprint]. ChemRxiv. https://doi.org/10.26434/chemrxiv.15011572/v1
+
+Code: MIT (`LICENSE`).
